@@ -1,4 +1,4 @@
-![Getting Started](../frontend/../echoTix/frontend/src/assets/echoTix_Logo.pngassets/echoTix_Logo.png)
+![Getting Started](../echoTix/frontend/src/assets/echoTix_Logo.png)
 
 ## Ticketing with Consciousness
 
