@@ -1,6 +1,5 @@
 ![Getting Started](./assets/echoTix_Logo.png)
 
-# echotix
 
 ## Ticketing with Consciousness
 
