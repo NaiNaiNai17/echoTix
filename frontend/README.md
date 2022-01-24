@@ -32,9 +32,12 @@ A ticketing website where:
 - Express Sessions
 - Cors
 - Cookie-Parser
+- Mongo DB
+- Mongoose
 - Stripe
 - Bcrypt
 - Passport Google
 - Passport JWT
+- Morgan
 
 ## A project by Nai Fowler and Lars Nemeth
