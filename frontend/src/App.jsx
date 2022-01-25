@@ -1,9 +1,10 @@
 import './App.css';
+import MainRouter from './hoc/MainRouter';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello echoTix</h1>
+      <MainRouter />
     </div>
   );
 }
