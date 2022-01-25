@@ -2,37 +2,53 @@ import styled from 'styled-components/macro';
 
 export const NavContainer = styled.div`
   height: 80px;
-  background-color: black;
+  background-color: lightgray;
   color: #fff;
 `;
 
 export const NavWrapper = styled.div`
-  padding: 30px 40px;
+  padding: 20px 40px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 
-//* Left Side of The Navbar
+//* Left
 export const NavLeft = styled.div`
-  width: 25%;
+  flex: 0.2;
+  img {
+    width: 100px;
+  }
 `;
 
+//* Center
+export const NavCenter = styled.div`
+  flex: 1;
+`;
+//* Search Box
 
-//* Center of the Navbar
-export const NavSearch = styled.div`
-  width: 25%;
+export const SearchContainer = styled.div`
+  ${'' /* border: 1px solid #fff; */}
+  display: flex;
+  align-items: center;
+  ${'' /* padding: 10px 40px 10px 40px; */}
 `;
 
-//* Right Side of the Navbar
+export const Input = styled.input`
+  border: none;
+`;
 
-export const Right = styled.div`
-  width: 25%;
+//* Right
+
+export const NavRight = styled.div`
+  flex: 1;
+  display: flex;
 `;
 //*** Inside Right Side */
-export const NavTreeCount = styled.div`
-  width: 25%;
+export const NavTreecount = styled.div`
+  width: 50%;
 `;
 
-export const User = styled.div`
-  width: 25%;
+export const NavUser = styled.div`
+  width: 50%;
 `;

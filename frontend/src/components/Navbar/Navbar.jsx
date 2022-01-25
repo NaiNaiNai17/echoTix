@@ -1,24 +1,40 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faSeedling } from '@fortawesome/free-solid-svg-icons';
+
 import {
   NavLeft,
-  NavSearch,
-  NavTreeCount,
-  Right,
+  NavCenter,
+  NavRight,
+  SearchContainer,
+  NavTreecount,
   NavContainer,
+  NavUser,
   NavWrapper,
+  Input,
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
   return (
     <NavContainer>
       <NavWrapper>
-        <NavLeft>Logo</NavLeft>
-        <NavSearch>Search Icon</NavSearch>
+        <NavLeft>
+          <img src="../assets/echoTix_Logo.png" alt="" />
+        </NavLeft>
+        <NavCenter>
+          <SearchContainer>
+            <Input />
+            <FontAwesomeIcon icon={faSearch} />
+          </SearchContainer>
+        </NavCenter>
 
-        <Right>
-          <NavTreeCount>Treecount</NavTreeCount>
-        </Right>
+        <NavRight>
+          <NavTreecount>
+            <FontAwesomeIcon icon={faSeedling} />
+          </NavTreecount>
+          <NavUser>User</NavUser>
+        </NavRight>
       </NavWrapper>
     </NavContainer>
   );
