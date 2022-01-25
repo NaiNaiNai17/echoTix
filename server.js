@@ -4,7 +4,7 @@ const cors = require('cors')
 const passport = require('passport')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
-
+const userRoutes = require('./routes/userRoutes')
 
 require('dotenv').config()
 
@@ -13,7 +13,8 @@ app.use(cors({
    credentials: true,
    origin:true,
 }))
-app.set('port', process.env.PORT || 4000)
+const PORT = process.env.PORT || 8000
+app.set('port', PORT || 4000)
 app.use(logger('dev'));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -23,7 +24,7 @@ app.use(passport.initialize())
 app.use(cookieParser())
 
  //Passport config
-const initializePassport = require('./config/passport-config')
+const initializePassport = require('./config/jwt-passport-config')
 initializePassport(passport)
 
 
@@ -37,11 +38,12 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
 
 
 
-const PORT = process.env.PORT || 8000
 
 
 
-// app.use('/users',userRoutes)
+
+app.use('/user',userRoutes)
 // app.use('/messages',messageRoutes)
+
 app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
