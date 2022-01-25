@@ -1,10 +1,12 @@
 const express = require('express')
+const axios = require('axios')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const passport = require('passport')
 const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
+const ticketRoutes = require('./routes/ticketRoutes')
 
 require('dotenv').config()
 
@@ -43,7 +45,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
 
 
 app.use('/user',userRoutes)
-// app.use('/messages',messageRoutes)
+app.use('/shows',ticketRoutes)
 
 app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
