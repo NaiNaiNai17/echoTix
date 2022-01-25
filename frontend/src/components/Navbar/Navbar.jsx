@@ -1,6 +1,10 @@
 import React from 'react';
 
 import {
+  NavLeft,
+  NavSearch,
+  NavTreeCount,
+  Right,
   NavContainer,
   NavWrapper,
 } from '../../components/styles/Navbar.styled';
@@ -8,7 +12,14 @@ import {
 const Navbar = () => {
   return (
     <NavContainer>
-      <NavWrapper>navbar</NavWrapper>
+      <NavWrapper>
+        <NavLeft>Logo</NavLeft>
+        <NavSearch>Search Icon</NavSearch>
+
+        <Right>
+          <NavTreeCount>Treecount</NavTreeCount>
+        </Right>
+      </NavWrapper>
     </NavContainer>
   );
 };
