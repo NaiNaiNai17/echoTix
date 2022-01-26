@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Badge from '@material-ui/core/Badge';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
-  faShoppingCart,
   faSeedling,
+  faShoppingCart,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,9 +17,10 @@ import {
   SearchContainer,
   NavTreecount,
   NavContainer,
-  NavUser,
+  NavUserItem,
   NavWrapper,
   Input,
+  ShoppingCartIcon,
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
@@ -25,7 +28,7 @@ const Navbar = () => {
     <NavContainer>
       <NavWrapper>
         <NavLeft>
-          <img src="../assets/echoTix_Logo.png" alt="" />
+          <img src="../assets/echoTix_Logo.png" alt="echotix-logo" />
         </NavLeft>
         <NavCenter>
           <SearchContainer>
@@ -38,10 +41,13 @@ const Navbar = () => {
           <NavTreecount>
             <FontAwesomeIcon icon={faSeedling} />
           </NavTreecount>
-          <NavUser>
+          <NavUserItem>
             <FontAwesomeIcon icon={faUser} />
-            <FontAwesomeIcon icon={faShoppingCart} />
-          </NavUser>
+
+            <Badge badgeContent={4} color="primary">
+              <FontAwesomeIcon icon={faShoppingCart} />
+            </Badge>
+          </NavUserItem>
         </NavRight>
       </NavWrapper>
     </NavContainer>
