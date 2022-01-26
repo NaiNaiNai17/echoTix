@@ -1,7 +1,12 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSeedling } from '@fortawesome/free-solid-svg-icons';
+import {
+  faSearch,
+  faShoppingCart,
+  faSeedling,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 
 import {
   NavLeft,
@@ -33,7 +38,10 @@ const Navbar = () => {
           <NavTreecount>
             <FontAwesomeIcon icon={faSeedling} />
           </NavTreecount>
-          <NavUser>User</NavUser>
+          <NavUser>
+            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faShoppingCart} />
+          </NavUser>
         </NavRight>
       </NavWrapper>
     </NavContainer>

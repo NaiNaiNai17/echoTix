@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 export const NavContainer = styled.div`
   height: 80px;
-  background-color: lightgray;
+  background-color: #2a9d8f;
   color: #fff;
 `;
 
@@ -31,6 +31,7 @@ export const SearchContainer = styled.div`
   ${'' /* border: 1px solid #fff; */}
   display: flex;
   align-items: center;
+  color: black;
   ${'' /* padding: 10px 40px 10px 40px; */}
 `;
 
@@ -43,6 +44,7 @@ export const Input = styled.input`
 export const NavRight = styled.div`
   flex: 1;
   display: flex;
+  color: black;
 `;
 //*** Inside Right Side */
 export const NavTreecount = styled.div`
