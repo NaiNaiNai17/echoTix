@@ -6,7 +6,7 @@ export const Container = styled.div.attrs(() => ({
   className: 'Container',
 }))`
   width: 100%;
-  height: 50vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   background-color: #cad2c5;
