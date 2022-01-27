@@ -1,12 +1,16 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
+import Hero from '../../components/Hero/Hero';
 
 //* Import Styling
 
-
-
 const Home = () => {
-  return <div><Navbar/></div>;
+  return (
+    <div>
+      <Navbar />
+      <Hero />
+    </div>
+  );
 };
 
 export default Home;

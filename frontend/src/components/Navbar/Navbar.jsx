@@ -20,7 +20,6 @@ import {
   NavUserItem,
   NavWrapper,
   Input,
-  ShoppingCartIcon,
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
