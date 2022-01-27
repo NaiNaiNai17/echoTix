@@ -12,6 +12,14 @@ export const Container = styled.div.attrs(() => ({
   overflow: hidden;
 `;
 
+export const Wrapper = styled.div.attrs(() => ({
+  className: 'Wrapper',
+}))`
+  height: 100%;
+  display: flex;
+  transform: translateX(${(props) => props.slideIndex * 100}vw);
+`;
+
 export const ImageContainer = styled.div.attrs(() => ({
   className: 'ImageContainer',
 }))`
