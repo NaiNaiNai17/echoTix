@@ -53,7 +53,7 @@ export const Image = styled.img.attrs(() => ({
 export const InfoContainer = styled.div.attrs(() => ({
   className: 'InfoContainer',
 }))`
-  flex: 1;
+  width: 50%;
   padding: 50px;
 `;
 
