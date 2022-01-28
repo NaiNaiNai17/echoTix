@@ -5,6 +5,7 @@ const passport = require('passport')
 const router = express.Router()
 const controller = require('../controller/ticketController')
 
+
 router.get('/listEvents', controller.showInfo)
 
 

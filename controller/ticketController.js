@@ -1,4 +1,5 @@
 const axios = require("axios");
+const auth = require('../middleware/auth')
 /**
  * parse only data we need from ticketmaster api 
  * @param {*} req 

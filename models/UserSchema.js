@@ -9,6 +9,6 @@ const userSchema = new Schema({
     roles:[String]
 })
 
-const User = model("User", userSchema)
+const User = model('User', userSchema)
 
 module.exports = User
