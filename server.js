@@ -35,8 +35,8 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
    useNewUrlParser:true, 
    useUnifiedTopology:true,
 })
-.then(() => {console.log("we are connected to the database.")})
-.catch((error) => { console.log('an error occurred while connecting ot the db', error)})
+.then(() => {console.log('we are connected to the database.')})
+.catch((error) => { console.log('an error occurred while connecting to the db', error)})
 
 
 
