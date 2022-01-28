@@ -1,4 +1,5 @@
 import React from 'react';
+import MainLogo from '../../assets/images/echoTix_Logo.png';
 
 //* Social Icons Import
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -30,7 +31,7 @@ const Footer = () => {
     <FooterContainer>
       <FooterLeft>
         <Logo>
-          <img src="../assets/echoTix_Logo.png" alt="echotix-logo" />
+          <img src={MainLogo} alt="echotix-logo" />
         </Logo>
         <Description>
           We live culture. We care about nature. With this unique Ticket
