@@ -1,19 +1,19 @@
 export const sliderItems = [
   {
     id: 1,
-    img: '../assets/Melt_1440x450.png',
+    img: '../../assets/images/Melt_1440x450.png',
     event: 'Melt',
     description: 'The Alternative-Festival at Ferropolis',
   },
   {
     id: 2,
-    img: '../assets/Bonobo_1440x450.jpg',
+    img: '../../assets/images/Bonobo_1440x450.jpg',
     event: 'Bonobo',
     description: 'The Finest of Electronic Dance Music',
   },
   {
     id: 3,
-    img: '../assets/Dukeland_1440x450.jpg',
+    img: '../../assets/images/Dukeland_1440x450.jpg',
     event: 'Dukeland',
     description: 'Festival Premier near Stuttgart',
   },
@@ -22,7 +22,7 @@ export const sliderItems = [
 export const squareCards = [
   {
     id: 1,
-    img: '../assets/red-hot-chili-peppers-tickets.jpg',
+    img: 'https://i.discogs.com/x-kpvN89qPQNwNvDMvEAKVUu2aQslt9-6Gm56W_i8hE/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEz/ODU5MzcxLTE1NjI3/NjQyNTUtNTgyOC5q/cGVn.jpeg',
   },
   {
     id: 2,

@@ -1,6 +1,6 @@
 import React from 'react';
-
 import Badge from '@material-ui/core/Badge';
+import Logo from '../../assets/images/echoTix_Logo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -27,7 +27,7 @@ const Navbar = () => {
     <NavContainer>
       <NavWrapper>
         <NavLeft>
-          <img src="../assets/echoTix_Logo.png" alt="echotix-logo" />
+          <img src={Logo} alt="echotix-logo" />
         </NavLeft>
         <NavCenter>
           <SearchContainer>
