@@ -11,6 +11,7 @@ export const NavContainer = styled.div.attrs(() => ({
     rgba(24, 78, 119, 1) 100%
   );
   color: #fff;
+  overflow: hidden;
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -27,7 +28,7 @@ export const NavLeft = styled.div.attrs(() => ({
   className: 'NavLeft',
 }))`
   flex: 0.2;
-  
+
   img {
     width: 200px;
   }
@@ -87,5 +88,12 @@ export const NavUserItem = styled.div.attrs(() => ({
 
   .MuiBadge-colorPrimary {
     background-color: gray;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    span {
+      size: 30px;
+    }
   }
 `;
