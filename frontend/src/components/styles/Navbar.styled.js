@@ -3,8 +3,13 @@ import styled from 'styled-components/macro';
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
-  height: 80px;
-  background-color: #2a9d8f;
+  height: 20vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(24, 78, 119, 1) 100%
+  );
   color: #fff;
 `;
 
@@ -22,8 +27,9 @@ export const NavLeft = styled.div.attrs(() => ({
   className: 'NavLeft',
 }))`
   flex: 0.2;
+  
   img {
-    width: 100px;
+    width: 200px;
   }
 `;
 
