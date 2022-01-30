@@ -2,6 +2,8 @@ import React from 'react';
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/echoTix_Logo.png';
 
+import { Scrollbars } from 'react-custom-scrollbars-2';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -24,7 +26,7 @@ import {
 
 const Navbar = () => {
   return (
-    <NavContainer>
+    <NavContainer fixed="top">
       <NavWrapper>
         <NavLeft>
           <img src={Logo} alt="echotix-logo" />
@@ -38,13 +40,13 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
-            <FontAwesomeIcon icon={faSeedling} />
+            <FontAwesomeIcon icon={faSeedling} size="2x" />
           </NavTreecount>
           <NavUserItem>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} size="2x" />
 
-            <Badge badgeContent={4} color="primary">
-              <FontAwesomeIcon icon={faShoppingCart} />
+            <Badge badgeContent={4} color="primary" font-size="lg">
+              <FontAwesomeIcon icon={faShoppingCart} size="2x" />
             </Badge>
           </NavUserItem>
         </NavRight>
