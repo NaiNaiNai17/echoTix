@@ -1,7 +1,15 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 const CheckoutComponent = () => {
-  return <div></div>;
+  return (
+    <CheckoutContainer>
+      <Navbar />
+      cart
+      <Footer />
+    </CheckoutContainer>
+  );
 };
 
 export default CheckoutComponent;
