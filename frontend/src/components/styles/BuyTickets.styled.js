@@ -17,15 +17,14 @@ export const EventDataContainer = styled.div.attrs(() => ({
   );
 `;
 
-export const EventInfo = styled.div.attrs(() => ({
-  className: 'EventInfo',
+export const EventInfoContainer = styled.div.attrs(() => ({
+  className: 'EventInfoContainer',
 }))`
   padding: 40px;
   background-color: #c4c4c4;
   height: 40vh;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 `;
 
@@ -45,37 +44,47 @@ export const EventCity = styled.h4.attrs(() => ({
 export const Table = styled.tr.attrs(() => ({
   className: 'Table',
 }))`
-  width: 70%;
+  width: 100%;
 `;
 
 export const TableRow = styled.tr.attrs(() => ({
   className: 'TableRow',
 }))`
   th {
-    width: 700px;
+    width: 30%;
+  }
+  td {
+    width: 25%;
   }
 `;
 
-//* TicketsData
+//* Tickets Data
 
 export const TicketsDataContainer = styled.tr.attrs(() => ({
   className: 'TicketsDataContainer',
 }))`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40vh;
+  width: 100%;
+  background-color: #e7e5e5;
 `;
 
 export const TicketInfo = styled.div.attrs(() => ({
   className: 'TicketInfo',
 }))`
   padding: 40px;
-  background-color: #e7e5e5;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 40vh;
 `;
 
 export const TicketH1 = styled.h1.attrs(() => ({
   className: 'TicketH1',
 }))`
   margin-bottom: 25px;
+  width: 100%;
 `;
