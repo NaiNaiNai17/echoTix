@@ -2,14 +2,16 @@ import styled from 'styled-components/macro';
 
 export const CheckoutContainer = styled.div.attrs(() => ({
   className: 'CheckoutContainer',
-}))``;
+}))`
+  background-color: orange;
+`;
 
 export const CheckoutWrapper = styled.div.attrs(() => ({
   className: 'CheckoutWrapper',
 }))`
-  padding: 20px;
-
+  padding: 40px;
   background-color: #c4c4c4;
+  ${'' /* width: 80%; */}
 `;
 
 export const CartTitle = styled.h1.attrs(() => ({
