@@ -19,6 +19,22 @@ export const sliderItems = [
   },
 ];
 
+export const subheroItems = [
+  {
+    id: 1,
+    img: 'https://s1.ticketm.net/img/tat/dam/a/f43/10a0ba85-3be9-40b7-9d05-07053aa78f43_1595521_CUSTOM.jpg',
+
+    event: 'Harry Styles',
+    description: 'Noise Rock',
+  },
+  {
+    id: 2,
+    img: 'https://s1.ticketm.net/img/tat/dam/a/3d6/c064daba-4792-4cf9-b834-173a4a0f73d6_1601051_CUSTOM.jpg',
+    event: 'Peter Doherty',
+    description: 'Alternative Rock',
+  },
+];
+
 export const squareCards = [
   {
     id: 1,
