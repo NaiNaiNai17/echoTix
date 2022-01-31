@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div.attrs(() => ({
   className: 'Container',
 }))`
-  flex: 1;
+  ${'' /* flex: 1; */}
   margin: 10px;
   display: flex;
   justify-content: center;
