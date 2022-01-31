@@ -15,7 +15,7 @@ export const FooterLeft = styled.div.attrs(() => ({
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #d8f3dc;
+  background-color: #fff;
 `;
 
 export const Logo = styled.div.attrs(() => ({
@@ -60,7 +60,7 @@ export const FooterCenter = styled.div.attrs(() => ({
   flex: 1;
   padding: 20px;
   color: white;
-  background-color: #081c15;
+  background-color: #184e77;
 `;
 
 export const FooterTitle = styled.h3.attrs(() => ({
@@ -94,7 +94,7 @@ export const FooterRight = styled.div.attrs(() => ({
   flex: 1;
   padding: 20px;
   color: white;
-  background-color: #081c15;
+  background: #202224;
 `;
 
 export const PaymentIcons = styled.div.attrs(() => ({
@@ -109,5 +109,4 @@ export const PaymentIcon = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   margin-right: 5px;
-  
 `;

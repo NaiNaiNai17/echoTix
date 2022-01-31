@@ -14,9 +14,10 @@ const Hero = () => {
       showArrows={false}
       showThumbs={false}
       showIndicators={false}
+      showStatus={false}
       autoPlay={true}
       infiniteLoop={true}
-      interval={3000}
+      interval={10000}
     >
       {/* {sliderItems.map((item) => (
         <div>
