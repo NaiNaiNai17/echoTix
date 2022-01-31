@@ -2,8 +2,6 @@ import React from 'react';
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/echoTix_Logo.png';
 
-import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,

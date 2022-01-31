@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -35,7 +33,6 @@ import { StylesContext } from '@material-ui/styles';
 const CheckoutComponent = () => {
   return (
     <CheckoutContainer>
-      <Navbar />
       <CheckoutWrapper>
         <CartTitle>Shopping Cart</CartTitle>
         <CheckoutTop>
@@ -78,7 +75,6 @@ const CheckoutComponent = () => {
           <Summary>Summary</Summary>
         </CheckoutBottom>
       </CheckoutWrapper>
-      <Footer />
     </CheckoutContainer>
   );
 };
