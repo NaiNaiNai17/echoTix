@@ -28,7 +28,6 @@ import {
   TicketAmount,
   TicketPrice,
 } from '../../components/styles/Checkout.styled';
-import { StylesContext } from '@material-ui/styles';
 
 const CheckoutComponent = () => {
   return (
