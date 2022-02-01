@@ -41,7 +41,6 @@ import {
 const CheckoutComponent = () => {
   return (
     <CheckoutContainer>
-      <Navbar />
       <WrapAll>
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
@@ -141,7 +140,6 @@ const CheckoutComponent = () => {
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>
-      <Footer />
     </CheckoutContainer>
   );
 };
