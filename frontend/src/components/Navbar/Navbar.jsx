@@ -23,6 +23,10 @@ import {
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
+  const example = () => {
+    console.log('user focussed on input field');
+  };
+
   return (
     <NavContainer fixed="top">
       <NavWrapper>
@@ -31,7 +35,7 @@ const Navbar = () => {
         </NavLeft>
         <NavCenter>
           <SearchContainer>
-            <Input />
+            <Input onFocus={example} />
             <FontAwesomeIcon icon={faSearch} />
           </SearchContainer>
         </NavCenter>
