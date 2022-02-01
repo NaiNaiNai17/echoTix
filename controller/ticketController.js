@@ -1,6 +1,11 @@
 const axios = require("axios");
 const auth = require('../middleware/auth') 
 
+/**
+ * second call to api for price obj by event id
+ * @param {*} id 
+ * @returns 
+ */
 const getMinPrice = async (id) =>{
     
     return axios.get(`https://app.ticketmaster.eu/mfxapi/v2/events/${id}/prices?domain=germany&lang&price_level_ids&apikey=${process.env.API_KEY}`)
@@ -19,13 +24,15 @@ const getMinPrice = async (id) =>{
  * @returns 
  */
 exports.showInfo = async (req, res) => {
-  const eventRes = await axios.get(process.env.EVENTS_API);
+  const eventRes = await axios.get(process.env.EVENTS_API)
   const dataArr = await Promise.all(eventRes.data.events.map(async (e) =>{
+
     const dataObj = {
       id: e.id,
       title: e.name,
       img: e.images,
       date:e.event_date,
+      url:e.url,
       venue:e.venue.name,
       address: [
         e.venue.location.address.address,
@@ -33,26 +40,22 @@ exports.showInfo = async (req, res) => {
         e.venue.location.address.city,
 
       ]
-
     }
-    dataObj.prices = await getMinPrice(e.id)
-    
+
+    prices = await getMinPrice(e.id)
+    dataObj.price = prices.event.price_types[0].price_levels[0].face_value
     return dataObj
+
 }))
-// a second api call just to get the price if available
-//makes api request for single event and return min price getMinPrice
-
- 
-
-  
-  //  dataArr.forEach(async(e) =>{
-  //   //how to save price depending on
-
-   
-  //   e['price'] = await getMinPrice(e.id)
-     
-  // })
-  
 
   return res.status(200).json({ message: "list", payload: dataArr });
 };
+
+const apiSearch = async (string) =>{
+   return axios(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${string}&domain=germany&attraction_name&apikey=${process.env.API_KEY}`)
+ } 
+
+exports.searchByName = async (req,res){
+ 
+
+}
