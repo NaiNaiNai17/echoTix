@@ -39,7 +39,6 @@ import {
 const CheckoutComponent = () => {
   return (
     <CheckoutContainer>
-      <Navbar />
       <WrapAll>
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
@@ -72,7 +71,13 @@ const CheckoutComponent = () => {
                 </TicketDetail>
                 <PriceDetail>
                   <TicketAmountCountainer>
-                    <Remove style={{ width: '75px', height: '75px' }} />
+                    <Remove
+                      style={{
+                        width: '75px',
+                        height: '75px',
+                        fontWeight: '300',
+                      }}
+                    />
                     <TicketAmount>2</TicketAmount>
                     <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
@@ -133,7 +138,6 @@ const CheckoutComponent = () => {
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>
-      <Footer />
     </CheckoutContainer>
   );
 };
