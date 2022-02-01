@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';

@@ -23,28 +23,32 @@ import {
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
+  const example = () => {
+    console.log('user focussed on input field');
+  };
+
   return (
-    <NavContainer>
+    <NavContainer fixed="top">
       <NavWrapper>
         <NavLeft>
           <img src={Logo} alt="echotix-logo" />
         </NavLeft>
         <NavCenter>
           <SearchContainer>
-            <Input />
+            <Input onFocus={example} />
             <FontAwesomeIcon icon={faSearch} />
           </SearchContainer>
         </NavCenter>
 
         <NavRight>
           <NavTreecount>
-            <FontAwesomeIcon icon={faSeedling} />
+            <FontAwesomeIcon icon={faSeedling} size="2x" />
           </NavTreecount>
           <NavUserItem>
-            <FontAwesomeIcon icon={faUser} />
+            <FontAwesomeIcon icon={faUser} size="2x" />
 
-            <Badge badgeContent={4} color="primary">
-              <FontAwesomeIcon icon={faShoppingCart} />
+            <Badge badgeContent={4} color="primary" font-size="lg">
+              <FontAwesomeIcon icon={faShoppingCart} size="2x" />
             </Badge>
           </NavUserItem>
         </NavRight>
