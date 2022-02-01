@@ -7,8 +7,7 @@ const controller = require('../controller/ticketController')
 
 
 router.get('/listEvents', controller.showInfo)
-
-
+router.use('/search', searchByName.showInfo)
 
 
 module.exports = router
