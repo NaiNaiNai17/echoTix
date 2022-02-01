@@ -3,7 +3,13 @@ import React from 'react';
 import {
   RegisterContainer,
   RegisterWrapper,
-} from '../../components/styles/Register.styled';
+  Title,
+  Form,
+  Input,
+  GoogleButton,
+  CreateButton,
+  Agreement,
+} from '../styles/Register';
 
 const Register = () => {
   return (
@@ -18,6 +24,10 @@ const Register = () => {
           <Input placeholder="confirm password"></Input>
           <GoogleButton>Sign in with Google</GoogleButton>
           <CreateButton>Create</CreateButton>
+          <Agreement>
+            By creating an account, I consent to the proceeding of my personal
+            data in accordance with <b>Privacy Policy</b>
+          </Agreement>
         </Form>
       </RegisterWrapper>
     </RegisterContainer>

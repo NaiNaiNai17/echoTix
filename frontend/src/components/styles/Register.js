@@ -5,23 +5,81 @@ export const RegisterContainer = styled.div.attrs(() => ({
 }))`
   width: 100vw;
   height: 100vh;
-  background: url("")
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 export const RegisterWrapper = styled.div.attrs(() => ({
   className: 'RegisterContainer',
-}))``;
+}))`
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+`;
+
 export const Title = styled.h1.attrs(() => ({
   className: 'Title',
-}))``;
+}))`
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+`;
+
 export const Form = styled.form.attrs(() => ({
   className: 'Form',
-}))``;
+}))`
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 export const Input = styled.input.attrs(() => ({
   className: 'Input',
+}))`
+  flex: 1;
+  min-width: 40%;
+  margin: 20px 10px 0px 0px;
+`;
+
+export const CreateInput = styled.input.attrs(() => ({
+  className: 'Input',
 }))``;
+
 export const GoogleButton = styled.button.attrs(() => ({
-  className: 'RegisterContainer',
-}))``;
-export const Button = styled.button.attrs(() => ({
-  className: 'Button',
-}))``;
+  className: 'GoogleButton',
+}))`
+  width: 50%;
+  border: none;
+  padding: 15px 20px;
+  background-color: #e7e5e5;
+  border-radius: 20px;
+  margin: 20px 10px 0px 0px;
+`;
+
+export const CreateButton = styled.button.attrs(() => ({
+  className: 'CreateButton',
+}))`
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: #30ab86;
+  border-radius: 20px;
+  margin: 20px 10px 0px 0px;
+`;
+
+export const Agreement = styled.span.attrs(() => ({
+  className: 'Agreement',
+}))`
+  font-size: 12px;
+  margin: 20px 0px;
+  text-align: center;
+`;
