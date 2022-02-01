@@ -1,10 +1,8 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
 import Subhero from '../../components/Subhero/Subhero';
-import BackToLive from "../../components/BackToLive/BackToLive"
+import BackToLive from '../../components/BackToLive/BackToLive';
 import Cards from '../../components/Cards/Cards';
-
-
 
 //* Import Styling
 
@@ -13,9 +11,8 @@ const Home = () => {
     <div>
       <Hero />
       <Subhero />
-      <BackToLive/>
+      <BackToLive />
       <Cards />
-      
     </div>
   );
 };
