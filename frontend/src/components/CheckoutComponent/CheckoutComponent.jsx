@@ -74,9 +74,9 @@ const CheckoutComponent = () => {
                 </TicketDetail>
                 <PriceDetail>
                   <TicketAmountCountainer>
-                    <Add style={{ width: '75px', height: '75px' }} />
-                    <TicketAmount>2</TicketAmount>
                     <Remove style={{ width: '75px', height: '75px' }} />
+                    <TicketAmount>2</TicketAmount>
+                    <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
                   <TicketPrice>EUR 30</TicketPrice>
                 </PriceDetail>
@@ -104,9 +104,9 @@ const CheckoutComponent = () => {
                 </TicketDetail>
                 <PriceDetail>
                   <TicketAmountCountainer>
-                    <Add style={{ width: '75px', height: '75px' }} />
-                    <TicketAmount>2</TicketAmount>
                     <Remove style={{ width: '75px', height: '75px' }} />
+                    <TicketAmount>2</TicketAmount>
+                    <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
                   <TicketPrice>EUR 20</TicketPrice>
                 </PriceDetail>
