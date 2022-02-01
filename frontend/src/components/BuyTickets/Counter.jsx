@@ -1,11 +1,14 @@
 import React from 'react';
 
+//* Icons Import
+import Add from '@material-ui/icons/AddCircleOutline';
+import Remove from '@material-ui/icons/RemoveCircleOutline';
+
 import Buy from '../Buttons/Buy';
 
 import {
   CounterContainer,
   CounterButtonContainer,
-  CounterButton,
   CounterNumber,
 } from '../../components/styles/Counter.styled';
 
@@ -27,9 +30,17 @@ class Counter extends React.Component {
     return (
       <CounterContainer>
         <CounterButtonContainer>
-          <CounterButton onClick={() => this.decrement()}>-</CounterButton>
-          <CounterNumber>{this.state.count}</CounterNumber>
-          <CounterButton onClick={() => this.increment()}>+</CounterButton>
+          <Remove
+            onClick={() => this.decrement()}
+            style={{ width: '75px', height: '75px' }}
+          ></Remove>
+          <CounterNumber style={{ fontSize: '2em' }}>
+            {this.state.count}
+          </CounterNumber>
+          <Add
+            onClick={() => this.increment()}
+            style={{ width: '75px', height: '75px' }}
+          ></Add>
         </CounterButtonContainer>
         <Buy />
       </CounterContainer>
