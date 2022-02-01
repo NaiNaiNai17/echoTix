@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-// import SearchDropUp from '../../components/SearchDropUp/SearchDropUp';
+import SearchDropUp from '../../components/SearchDropUp/SearchDropUp';
 import Hero from '../../components/Hero/Hero';
 import Subhero from '../../components/Subhero/Subhero';
 import Cards from '../../components/Cards/Cards';
@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      {/* <SearchDropUp /> */}
+      <SearchDropUp />
       <Hero />
       <Subhero />
       <Cards />
