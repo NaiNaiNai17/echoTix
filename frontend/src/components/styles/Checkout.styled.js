@@ -2,13 +2,25 @@ import styled from 'styled-components/macro';
 
 export const CheckoutContainer = styled.div.attrs(() => ({
   className: 'CheckoutContainer',
-}))``;
+}))`
+  background: rgb(216, 243, 218);
+  background: linear-gradient(
+    0deg,
+    rgba(216, 243, 218, 1) 33%,
+    rgba(7, 28, 49, 1) 100%
+  );
+`;
+
+export const WrapAll = styled.div.attrs(() => ({
+  className: 'WrapAll',
+}))`
+  padding: 40px;
+`;
 
 export const CheckoutWrapper = styled.div.attrs(() => ({
   className: 'CheckoutWrapper',
 }))`
-  padding: 20px;
-
+  padding: 40px;
   background-color: #c4c4c4;
 `;
 
@@ -60,12 +72,6 @@ export const Info = styled.div.attrs(() => ({
   flex: 3;
 `;
 
-export const Summary = styled.div.attrs(() => ({
-  className: 'Summary',
-}))`
-  flex: 1;
-`;
-
 //* Order Details
 
 export const Ticket = styled.div.attrs(() => ({
@@ -73,6 +79,7 @@ export const Ticket = styled.div.attrs(() => ({
 }))`
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 `;
 
 export const Image = styled.img.attrs(() => ({
@@ -136,6 +143,7 @@ export const TicketAmountCountainer = styled.div.attrs(() => ({
 }))`
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const TicketAmount = styled.div.attrs(() => ({
@@ -147,4 +155,62 @@ export const TicketAmount = styled.div.attrs(() => ({
 
 export const TicketPrice = styled.div.attrs(() => ({
   className: 'TicketPrice',
+}))`
+  font-size: 30px;
+  font-weight: 200;
+`;
+
+export const Hr = styled.hr.attrs(() => ({
+  className: 'Hr',
+}))`
+  background-color: #eee;
+  border: none;
+  height: 1px;
+`;
+
+//* Summary
+
+export const Summary = styled.div.attrs(() => ({
+  className: 'Summary',
+}))`
+  flex: 1;
+  border: 0.5 solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  height: 60vh;
+  background-color: white;
+`;
+
+export const SummaryTitle = styled.h1.attrs(() => ({
+  className: 'SummaryTitle',
+}))`
+  font-weight: 200;
+`;
+
+export const SummaryItem = styled.div.attrs(() => ({
+  className: 'SummaryItem',
+}))`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === 'total' && '500'}
+  font-size: ${(props) => props.type === 'total' && '24px'}
+`;
+
+export const SummaryItemText = styled.span.attrs(() => ({
+  className: 'SummaryTitle',
 }))``;
+
+export const SummaryItemPrice = styled.span.attrs(() => ({
+  className: 'SummaryItemPrice',
+}))``;
+
+export const SummaryButton = styled.button.attrs(() => ({
+  className: 'SummaryButton',
+}))`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 400;
+`;
