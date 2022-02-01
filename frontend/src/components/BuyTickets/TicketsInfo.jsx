@@ -15,7 +15,6 @@ const TicketsInfo = () => {
         <TicketInfo>
           <TicketH1>Get Your Tickets</TicketH1>
           <Counter />
-          
         </TicketInfo>
       </TicketsDataContainer>
     
