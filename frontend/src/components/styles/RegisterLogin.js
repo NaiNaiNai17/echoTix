@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
-export const RegisterContainer = styled.div.attrs(() => ({
-  className: 'RegisterContainer',
+export const Container = styled.div.attrs(() => ({
+  className: 'RegisterLoginContainer',
 }))`
   width: 100vw;
   height: 100vh;
@@ -15,12 +15,16 @@ export const RegisterContainer = styled.div.attrs(() => ({
   align-items: center;
   justify-content: center;
 `;
-export const RegisterWrapper = styled.div.attrs(() => ({
-  className: 'RegisterContainer',
+export const Wrapper = styled.div.attrs(() => ({
+  className: 'LoginWrapper',
 }))`
-  width: 40%;
+  width: 30%;
   padding: 20px;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -36,6 +40,16 @@ export const Form = styled.form.attrs(() => ({
 }))`
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const LoginForm = styled.form.attrs(() => ({
+  className: 'LoginForm',
+}))`
+  width: 70%;
+  padding: 20px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,14 +64,20 @@ export const Input = styled.input.attrs(() => ({
   margin: 20px 10px 0px 0px;
 `;
 
-export const CreateInput = styled.input.attrs(() => ({
-  className: 'Input',
-}))``;
+export const ButtonCotainer = styled.div.attrs(() => ({
+  className: 'ButtonContainer',
+}))`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: ;
+  flex-direction: column;
+`;
 
 export const GoogleButton = styled.button.attrs(() => ({
   className: 'GoogleButton',
 }))`
-  width: 50%;
+  width: 100%;
   border: none;
   padding: 15px 20px;
   background-color: #e7e5e5;
@@ -65,10 +85,10 @@ export const GoogleButton = styled.button.attrs(() => ({
   margin: 20px 10px 0px 0px;
 `;
 
-export const CreateButton = styled.button.attrs(() => ({
+export const Button = styled.button.attrs(() => ({
   className: 'CreateButton',
 }))`
-  width: 40%;
+  width: 100%;
   border: none;
   padding: 15px 20px;
   background-color: #30ab86;

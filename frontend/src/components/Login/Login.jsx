@@ -1,11 +1,33 @@
 import React from 'react';
 
 import {
- 
-} from '../../components/styles/Login.styled';
+  Container,
+  Wrapper,
+  Title,
+  LoginForm,
+  Input,
+  ButtonCotainer,
+  GoogleButton,
+  Button,
+} from '../styles/RegisterLogin';
 
-const Login = () => {
-  return <div></div>;
+const Register = () => {
+  return (
+    <Container>
+      <Wrapper>
+        <Title>Login</Title>
+        <LoginForm>
+          <Input placeholder="email"></Input>
+          <Input placeholder="password"></Input>
+
+          <ButtonCotainer>
+            <GoogleButton>Login in with Google</GoogleButton>
+            <Button>Login</Button>
+          </ButtonCotainer>
+        </LoginForm>
+      </Wrapper>
+    </Container>
+  );
 };
 
-export default Login;
+export default Register;

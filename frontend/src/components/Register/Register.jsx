@@ -1,20 +1,21 @@
 import React from 'react';
 
 import {
-  RegisterContainer,
-  RegisterWrapper,
+  Container,
+  Wrapper,
   Title,
   Form,
   Input,
+  ButtonCotainer,
   GoogleButton,
-  CreateButton,
+  Button,
   Agreement,
-} from '../styles/Register';
+} from '../styles/RegisterLogin';
 
 const Register = () => {
   return (
-    <RegisterContainer>
-      <RegisterWrapper>
+    <Container>
+      <Wrapper>
         <Title>Create an Account</Title>
         <Form>
           <Input placeholder="first name"></Input>
@@ -22,15 +23,18 @@ const Register = () => {
           <Input placeholder="email"></Input>
           <Input placeholder="password"></Input>
           <Input placeholder="confirm password"></Input>
-          <GoogleButton>Sign in with Google</GoogleButton>
-          <CreateButton>Create</CreateButton>
+          <ButtonCotainer>
+            <GoogleButton>Sign in with Google</GoogleButton>
+            <Button>Create</Button>
+          </ButtonCotainer>
+
           <Agreement>
             By creating an account, I consent to the proceeding of my personal
             data in accordance with <b>Privacy Policy</b>
           </Agreement>
         </Form>
-      </RegisterWrapper>
-    </RegisterContainer>
+      </Wrapper>
+    </Container>
   );
 };
 
