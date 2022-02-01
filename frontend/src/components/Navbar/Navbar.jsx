@@ -2,8 +2,6 @@ import React from 'react';
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/echoTix_Logo.png';
 
-import { Scrollbars } from 'react-custom-scrollbars-2';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -25,6 +23,10 @@ import {
 } from '../../components/styles/Navbar.styled';
 
 const Navbar = () => {
+  const example = () => {
+    console.log('user focussed on input field');
+  };
+
   return (
     <NavContainer fixed="top">
       <NavWrapper>
@@ -33,7 +35,7 @@ const Navbar = () => {
         </NavLeft>
         <NavCenter>
           <SearchContainer>
-            <Input />
+            <Input onFocus={example} />
             <FontAwesomeIcon icon={faSearch} />
           </SearchContainer>
         </NavCenter>
