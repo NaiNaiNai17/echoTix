@@ -7,7 +7,7 @@ const controller = require('../controller/ticketController')
 
 
 router.get('/listEvents', controller.showInfo)
-router.use('/search', searchByName.showInfo)
+router.get('/attractions', controller.searchByName)
 
 
 module.exports = router

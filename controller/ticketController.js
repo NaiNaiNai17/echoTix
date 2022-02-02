@@ -51,11 +51,17 @@ exports.showInfo = async (req, res) => {
   return res.status(200).json({ message: "list", payload: dataArr });
 };
 
-const apiSearch = async (string) =>{
-   return axios(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${string}&domain=germany&attraction_name&apikey=${process.env.API_KEY}`)
+const apiSearch = async (req,res) =>{
+   
  } 
 
-exports.searchByName = async (req,res){
- 
+exports.searchByName = async (req,res)=>{
+//  const attraction = req.query
+  //  const string = req.query
+   const { attractionName } = req.query
+   const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${attractionName}&domain=germany&apikey=${process.env.API_KEY}`)
+  //  console.log(res.attractions)
+  console.log(response.data)
+  return res.status(200).json({message:'search results', payload: response.data})
 
 }
