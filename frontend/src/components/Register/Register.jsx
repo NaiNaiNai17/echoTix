@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Container,
+  RegisterContainer,
   Wrapper,
   Title,
   Form,
@@ -14,7 +14,7 @@ import {
 
 const Register = () => {
   return (
-    <Container>
+    <RegisterContainer>
       <Wrapper>
         <Title>Create an Account</Title>
         <Form>
@@ -34,7 +34,7 @@ const Register = () => {
           </Agreement>
         </Form>
       </Wrapper>
-    </Container>
+    </RegisterContainer>
   );
 };
 
