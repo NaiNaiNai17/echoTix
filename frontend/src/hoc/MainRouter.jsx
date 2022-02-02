@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,6 +15,7 @@ import Footer from '../components/Footer/Footer';
 // import Checkout from '../pages/Checkout/Checkout';
 
 const MainRouter = () => {
+  // const [showModal, setShowModal] = useState(false);
   return (
     <Router>
       <Navbar />

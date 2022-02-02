@@ -1,8 +1,10 @@
 import styled from 'styled-components/macro';
+import { MdClose } from 'react-icons/md';
 
-export const Container = styled.div.attrs(() => ({
-  className: 'RegisterLoginContainer',
+export const RegisterContainer = styled.div.attrs(() => ({
+  className: 'RegisterContainer',
 }))`
+  z-index: 99;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
@@ -15,6 +17,24 @@ export const Container = styled.div.attrs(() => ({
   align-items: center;
   justify-content: center;
 `;
+
+export const LoginContainer = styled.div.attrs(() => ({
+  className: 'LoginContainer',
+}))`
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-20%, -30%);
+`;
+
 export const Wrapper = styled.div.attrs(() => ({
   className: 'LoginWrapper',
 }))`
@@ -25,6 +45,7 @@ export const Wrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -60,8 +81,12 @@ export const Input = styled.input.attrs(() => ({
   className: 'Input',
 }))`
   flex: 1;
-  min-width: 40%;
+  min-width: 65%;
   margin: 20px 10px 0px 0px;
+  padding: 10px 45px;
+  ::placeholder {
+   color: black;
+   text-align: center;
 `;
 
 export const ButtonCotainer = styled.div.attrs(() => ({
@@ -102,4 +127,15 @@ export const Agreement = styled.span.attrs(() => ({
   font-size: 12px;
   margin: 20px 0px;
   text-align: center;
+`;
+
+export const CloseLoginButton = styled(MdClose)`
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
 `;
