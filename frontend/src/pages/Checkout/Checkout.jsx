@@ -7,9 +7,7 @@ import Footer from '../../components/Footer/Footer';
 const Checkout = () => {
   return (
     <>
-      <Navbar />
       <CheckoutComponent />
-      <Footer />
     </>
   );
 };
