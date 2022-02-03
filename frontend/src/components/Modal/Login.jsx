@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../../util/axiosInstance';
 
 import {
   LoginContainer,
@@ -10,7 +11,13 @@ import {
   GoogleButton,
   Button,
   CloseLoginButton,
+  RegisterButton,
 } from '../styles/RegisterLogin';
+
+const submitHandler = (e) => {
+  e.preventDefault();
+  console.log('submit');
+};
 
 const Login = ({ showModal, setShowModal }) => {
   return (
@@ -27,8 +34,10 @@ const Login = ({ showModal, setShowModal }) => {
               <Input placeholder="email"></Input>
               <Input placeholder="password"></Input>
               <ButtonCotainer>
+                <Button submitHandler={submitHandler}>Login</Button>
                 <GoogleButton>Login in with Google</GoogleButton>
-                <Button>Login</Button>
+
+                <RegisterButton>Register</RegisterButton>
               </ButtonCotainer>
             </LoginForm>
           </Wrapper>

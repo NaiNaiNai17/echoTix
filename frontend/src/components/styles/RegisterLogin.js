@@ -108,6 +108,7 @@ export const GoogleButton = styled.button.attrs(() => ({
   background-color: #e7e5e5;
   border-radius: 20px;
   margin: 20px 10px 0px 0px;
+  cursor: pointer;
 `;
 
 export const Button = styled.button.attrs(() => ({
@@ -119,6 +120,7 @@ export const Button = styled.button.attrs(() => ({
   background-color: #30ab86;
   border-radius: 20px;
   margin: 20px 10px 0px 0px;
+  cursor: pointer;
 `;
 
 export const Agreement = styled.span.attrs(() => ({
@@ -138,4 +140,18 @@ export const CloseLoginButton = styled(MdClose)`
   height: 32px;
   padding: 0;
   z-index: 10;
+  cursor: pointer;
+`;
+
+export const RegisterButton = styled.button.attrs(() => ({
+  className: 'RegisterButton',
+}))`
+  width: 100%;
+  border: none;
+  padding: 15px 20px;
+  background-color: #201d1d;
+  color: white;
+  border-radius: 20px;
+  margin: 20px 10px 0px 0px;
+  cursor: pointer;
 `;
