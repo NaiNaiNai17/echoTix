@@ -21,7 +21,7 @@ const MainRouter = () => {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
