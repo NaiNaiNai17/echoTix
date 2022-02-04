@@ -2,6 +2,7 @@ import React from 'react';
 import axios from '../../util/axiosInstance'
 import { useNavigate } from 'react-router-dom'
 
+
 import {
   LoginContainer,
   Wrapper,
@@ -12,8 +13,14 @@ import {
   GoogleButton,
   Button,
   CloseLoginButton,
+  RegisterButton,
 
 } from '../styles/RegisterLogin';
+
+const submitHandler = (e) => {
+  e.preventDefault();
+  console.log('submit');
+};
 
 const Login = ({ showModal, setShowModal }) => {
   const navigate = useNavigate()
@@ -52,8 +59,14 @@ const Login = ({ showModal, setShowModal }) => {
               <Input placeholder="email" name="email-address" id="email-address" type="email"></Input>
               <Input placeholder="password" name="password" id="password" type="password"></Input>
               <ButtonCotainer>
+                <Button submitHandler={submitHandler}>Login</Button>
                 <GoogleButton>Login in with Google</GoogleButton>
+
+
+                <RegisterButton>Register</RegisterButton>
+
                 <Button onChange={onSubmitHandle}>Login</Button>
+
               </ButtonCotainer>
             </LoginForm>
           </Wrapper>
