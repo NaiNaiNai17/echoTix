@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
-  height: 20vh;
+  height: 8rem;
   background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
@@ -69,20 +69,23 @@ export const NavRight = styled.div.attrs(() => ({
   flex: 1;
   display: flex;
   color: black;
+  align-items: center;
 `;
-//*** Inside Right Side */
+//*** Inside Right Side: TREECOUNTER */
+
 export const NavTreecount = styled.div.attrs(() => ({
   className: 'Treecount',
 }))`
-  width: 75%;
+  width: 60%;
   display: flex;
   justify-content: center;
 `;
 
+//*** Inside Right Side: USERICONS */
 export const NavUserItem = styled.div.attrs(() => ({
   className: 'NavUserItem',
 }))`
-  width: 25%;
+  width: 40%;
   display: flex;
   justify-content: space-around;
 
