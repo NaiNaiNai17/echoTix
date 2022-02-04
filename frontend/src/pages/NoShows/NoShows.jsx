@@ -1,14 +1,17 @@
 import React from 'react';
 
-import { NoShowsContainer, NoShowMessage } from '../../components/styles/NoShows.styled';
+import {
+  NoContainer,
+  NoShowMessage,
+} from '../../components/styles/NoShowsNotFound.styled';
 
 const Register = () => {
   return (
-    <NoShowsContainer>
+    <NoContainer>
       <NoShowMessage>
-        Unfortuantely There are No Shows for "This Artist" available right now!
+        Unfortuantely there are no Shows for "This Artist" available right now!
       </NoShowMessage>
-    </NoShowsContainer>
+    </NoContainer>
   );
 };
 

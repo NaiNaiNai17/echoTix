@@ -12,6 +12,7 @@ import Checkout from '../pages/Checkout/Checkout';
 import Register from '../components/Register/Register';
 import Footer from '../components/Footer/Footer';
 import NoShows from '../pages/NoShows/NoShows';
+import NotFound from '../pages/NotFound/NotFound';
 // import BuyTickets from '../pages/BuyTickets/BuyTickets';
 // import Checkout from '../pages/Checkout/Checkout';
 
@@ -26,6 +27,7 @@ const MainRouter = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/noshows" element={<NoShows />} />
+          <Route path="/notfound" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

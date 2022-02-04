@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const NoShowsContainer = styled.div.attrs(() => ({
+export const NoContainer = styled.div.attrs(() => ({
   className: 'NoShowsContainer',
 }))`
   width: 100vw;
@@ -17,7 +17,7 @@ export const NoShowsContainer = styled.div.attrs(() => ({
   background-size: cover;
 `;
 
-export const NoShowMessage = styled.span.attrs(() => ({
+export const NoShowMessage = styled.div.attrs(() => ({
   className: 'NoShowMessage',
 }))`
   width: 50%;
@@ -28,6 +28,28 @@ export const NoShowMessage = styled.span.attrs(() => ({
   font-size: 3rem;
   text-align: center;
   display: flex;
+  align-items: center;
+  padding: 20px;
+`;
+
+export const NotFoundH1 = styled.h1.attrs(() => ({
+  className: 'NotFoundMessage',
+}))`
+  font-size: 6rem;
+`;
+
+export const NotFoundCountainer = styled.div.attrs(() => ({
+  className: 'NotFoundCountainer',
+}))`
+  width: 50%;
+  height: 50vh;
+  background-color: red;
+  opacity: 0.6;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 `;
