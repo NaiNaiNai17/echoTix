@@ -6,7 +6,7 @@ const router = express.Router()
 const controller = require('../controller/ticketController')
 
 
-router.get('/listEvents', controller.showInfo)
+router.get('/listevents', controller.showInfo)
 router.get('/attractions', controller.searchByName)
 
 

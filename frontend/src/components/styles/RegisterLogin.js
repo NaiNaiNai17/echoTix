@@ -67,6 +67,7 @@ export const Form = styled.form.attrs(() => ({
 
 export const LoginForm = styled.form.attrs(() => ({
   className: 'LoginForm',
+  
 }))`
   width: 70%;
   padding: 20px;
