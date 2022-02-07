@@ -30,6 +30,10 @@ export const NoShowMessage = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   padding: 20px;
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    11px 9px 26px 5px #000000;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    11px 9px 26px 5px #000000;
 `;
 
 export const NotFoundH1 = styled.h1.attrs(() => ({
@@ -52,4 +56,8 @@ export const NotFoundCountainer = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   padding: 20px;
+  -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    11px 9px 26px 5px #000000;
+  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,
+    11px 9px 26px 5px #000000;
 `;
