@@ -28,7 +28,7 @@ export const CounterButtonContainer = styled.div.attrs(() => ({
 `;
 
 export const CounterNumber = styled.h4.attrs(() => ({
-  className: 'CounterContainer',
+  className: 'CounterNumber',
 }))`
   width: 2rem;
   text-align: center;

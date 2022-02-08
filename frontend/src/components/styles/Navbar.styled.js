@@ -4,12 +4,13 @@ export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   height: 20vh;
-  background: rgb(255, 255, 255);
+  ${'' /* background: rgb(255, 255, 255);
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 1) 0%,
-    rgba(24, 78, 119, 1) 100%
-  );
+    rgba(255, 255, 255, 1) 0%,
+    rgba(45, 193, 139, 1) 100%
+  ); */}
   color: #fff;
   overflow: hidden;
 `;

@@ -1,1 +1,8 @@
-@import './hero';
+body {
+  background: rgb(231, 254, 236);
+  background: radial-gradient(
+    circle,
+    rgba(231, 254, 236, 1) 0%,
+    rgba(4, 65, 44, 1) 100%
+  );
+}

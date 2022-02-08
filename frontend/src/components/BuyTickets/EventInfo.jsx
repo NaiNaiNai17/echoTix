@@ -4,7 +4,7 @@ import {
   EventInfoContainer,
   EventCity,
   EventTitle,
-  Table,
+  Tables,
   TableRow,
 } from '../../components/styles/BuyTickets.styled';
 
@@ -13,7 +13,7 @@ const EventInfo = () => {
     <EventInfoContainer>
       <EventCity>Hamburg</EventCity>
       <EventTitle>Alt-J</EventTitle>
-      <Table>
+      <Tables>
         <TableRow>
           <th align="left">Venue</th>
           <th align="left">Date</th>
@@ -26,7 +26,7 @@ const EventInfo = () => {
           <td>32.99</td>
           <td>299</td>
         </TableRow>
-      </Table>
+      </Tables>
     </EventInfoContainer>
   );
 };
