@@ -71,11 +71,13 @@ const Navbar = () => {
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
               value={search}
+              size="40"
             />
             <FontAwesomeIcon
               icon={faSearch}
               onClick={searchHandler}
               style={{ cursor: 'pointer' }}
+              size="2x"
             />
           </SearchContainer>
         </NavCenter>
