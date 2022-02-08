@@ -6,7 +6,7 @@ import {
   Title,
   Form,
   Input,
-  ButtonCotainer,
+  ButtonContainer,
   GoogleButton,
   Button,
   Agreement,
@@ -23,10 +23,10 @@ const Register = () => {
           <Input placeholder="email"></Input>
           <Input placeholder="password"></Input>
           <Input placeholder="confirm password"></Input>
-          <ButtonCotainer>
+          <ButtonContainer>
             <GoogleButton>Sign in with Google</GoogleButton>
             <Button>Create</Button>
-          </ButtonCotainer>
+          </ButtonContainer>
 
           <Agreement>
             By creating an account, I consent to the proceeding of my personal
