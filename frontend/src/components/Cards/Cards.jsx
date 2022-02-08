@@ -11,8 +11,6 @@ const Cards = () => {
     const response = await axios.get('/shows/attractions?attractionName=madonna')
     console.log(response.data)
     setResults(response.data.payload.attractions)
-
-
     
   }
 

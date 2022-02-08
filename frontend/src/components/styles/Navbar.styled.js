@@ -3,9 +3,9 @@ import styled from 'styled-components/macro';
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
-
   height: 20vh;
-  ${'' /* background: rgb(255, 255, 255);
+  ${
+    '' /* background: rgb(255, 255, 255);
 
   
   background: linear-gradient(
@@ -13,7 +13,8 @@ export const NavContainer = styled.div.attrs(() => ({
     rgba(255, 255, 255, 1) 0%,
     rgba(255, 255, 255, 1) 0%,
     rgba(45, 193, 139, 1) 100%
-  ); */}
+  ); */
+  }
   color: #fff;
   overflow: hidden;
 `;
@@ -62,7 +63,8 @@ export const Input = styled.input.attrs(() => ({
   className: 'Input',
 }))`
   border: none;
-  ${'' /* padding: 80px; */}
+  padding: 10px 150px;
+  ${'' /* padding: 80px; */};
 `;
 
 //* Right
