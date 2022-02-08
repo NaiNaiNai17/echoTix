@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Container = styled.div.attrs(() => ({
-  className: 'Container',
+  className: 'CardsContainer',
 }))`
   padding: 10px 10px;
   display: flex;

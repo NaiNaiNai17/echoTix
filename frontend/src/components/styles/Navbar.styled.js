@@ -3,18 +3,7 @@ import styled from 'styled-components/macro';
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
-  height: 20vh;
-  ${
-    '' /* background: rgb(255, 255, 255);
-
-  
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(45, 193, 139, 1) 100%
-  ); */
-  }
+  height: 8rem;
   color: #fff;
   overflow: hidden;
 `;
@@ -33,7 +22,6 @@ export const NavLeft = styled.div.attrs(() => ({
   className: 'NavLeft',
 }))`
   flex: 0.2;
-
   img {
     width: 200px;
   }
@@ -55,16 +43,18 @@ export const SearchContainer = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
   color: black;
-  padding: 10px 40px 10px 40px;
+  padding: 10px 40px 10px 5px;
   background-color: #fff;
 `;
 
 export const Input = styled.input.attrs(() => ({
   className: 'Input',
 }))`
-  border: none;
-  padding: 10px 150px;
-  ${'' /* padding: 80px; */};
+  font-size: 1.5rem;
+  box-shadow: none;
+  border: 0;
+  outline: none;
+  
 `;
 
 //* Right

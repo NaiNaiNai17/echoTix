@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
 export const Container = styled.div.attrs(() => ({
-  className: 'Container',
+  className: 'CardContainer',
 }))`
   ${'' /* flex: 1; */}
   margin: 10px;
