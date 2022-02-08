@@ -8,5 +8,5 @@ export const Container = styled.div.attrs(() => ({
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  background-color: #264653;
+  ${'' /* background-color: #264653; */}
 `;

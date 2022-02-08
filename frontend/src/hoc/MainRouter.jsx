@@ -11,9 +11,11 @@ import Navbar from '../components/Navbar/Navbar';
 import Checkout from '../pages/Checkout/Checkout';
 import Register from '../components/Register/Register';
 import Footer from '../components/Footer/Footer';
+
 import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
 // import BuyTickets from '../pages/BuyTickets/BuyTickets';
+
 // import Checkout from '../pages/Checkout/Checkout';
 
 const MainRouter = () => {
@@ -21,6 +23,7 @@ const MainRouter = () => {
   return (
     <Router>
       <Navbar />
+      {/* <AdminView /> */}
       <main>
         <Routes>
           <Route exact path="/" element={<Home />} />

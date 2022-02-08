@@ -41,7 +41,7 @@ export const EventCity = styled.h4.attrs(() => ({
   text-transform: uppercase;
 `;
 
-export const Table = styled.tr.attrs(() => ({
+export const Tables = styled.div.attrs(() => ({
   className: 'Table',
 }))`
   width: 100%;
@@ -51,10 +51,12 @@ export const TableRow = styled.tr.attrs(() => ({
   className: 'TableRow',
 }))`
   th {
-    width: 30%;
+    width: 20rem;
+    font-size: x-large;
   }
   td {
     width: 25%;
+    font-size: large;
   }
 `;
 
@@ -66,7 +68,6 @@ export const TicketsDataContainer = styled.tr.attrs(() => ({
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 40vh;
   width: 100%;
   background-color: #e7e5e5;
 `;

@@ -22,14 +22,14 @@ export const sliderItems = [
 export const subheroItems = [
   {
     id: 1,
-    img: 'https://s1.ticketm.net/img/tat/dam/a/f43/10a0ba85-3be9-40b7-9d05-07053aa78f43_1595521_CUSTOM.jpg',
+    img: 'https://images.unsplash.com/photo-1520366103608-36a0cc873a36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
 
     event: 'Harry Styles',
     description: 'Noise Rock',
   },
   {
     id: 2,
-    img: 'https://s1.ticketm.net/img/tat/dam/a/3d6/c064daba-4792-4cf9-b834-173a4a0f73d6_1601051_CUSTOM.jpg',
+    img: 'https://images.unsplash.com/photo-1561447920-aa5c68129cff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGxpdmUlMjBtdXNpY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60',
     event: 'Peter Doherty',
     description: 'Alternative Rock',
   },
