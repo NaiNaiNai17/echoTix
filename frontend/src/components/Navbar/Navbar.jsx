@@ -48,7 +48,7 @@ const Navbar = () => {
       );
       console.log('This is my response from Search', response.data);
       console.log(search);
-      console.log(response.name);
+      console.log(response.data.payload.attractions[0].images.large.url);
     } catch (error) {
       console.log("Can't get Data", error.message);
     }
