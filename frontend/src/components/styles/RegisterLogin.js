@@ -90,7 +90,7 @@ export const Input = styled.input.attrs(() => ({
    text-align: center;
 `;
 
-export const ButtonCotainer = styled.div.attrs(() => ({
+export const ButtonContainer = styled.div.attrs(() => ({
   className: 'ButtonContainer',
 }))`
   width: 100%;
