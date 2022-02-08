@@ -68,11 +68,13 @@ const Login = ({ showModal, setShowModal }) => {
                 id="password"
                 type="password"
               ></Input>
+
               <ButtonContainer>
                 <Button submitHandler={submitHandler}>Login</Button>
                 <GoogleButton>Login in with Google</GoogleButton>
                 <RegisterButton>Register</RegisterButton>
               </ButtonContainer>
+
             </LoginForm>
           </Wrapper>
         </LoginContainer>
