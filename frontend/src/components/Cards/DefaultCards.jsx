@@ -20,15 +20,10 @@ const Cards = () => {
 
   return (
     <Container>
-      {results
-        ? results.map((event) => <Card event={event} key={event.id} />)
-        : 'no shows'}
+      {squareCards.map((item) => (
+        <Card item={item} key={item.id} />
+      ))}
     </Container>
-    //   <Container>
-    //     {squareCards.map((item) => (
-    //       <Card item={item} key={item.id} />
-    //     ))}
-    //   </Container>
   );
 };
 

@@ -1,38 +1,32 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../../components/Cards/Card';
-import { squareCards } from '../../data';
+
 import { Container } from '../../components/styles/Cards.styled';
-import axios from '../../util/axiosInstance'
+import axios from '../../util/axiosInstance';
+
 const Cards = () => {
+  const [results, setResults] = useState([]);
 
-  const [results,setResults] = useState([])
-
-  const getArtists = async () =>{
-    const response = await axios.get('/shows/attractions?attractionName=madonna')
-    console.log(response.data)
-    setResults(response.data.payload.attractions)
-    
-  }
+  const getArtists = async () => {
+    const response = await axios.get(
+      '/shows/attractions?attractionName=coldplay'
+    );
+    console.log(response.data);
+    setResults(response.data.payload.attractions);
+  };
 
   useEffect(() => {
-    getArtists()
-  }, [])
+    getArtists();
+  }, []);
 
   return (
     <Container>
-      {results ? results.map((event)=>(
-       <Card
-  
-        event={event} key={event.id}/> 
-      )) : 'no shows'}
+      {results
+        ? results.map((event) => <Card event={event} key={event.id} />)
+        : 'no shows'}
     </Container>
-  //   <Container>
-  //     {squareCards.map((item) => (
-  //       <Card item={item} key={item.id} />
-  //     ))}
-  //   </Container>
+    
   );
-}
+};
 
 export default Cards;
-

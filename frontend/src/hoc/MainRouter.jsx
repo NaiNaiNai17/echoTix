@@ -1,10 +1,5 @@
-import React, { useState } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Redirect,
-} from 'react-router-dom';
+import React, { useState, createContext } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from '../pages/Home/Home';
 import Navbar from '../components/Navbar/Navbar';
@@ -14,26 +9,34 @@ import Footer from '../components/Footer/Footer';
 
 import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
-// import BuyTickets from '../pages/BuyTickets/BuyTickets';
+import SearchResults from '../pages/SearchResults/SearchResults';
 
-// import Checkout from '../pages/Checkout/Checkout';
+//* Use Context
+export const SearchContext = createContext();
 
 const MainRouter = () => {
-  // const [showModal, setShowModal] = useState(false);
+  //* UseContext
+  //* UseState
+  const [results, setResults] = useState([]);
+  const [search, setSearch] = useState('');
+
   return (
     <Router>
-      <Navbar />
-      {/* <AdminView /> */}
-      <main>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/noshows" element={<NoShows />} />
-          <Route path="/notfound" element={<NotFound />} />
-        </Routes>
-      </main>
-      <Footer />
+      <SearchContext.Provider value={[results, setResults, search, setSearch]}>
+        <Navbar />
+
+        <main>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/noshows" element={<NoShows />} />
+            <Route path="/notfound" element={<NotFound />} />
+            <Route path="/searchresult/*" element={<SearchResults />} />
+          </Routes>
+        </main>
+        <Footer />
+      </SearchContext.Provider>
     </Router>
   );
 };
