@@ -38,14 +38,16 @@ const Navbar = () => {
   const [search, setSearch] = useContext(SearchContext);
   const navigate = useNavigate();
 
+  //* Opens the Login-Modal
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
 
+  //* Console: Showing if the input-field is active
   const example = () => {
     console.log('user focussed on input field');
   };
-
+  //* Trigger the Search and navigate to seachresult-page
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };

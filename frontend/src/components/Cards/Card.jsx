@@ -1,12 +1,21 @@
 import React from 'react';
-import { Container, Image } from '../../components/styles/Card.styled';
+import {
+  CardContainer,
+  Eventname,
+  ImageContainer,
+  Image,
+} from '../../components/styles/Card.styled';
 
 const Card = ({ event }) => {
   return (
-    <Container>
-      <h1>{event.name}</h1>
-      <Image src={event.images.large.url} />
-    </Container>
+    <CardContainer>
+      <h2>Top Search Results:</h2>
+      <hr />
+      <Eventname>{event.name}</Eventname>
+      <ImageContainer>
+        <Image src={event.images.large.url} />
+      </ImageContainer>
+    </CardContainer>
   );
 };
 
