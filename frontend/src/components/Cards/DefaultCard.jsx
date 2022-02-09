@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Image } from '../../components/styles/Card.styled';
 
-const Card = ({ event }) => {
+const Card = ({ item }) => {
   return (
     <Container>
-      <Image src={event.images.large.url} />
+      <Image src={item.img} />
     </Container>
   );
 };

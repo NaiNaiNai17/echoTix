@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from '../../util/axiosInstance';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SearchContext } from '../../hoc/MainRouter';
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/echoTix_Logo.png';
 
 import Login from '../Modal/Login';
+
+//* Imported Icons from Fontawesome
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -15,6 +17,8 @@ import {
   faUser,
   faSignOutAlt,
 } from '@fortawesome/free-solid-svg-icons';
+
+//* Imported Components
 
 import {
   NavLeft,
@@ -31,7 +35,8 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [login, setLogin] = useState(true);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -42,21 +47,8 @@ const Navbar = () => {
   };
 
   const searchHandler = async () => {
-    try {
-      const response = await axios.get(
-        `/shows/attractions?attractionName=${search}`
-      );
-      console.log('This is my response from Search', response.data);
-      console.log(search);
-      console.log(response.data.payload.attractions[0].images.large.url);
-    } catch (error) {
-      console.log("Can't get Data", error.message);
-    }
+    navigate(`/searchresult?name=${search}`, { replace: true });
   };
-
-  useEffect(() => {
-    searchHandler();
-  }, [search]);
 
   return (
     <NavContainer fixed="top">

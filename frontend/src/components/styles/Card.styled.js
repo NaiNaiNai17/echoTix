@@ -15,6 +15,7 @@ export const Image = styled.img.attrs(() => ({
 }))`
   height: 170px;
   width: 170px;
+  object-fit: cover;
 
   &:hover {
     transform: scale(1.1);
