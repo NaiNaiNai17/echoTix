@@ -3,7 +3,7 @@ import Hero from '../../components/Hero/Hero';
 import Subhero from '../../components/Subhero/Subhero';
 import BackToLive from '../../components/BackToLive/BackToLive';
 import Cards from '../../components/Cards/Cards';
-
+import DefaultCards from '../../components/Cards/DefaultCards';
 
 //* Import Styling
 
@@ -13,7 +13,7 @@ const Home = () => {
       <Hero />
       <Subhero />
       <BackToLive />
-      <Cards />
+      <DefaultCards />
     </div>
   );
 };

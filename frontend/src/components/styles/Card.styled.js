@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const CardContainer = styled.div.attrs(() => ({
   className: 'CardContainer',
@@ -38,3 +38,7 @@ export const Image = styled.img.attrs(() => ({
     transform: scale(1.1);
   }
 `;
+
+export const DefaultCardContainer = styled.div.attrs(() => ({
+  className: 'CardContainer',
+}))``;

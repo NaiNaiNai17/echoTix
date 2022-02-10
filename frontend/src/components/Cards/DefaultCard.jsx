@@ -1,12 +1,15 @@
 import React from 'react';
-import { Container, Image } from '../../components/styles/Card.styled';
+import {
+  DefaultCardContainer,
+  Image,
+} from '../../components/styles/DefaultCard.styled';
 
-const Card = ({ item }) => {
+const DefaultCard = ({ item }) => {
   return (
-    <Container>
+    <DefaultCardContainer>
       <Image src={item.img} />
-    </Container>
+    </DefaultCardContainer>
   );
 };
 
-export default Card;
+export default DefaultCard;
