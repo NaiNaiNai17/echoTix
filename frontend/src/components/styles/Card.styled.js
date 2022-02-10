@@ -8,7 +8,7 @@ export const CardContainer = styled.div.attrs(() => ({
   justify-content: space-around;
   flex-direction: column;
   align-items: space-between;
-  width: 100%;
+  width: 80%;
   height: 300px;
   background-color: e0e0e0;
   -webkit-box-shadow: 5px 5px 15px 5px #c6c6c6;
