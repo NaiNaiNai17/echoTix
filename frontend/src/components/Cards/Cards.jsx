@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../../components/Cards/Card';
 
-import { Container } from '../../components/styles/Cards.styled';
+import { Container } from '../../components/styles/Event.styled';
 import axios from '../../util/axiosInstance';
 
 const Cards = () => {

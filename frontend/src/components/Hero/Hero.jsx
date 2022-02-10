@@ -19,17 +19,18 @@ const Hero = () => {
       infiniteLoop={true}
       interval={10000}
     >
-      {/* {sliderItems.map((item) => (
+      {sliderItems.map((item) => (
         <div>
           <img
-            src={require('../../assets/images/Melt_1440x450.png')}
+            style={{ height: '250px' }}
+            src={item.img}
             key={item}
             alt="show-images"
           />
         </div>
-      ))} */}
+      ))}
 
-      <div>
+      {/* <div>
         <img src={PicOne} alt="Melt" />
       </div>
       <div>
@@ -37,19 +38,10 @@ const Hero = () => {
       </div>
       <div>
         <img src={PicThree} alt="Dukeland" />
-      </div>
+      </div> */}
     </Carousel>
   );
 };
 
 export default Hero;
 
-{
-  /* <div>
-  {sliderItems.map((item) => (
-    <div>
-      <img src={item.img} key={item} alt="show-images" />
-    </div>
-  ))}
-</div>; */
-}

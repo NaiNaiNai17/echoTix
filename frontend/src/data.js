@@ -1,36 +1,38 @@
 export const sliderItems = [
   {
     id: 1,
-    img: '../../assets/images/Melt_1440x450.png',
-    event: 'Melt',
-    description: 'The Alternative-Festival at Ferropolis',
+    img: 'https://www.mercedes-benz-arena-berlin.de/assets/img/BonIver_Header_MBA-6e0d0ae303.jpg',
+    name: 'Bon Iver',
+    description: 'Future Folk',
   },
   {
     id: 2,
-    img: '../../assets/images/Bonobo_1440x450.jpg',
-    event: 'Bonobo',
-    description: 'The Finest of Electronic Dance Music',
+    img: 'https://olympiastadion.berlin/wp-content/uploads/2021/10/coldplayheader.jpg',
+    name: 'Coldplay',
+    description: 'Chart Pop',
   },
   {
     id: 3,
-    img: '../../assets/images/Dukeland_1440x450.jpg',
-    event: 'Dukeland',
-    description: 'Festival Premier near Stuttgart',
+    img: 'https://images.ticketmasterpartners.com/wp-content/uploads/sites/3295/2021/10/1633610111722/rhcp-2.jpg',
+    name: 'Red Hot Chili Peppers',
+    description: 'Funk Rock',
   },
 ];
 
 export const subheroItems = [
   {
     id: 1,
-    img: 'https://images.unsplash.com/photo-1520366103608-36a0cc873a36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    img: 'https://s1.ticketm.net/dam/a/e91/2b53857b-39cc-4957-b0fc-f6a097a30e91_1570731_RETINA_PORTRAIT_3_2.jpg',
 
-    event: 'Harry Styles',
+    name: 'Glen Hansard',
+    event_ids: 846987,
     description: 'Noise Rock',
   },
   {
     id: 2,
-    img: 'https://images.unsplash.com/photo-1561447920-aa5c68129cff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGxpdmUlMjBtdXNpY3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60',
-    event: 'Peter Doherty',
+    img: 'https://s1.ticketm.net/dam/a/f14/6b4c86dd-b18f-48de-89ee-c9bff5da7f14_614411_RETINA_PORTRAIT_3_2.jpg',
+    name: 'Pearl Jam',
+    event_ids: 226,
     description: 'Alternative Rock',
   },
 ];
@@ -38,75 +40,75 @@ export const subheroItems = [
 export const squareCards = [
   {
     id: 1,
-    img: 'https://i.discogs.com/x-kpvN89qPQNwNvDMvEAKVUu2aQslt9-6Gm56W_i8hE/rs:fit/g:sm/q:90/h:597/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEz/ODU5MzcxLTE1NjI3/NjQyNTUtNTgyOC5q/cGVn.jpeg',
+    name: 'Woodkid',
+    event_ids: 865800,
+    img: 'https://s1.ticketm.net/dam/a/772/5fb818c9-7212-4250-a3dc-a37b29609772_1278681_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 2,
-    img: 'https://i.discogs.com/DWQBYCvcOP4mh5ZVwMfHT0v0mD_mh_5rM63T_OzWask/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTE0/NjQ5MTEtMTU4NjYx/MDc3MS03NzQzLmdp/Zg.jpeg',
+    name: 'Tool',
+    event_ids: 284,
+    img: 'https://s1.ticketm.net/dam/a/d1d/9ff2c038-6ae7-4aca-a97f-4f472d92ed1d_1517601_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 3,
-    img: 'https://i.discogs.com/jSd_oBAjyHzRit2cyEJY7JeK88fkSuHGrmRySqcz1q4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTY1/MzM5Ni0xMTU2MzMw/NDc1LmpwZWc.jpeg',
+    name: 'Bon Iver',
+    event_ids: 58913,
+    img: 'https://s1.ticketm.net/dam/a/6f2/bd24fdc6-3946-4b80-985c-6499a11cd6f2_1538571_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 4,
-    img: 'https://i.discogs.com/jJMKaZJCPvljQWVMw5nFyWVHyFyRoiFmh-OyizUiMdw/rs:fit/g:sm/q:90/h:606/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEw/Mjc2NjMtMTE4NTY4/MjQxMy5qcGVn.jpeg',
+    name: 'Black Sea Dahu',
+    event_ids: 1009322,
+    img: 'https://s1.ticketm.net/dam/c/779/d4bc7e11-1b50-4aa4-a2be-0a21569f5779_106531_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 5,
-    img: 'https://i.discogs.com/KXHN6iwFNtry3-_WNQ9CJNomnc5DBuWR4ejU49IseeI/rs:fit/g:sm/q:90/h:596/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEx/MzE2MTMtMTU2MjEz/NjM0OS0xNDgyLmpw/ZWc.jpeg',
+    name: 'Bad Religion',
+    event_ids: 1568,
+    img: 'https://s1.ticketm.net/dam/a/5d1/43603580-323a-4619-910f-fd2666ac15d1_1235371_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 6,
-    img: 'https://i.discogs.com/eoscIMR5pNfsNpNTlv1a3ChfklWpjz32ejqZXkw5Yi8/rs:fit/g:sm/q:90/h:440/w:440/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEz/NzQwNjE3LTE1NjAx/MjE4MTQtODMzMC5q/cGVn.jpeg',
+    name: 'Ash',
+    event_ids: 4916,
+    img: 'https://s1.ticketm.net/dam/a/615/1d3c1a66-179d-4b9f-9ff9-84ed4164d615_31171_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 7,
-    img: 'https://i.discogs.com/iQKXFWJsKeecoitSMhMfP5BpFMBeOVSWtVv3MoQh6uA/rs:fit/g:sm/q:90/h:467/w:467/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTE3/MTg0MjUtMTIzODk1/Nzg5Mi5qcGVn.jpeg',
+    name: 'Mitski',
+    event_ids: 954375,
+    img: 'https://s1.ticketm.net/dam/a/4b8/2ab1122e-7234-4b4e-a753-82e4008284b8_1524111_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 8,
-    img: 'https://i.discogs.com/uBftAfZRxI8Fji9cHAWoT5b2jELNgJ0PI-qfl5o7G-0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTQ0/MjY1MjUtMTQwOTMz/ODUzNC05MDMyLmpw/ZWc.jpeg',
+    name: 'Franz Ferdinand',
+    event_ids: 25834,
+    img: 'https://s1.ticketm.net/dam/a/821/527bb8c4-4992-47bc-a7e7-9a9dd4f4e821_304231_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 9,
-    img: 'https://i.discogs.com/iWBdixkwZrakG8XCFLPc2PSBPf69n7DajpINtDbFSBU/rs:fit/g:sm/q:90/h:600/w:588/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTMx/MzM5NzMtMTMxNzMy/OTU1Mi5qcGVn.jpeg',
+    name: 'half.alive',
+    event_ids: 1005629,
+    img: 'https://s1.ticketm.net/dam/a/7f6/beaaf74c-3e8f-4443-8487-6a6c074f17f6_1557491_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 10,
-    img: 'https://i.discogs.com/M5wP_1bdzNlQVNnK83PpSMDf1ElkNaoFtkGciisndwk/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTQ5/NTA3OTgtMTM4ODYy/MzYxMS0yMzYyLmpw/ZWc.jpeg',
+    name: 'Pixies',
+    event_ids: 231,
+    img: 'https://s1.ticketm.net/dam/a/979/abed8b8f-592c-4fd8-b2c9-d69d71818979_1236341_RETINA_PORTRAIT_3_2.jpg',
   },
   {
     id: 11,
-    img: 'https://i.discogs.com/apMV33KM4cnGApuyuz_d4p9S8NMS9upcqe7GELX8mbU/rs:fit/g:sm/q:90/h:613/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEy/NDg2NzQ2LTE1MzYy/NDk3NTgtMTIxNC5q/cGVn.jpeg',
+    name: 'The Antlers',
+    event_ids: 69903,
+    img: 'https://s1.ticketm.net/dam/c/fbc/b293c0ad-c904-4215-bc59-8d7f2414dfbc_106141_RETINA_PORTRAIT_3_2.jpg',
   },
 
   {
     id: 12,
-    img: 'https://i.discogs.com/UkAHVId2CtYN8zmwzjFF3k5KLFTwQuAYfJaSWR-7RUY/rs:fit/g:sm/q:90/h:548/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTIz/NDgxODAtMTUwMjEy/MDkxMy01NjgxLmpw/ZWc.jpeg',
-  },
-  {
-    id: 13,
-    img: 'https://i.discogs.com/vqQv1i0So1myo-aBedoUYRi0fsVDwdo8PfojZjhikcs/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEy/OTAwNjQtMTYxNjUy/NTc5OC0zODM1Lmpw/ZWc.jpeg',
-  },
-  {
-    id: 14,
-    img: 'https://i.discogs.com/it5tWlgPHdZL9ZtZ9wbFqc9mMBoZaJxOwA1pMajkNW8/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTgy/MDI2MTgtMTQ1ODI1/MDM1NS01MTM4Lmpw/ZWc.jpeg',
-  },
-  {
-    id: 15,
-    img: 'https://i.discogs.com/jLlZlh_g7BswWFBlNt5df3VX8YtCVDbCzyGCMd45EhI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEx/ODU3MTc4LTE1MjUz/NDkxMTEtNDk4Mi5q/cGVn.jpeg',
-  },
-  {
-    id: 16,
-    img: 'https://i.discogs.com/ofEk85AS-K_Pe-t39NOOU7_QT55U11VdtJ48NVdC2F0/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTQw/MDc0NTAtMTM1MjEy/MjA4MC00ODk2LnBu/Zw.jpeg',
-  },
-  {
-    id: 17,
-    img: 'https://i.discogs.com/LNaxDWwiY91JPMlQQICq1IjualfjxZj-x0YoTB8RpYs/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTc3/MDU2NTctMTU1Nzkw/ODEwOC02MzE1Lmpw/ZWc.jpeg',
-  },
-  {
-    id: 18,
-    img: 'https://i.discogs.com/-bYvVBJOmkbnMl1s8isS7pNe363b8AnhrWdT-GL3S10/rs:fit/g:sm/q:90/h:605/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTEw/MjA2ODYzLTE0OTMz/OTc4MzgtNzU4MC5q/cGVn.jpeg',
+    name: 'Saint Motel',
+    event_ids: 521443,
+    img: 'https://s1.ticketm.net/dam/a/dde/91b4d9fc-2ba1-4629-895c-26cfc25bbdde_1454481_RETINA_PORTRAIT_3_2.jpg',
   },
 ];
