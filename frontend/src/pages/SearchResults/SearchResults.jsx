@@ -9,7 +9,6 @@ import { useSearchParams } from 'react-router-dom';
 
 const SearchResults = () => {
   const [results, setResults] = useState([]);
-  // const [results, setResults] = useContext(SearchContext);
   const { search } = useContext(SearchContext);
 
   const [searchParams, setSearchParams] = useSearchParams();
