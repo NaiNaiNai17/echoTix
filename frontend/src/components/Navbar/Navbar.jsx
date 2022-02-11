@@ -25,6 +25,7 @@ import {
   NavCenter,
   NavRight,
   SearchContainer,
+  TreecountNumber,
   NavTreecount,
   NavContainer,
   NavUserItem,
@@ -61,8 +62,8 @@ const Navbar = () => {
   return (
     <NavContainer fixed="top">
       <NavWrapper>
-        <NavLeft>
-          <img src={Logo} alt="echotix-logo" onClick={goHome} />
+        <NavLeft src={Logo} alt="echotix-logo" onClick={goHome} >
+         
         </NavLeft>
         <NavCenter>
           <SearchContainer>
@@ -71,7 +72,7 @@ const Navbar = () => {
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
               value={search}
-              size="40"
+              size="30"
             />
             <FontAwesomeIcon
               icon={faSearch}
@@ -84,6 +85,7 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
+            <TreecountNumber>43.333</TreecountNumber>
             <FontAwesomeIcon icon={faSeedling} size="3x" />
           </NavTreecount>
           <NavUserItem>
@@ -96,6 +98,7 @@ const Navbar = () => {
                 display: login ? 'block' : 'none',
                 backgroundColor: 'transparent',
                 border: 'none',
+                paddingRight: '30px',
               }}
             />
             <FontAwesomeIcon
@@ -106,18 +109,17 @@ const Navbar = () => {
                 display: login ? 'block' : 'none',
                 backgroundColor: 'transparent',
                 border: 'none',
+                paddingRight: '30px',
               }}
             />
 
+            <FontAwesomeIcon
+              style={{ cursor: 'pointer' }}
+              icon={faShoppingCart}
+              size="3x"
+            />
+            <Badge badgeContent={4} color="primary"></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
-
-            <Badge badgeContent={4} color="primary">
-              <FontAwesomeIcon
-                style={{ cursor: 'pointer' }}
-                icon={faShoppingCart}
-                size="3x"
-              />
-            </Badge>
           </NavUserItem>
         </NavRight>
       </NavWrapper>
