@@ -18,14 +18,11 @@ export const NavWrapper = styled.div.attrs(() => ({
 `;
 
 //* Left
-export const NavLeft = styled.div.attrs(() => ({
+export const NavLeft = styled.img.attrs(() => ({
   className: 'NavLeft',
 }))`
-  flex: 0.2;
-  img {
-    width: 200px;
-    cursor: pointer;
-  }
+  width: 200px;
+  cursor: pointer;
 `;
 
 //* Center
@@ -68,6 +65,13 @@ export const NavRight = styled.div.attrs(() => ({
   align-items: center;
 `;
 //*** Inside Right Side: TREECOUNTER */
+export const TreecountNumber = styled.span.attrs(() => ({
+  className: 'TreecountNumber',
+}))`
+  margin-right: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+`;
 
 export const NavTreecount = styled.div.attrs(() => ({
   className: 'Treecount',
@@ -75,13 +79,13 @@ export const NavTreecount = styled.div.attrs(() => ({
   width: 60%;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 //*** Inside Right Side: USERICONS */
 export const NavUserItem = styled.div.attrs(() => ({
   className: 'NavUserItem',
 }))`
-  width: 40%;
   display: flex;
   justify-content: space-around;
 

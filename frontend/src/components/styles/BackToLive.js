@@ -19,5 +19,6 @@ export const BTL = styled.h1.attrs(() => ({
   color: #fff;
   align-self: center;
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 6rem;
+  font-family: Edo;
 `;
