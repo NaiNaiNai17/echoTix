@@ -9,10 +9,7 @@ import Card from '../../components/Cards/Card';
 import Events from '../../components/Cards/Events';
 
 //* IMPORT STYLE_____________________________________
-import {
-  Container,
-  EventCount,
-} from '../../components/styles/Event.styled';
+import { Container, EventCount } from '../../components/styles/Event.styled';
 
 //* IMPORT TOOLS_____________________________________
 import { useSearchParams } from 'react-router-dom';
@@ -27,19 +24,20 @@ const SearchResults = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   //* Start: Search by Name (attractionName)_______________
-  const getArtists = async () => {
-    const name = searchParams.get('name');
-    console.log(searchParams);
-    const response = await axios.get(
-      `/shows/attractions?attractionName=${name}`
-    );
-    console.log(response.data);
-    setResults(response.data.payload.attractions);
-  };
+  // const getArtists = async () => {
+  //   const name = searchParams.get('name');
+  //   console.log(searchParams);
+  //   const response = await axios.get(
+  //     `/shows/attractions?attractionName=${name}`
+  //   );
+  //   console.log('Hier response.data', response.data);
+  //   setResults(response.data.payload.attractions);
+  //   console.log('THIS IS MY RESULT', results);
+  // };
 
-  useEffect(() => {
-    getArtists();
-  }, [searchParams]);
+  // useEffect(() => {
+  //   getArtists();
+  // }, [searchParams]);
 
   //* End: Search by Name (attractionName)____________________
 
@@ -51,8 +49,9 @@ const SearchResults = () => {
     const response = await axios.get(
       `/shows/attractions?attractionName=${name}`
     );
-    console.log(response.data.payload);
+    console.log('Das ist mein neuer console.log', response.data.payload);
     setResults(response.data.payload.attractions);
+    console.log('Das ist mein neuer Search', response.data.payload.attractions);
   };
 
   const getEventDetails = async () => {

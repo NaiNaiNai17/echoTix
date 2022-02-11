@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Tickets from '../Buttons/Tickets';
+
 //* Style Components
 import {
   SubheroItemContainer,
@@ -13,7 +15,9 @@ const SubheroItem = ({ item }) => {
     <SubheroItemContainer>
       <Image src={item.img} key={item.id} />
       <Info>
-        {/* <Title>{item.event}</Title> */}
+        <Title>{item.name}</Title>
+        <p>My Description Info</p>
+        <Tickets />
       </Info>
     </SubheroItemContainer>
   );
