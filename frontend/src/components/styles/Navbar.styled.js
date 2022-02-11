@@ -24,6 +24,7 @@ export const NavLeft = styled.div.attrs(() => ({
   flex: 0.2;
   img {
     width: 200px;
+    cursor: pointer;
   }
 `;
 
@@ -54,7 +55,6 @@ export const Input = styled.input.attrs(() => ({
   box-shadow: none;
   border: 0;
   outline: none;
-  
 `;
 
 //* Right
