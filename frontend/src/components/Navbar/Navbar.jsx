@@ -52,11 +52,17 @@ const Navbar = () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
 
+  //* Going Home
+
+  function goHome() {
+    navigate('/');
+  }
+
   return (
     <NavContainer fixed="top">
       <NavWrapper>
         <NavLeft>
-          <img src={Logo} alt="echotix-logo" />
+          <img src={Logo} alt="echotix-logo" onClick={goHome} />
         </NavLeft>
         <NavCenter>
           <SearchContainer>
