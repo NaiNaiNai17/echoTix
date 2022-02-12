@@ -7,14 +7,13 @@ export const sliderItems = [
   },
   {
     id: 2,
-    img: 'https://olympiastadion.berlin/wp-content/uploads/2021/10/coldplayheader.jpg',
-    name: 'Coldplay',
+    img: 'https://www.oeticket.com/obj/media/AT-eventim/teaser/artworks/2021/gregory-porter-kad-tickets-2022-artwork.jpg',
     description: 'Chart Pop',
   },
   {
     id: 3,
-    img: 'https://images.ticketmasterpartners.com/wp-content/uploads/sites/3295/2021/10/1633610111722/rhcp-2.jpg',
-    name: 'Red Hot Chili Peppers',
+    img: 'https://www.eventim.de/obj/media/DE-eventim/teaser/artworks/2021/curtis-harding-tickets-artwork.jpg',
+    name: 'Curtis Harding',
     description: 'Funk Rock',
   },
 ];
