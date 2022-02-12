@@ -6,5 +6,5 @@ export const SubheroContainer = styled.div.attrs(() => ({
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
-  ${'' /* background-color: #264653; */}
+  background-color: #264653;
 `;
