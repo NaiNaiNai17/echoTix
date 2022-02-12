@@ -5,7 +5,7 @@ export const SubheroItemContainer = styled.div.attrs(() => ({
 }))`
   flex: 1;
   margin: 10px;
-  height: 15rem;
+  height: 20rem;
   position: relative;
 `;
 

@@ -2,12 +2,16 @@ import React from 'react';
 
 import { sliderItems } from '../../data';
 
+import Tickets from '../Buttons/Tickets';
+
 import {
   HeroImageContainer,
   HeroImage,
+  InfoWrapper,
+  Description,
 } from '../../components/styles/Hero.styled';
 
-import { Title, Info } from '../../components/styles/SubheroItem.styled';
+import { InfoContainer, Title } from '../../components/styles/Hero.styled';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -25,18 +29,12 @@ const Hero = () => {
     >
       {sliderItems.map((item) => (
         <HeroImageContainer>
-          <HeroImage
-            style={{
-              height: '15rem',
-              objectFit: 'cover',
-            }}
-            src={item.img}
-            key={item}
-            alt="show-images"
-          />
-          <Info>
+          <HeroImage src={item.img} key={item} alt="show-images" />
+          <InfoContainer>
             <Title>{item.name}</Title>
-          </Info>
+            <Description>{item.description}</Description>
+            <Tickets />
+          </InfoContainer>
         </HeroImageContainer>
       ))}
     </Carousel>
