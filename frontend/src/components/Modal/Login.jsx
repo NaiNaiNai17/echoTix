@@ -74,7 +74,6 @@ const Login = ({ showModal, setShowModal }) => {
                 <GoogleButton>Login in with Google</GoogleButton>
                 <RegisterButton>Register</RegisterButton>
               </ButtonContainer>
-
             </LoginForm>
           </Wrapper>
         </LoginContainer>

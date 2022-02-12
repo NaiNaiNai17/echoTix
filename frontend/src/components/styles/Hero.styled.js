@@ -39,8 +39,6 @@ export const InfoContainer = styled.div.attrs(() => ({
   justify-content: flex-start;
   flex-direction: column;
 
-  ${'' /* opacity: 0; */}
-
   :hover {
     opacity: 1;
     background: rgba(0, 0, 0, 0.6);
@@ -57,14 +55,11 @@ export const InfoContainer = styled.div.attrs(() => ({
       padding: 20px;
       color: #fff;
       border-radius: 20px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      opacity: 1;
+      letter-spacing: 0.1em;
     }
-  }
-
-  p {
-    color: #fff;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    opacity: 1;
   }
 `;
 
@@ -97,4 +92,5 @@ export const Description = styled.p.attrs(() => ({
   font-size: 1rem;
   width: 30rem;
   text-align: start;
+  margin-left: -2rem;
 `;
