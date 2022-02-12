@@ -1,9 +1,13 @@
 import React from 'react';
-import PicOne from '../../assets/images/Melt_1440x450.png';
-import PicTwo from '../../assets/images/Bonobo_1440x450.jpg';
-import PicThree from '../../assets/images/Dukeland_1440x450.jpg';
 
 import { sliderItems } from '../../data';
+
+import {
+  HeroImageContainer,
+  HeroImage,
+} from '../../components/styles/Hero.styled';
+
+import { Title, Info } from '../../components/styles/SubheroItem.styled';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -17,31 +21,26 @@ const Hero = () => {
       showStatus={false}
       autoPlay={true}
       infiniteLoop={true}
-      interval={10000}
+      interval={4000}
     >
       {sliderItems.map((item) => (
-        <div>
-          <img
-            style={{ height: '250px' }}
+        <HeroImageContainer>
+          <HeroImage
+            style={{
+              height: '15rem',
+              objectFit: 'cover',
+            }}
             src={item.img}
             key={item}
             alt="show-images"
           />
-        </div>
+          <Info>
+            <Title>{item.name}</Title>
+          </Info>
+        </HeroImageContainer>
       ))}
-
-      {/* <div>
-        <img src={PicOne} alt="Melt" />
-      </div>
-      <div>
-        <img src={PicTwo} alt="Bonobo" />
-      </div>
-      <div>
-        <img src={PicThree} alt="Dukeland" />
-      </div> */}
     </Carousel>
   );
 };
 
 export default Hero;
-

@@ -5,7 +5,7 @@ export const SubheroItemContainer = styled.div.attrs(() => ({
 }))`
   flex: 1;
   margin: 10px;
-  height: 50vh;
+  height: 15rem;
   position: relative;
 `;
 
@@ -51,5 +51,4 @@ export const Title = styled.h1.attrs(() => ({
   font-size: 4rem;
   font-weight: bold;
   font-family: Edo;
-  
 `;

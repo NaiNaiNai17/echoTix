@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 export const ImageContainer = styled.div.attrs(() => ({
   className: 'ImageContainer',
 }))`
-  height: 40vh;
+  height: 15rem;
   display: flex;
   justify-content: center;
 
