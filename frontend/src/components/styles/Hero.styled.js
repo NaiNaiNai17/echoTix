@@ -39,26 +39,29 @@ export const InfoContainer = styled.div.attrs(() => ({
   justify-content: flex-start;
   flex-direction: column;
 
+  ${'' /* opacity: 0; */}
+
   :hover {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(55, 55, 55, 0.3);
 
     p {
+      background: rgb(55, 55, 55);
       background: linear-gradient(
         90deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(38, 38, 38, 1) 3%
+        rgba(55, 55, 55, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
       );
 
-      font-size: smaller;
+      font-size: small;
       line-height: 1.2rem;
       padding: 20px;
       color: #fff;
       border-radius: 20px;
+      color: #fff;
       margin-top: 1rem;
       margin-bottom: 1rem;
       opacity: 1;
-      letter-spacing: 0.1em;
     }
   }
 `;
@@ -73,7 +76,6 @@ export const InfoWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: background: rgba(233, 03, 30, 0.8);
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -92,5 +94,5 @@ export const Description = styled.p.attrs(() => ({
   font-size: 1rem;
   width: 30rem;
   text-align: start;
-  margin-left: -2rem;
+  margin: -20px;
 `;
