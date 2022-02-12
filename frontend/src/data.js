@@ -3,18 +3,24 @@ export const sliderItems = [
     id: 1,
     img: 'https://www.mercedes-benz-arena-berlin.de/assets/img/BonIver_Header_MBA-6e0d0ae303.jpg',
     name: 'Bon Iver',
-    description: 'Future Folk',
+    date: 'October 31, 2022',
+    description:
+      'With his 2007 debut album, Justin Vernon demonstrated the soul-cleansing properties of isolating yourself from the world in a wooden shed. ',
   },
   {
     id: 2,
-    img: 'https://www.oeticket.com/obj/media/AT-eventim/teaser/artworks/2021/gregory-porter-kad-tickets-2022-artwork.jpg',
-    description: 'Chart Pop',
+    img: 'https://www.langweiledich.net/wp-content/uploads/2017/11/Rhye-Taste.jpg',
+
+    name: 'Rhye',
+    description:
+      'Gefühlvoll arrangierte Piano-Tracks, organische Percussion, schwirrende Synthies und eine intensive Stimme',
   },
   {
     id: 3,
     img: 'https://www.eventim.de/obj/media/DE-eventim/teaser/artworks/2021/curtis-harding-tickets-artwork.jpg',
     name: 'Curtis Harding',
-    description: 'Funk Rock',
+    description:
+      'Hardings style was born in Michigan and bred on the road, a restless childhood spent singing Gospel alongside an evangelizing mother',
   },
 ];
 
