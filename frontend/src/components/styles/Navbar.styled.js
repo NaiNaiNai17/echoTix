@@ -15,6 +15,14 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: rgb(231, 254, 236);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    60deg,
+    rgb(255, 255, 255) 30%,
+    rgba(41, 209, 158, 0.7) 60%,
+    rgba(4, 52, 41, 1) 100%
+  );
 `;
 
 //* Left
