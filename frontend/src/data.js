@@ -9,6 +9,7 @@ export const sliderItems = [
     id: 2,
     img: 'https://www.oeticket.com/obj/media/AT-eventim/teaser/artworks/2021/gregory-porter-kad-tickets-2022-artwork.jpg',
     description: 'Chart Pop',
+    name: 'Gregory Porter',
   },
   {
     id: 3,

@@ -52,6 +52,7 @@ export const Input = styled.input.attrs(() => ({
   box-shadow: none;
   border: 0;
   outline: none;
+  text-align: center;
 `;
 
 //* Right
