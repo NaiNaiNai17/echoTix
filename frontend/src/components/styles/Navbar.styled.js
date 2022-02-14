@@ -15,13 +15,12 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(231, 254, 236);
   background: rgb(255, 255, 255);
   background: linear-gradient(
-    60deg,
-    rgb(255, 255, 255) 30%,
-    rgba(41, 209, 158, 0.7) 60%,
-    rgba(4, 52, 41, 1) 100%
+    20deg,
+    rgba(255, 255, 255, 1) 23%,
+    rgba(20, 219, 150, 1) 64%,
+    rgba(55, 55, 55, 1) 100%
   );
 `;
 

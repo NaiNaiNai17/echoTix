@@ -13,7 +13,7 @@ export const HeroImage = styled.img.attrs(() => ({
   className: 'HeroImage',
 }))`
   width: 100%;
-  height: 20rem;
+  height: 30rem;
   object-fit: cover;
   display: block;
 
@@ -25,7 +25,6 @@ export const HeroImage = styled.img.attrs(() => ({
 export const InfoContainer = styled.div.attrs(() => ({
   className: 'InfoContainer',
 }))`
-  padding-left: 30px;
   position: absolute;
   top: 0;
   left: 0;
@@ -33,8 +32,9 @@ export const InfoContainer = styled.div.attrs(() => ({
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: space-around;
   padding: 50px;
+  padding-left: 100px;
   opacity: 0;
   justify-content: flex-start;
   flex-direction: column;
@@ -53,14 +53,13 @@ export const InfoContainer = styled.div.attrs(() => ({
         rgba(0, 0, 0, 1) 100%
       );
 
-      font-size: small;
+      font-size: 1rem;
       line-height: 1.2rem;
-      padding: 20px;
+      padding: 30px;
       color: #fff;
-      border-radius: 20px;
       color: #fff;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
       opacity: 1;
     }
   }
@@ -82,7 +81,7 @@ export const Title = styled.h1.attrs(() => ({
   className: 'Title',
 }))`
   color: #fff;
-  font-size: 3rem;
+  font-size: 7rem;
   font-weight: bold;
   font-family: Edo;
   text-align: start;
@@ -91,8 +90,8 @@ export const Title = styled.h1.attrs(() => ({
 export const Description = styled.p.attrs(() => ({
   className: 'Description',
 }))`
-  font-size: 1rem;
+  font-size: 3rem;
   width: 30rem;
   text-align: start;
-  margin: -20px;
+  margin: -10px;
 `;

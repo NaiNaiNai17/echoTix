@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import DefaultCard from '../../components/Cards/DefaultCard';
+import FlipCard from '../../components/Cards/DefaultCard';
 import { squareCards } from '../../data';
 import { DefaultCardsContainer } from '../../components/styles/DefaultCards.styled';
 import axios from '../../util/axiosInstance';
 
 const DafaultCards = () => {
   return (
-    <DefaultCardsContainer>
+    <DefaultCardsContainer className="Projects">
       {squareCards.map((item) => (
-        <DefaultCard item={item} key={item.id} />
+        <FlipCard item={item} key={item.id} />
       ))}
     </DefaultCardsContainer>
   );
