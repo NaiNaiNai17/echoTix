@@ -1,69 +1,74 @@
 import styled, { css } from 'styled-components';
 
-export const Image = styled.div.attrs(({ item }) => ({
-  className: 'Image',
+export const Bandname = styled.div.attrs(() => ({
+  className: 'Bandname',
 }))`
-  width: 20rem;
-  height: 20rem;
-  background: rgba(32, 29, 29, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${'' /* background: url(${(props) => props.item.img}); */}
-
-  p {
-    font-size: 3rem;
-    font-weight: bold;
-    font-family: Edo;
-    color: #fff;
-    text-align: center;
-  }
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: Edo;
+  color: #fff;
+  text-align: center;
 `;
 
-export const FrontBackContainer = styled.div.attrs(({ item }) => ({
-  className: 'FrontBackContainer',
+export const FrontContainer = styled.div.attrs(({ item }) => ({
+  className: 'FrontContainer',
 }))`
   margin: 20px;
-  width: '20rem;
-  height: 20rem';
-  background: 'rgba(32, 29, 29, 0.6);';
+  width: 320px;
+  height: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.7),
+      rgba(200, 200, 200, 0.6)
+    ),
+    url(${(props) => props.img});
+  background-size: cover;
 `;
 
-// export const FrontBackWrapper = styled.div.attrs(({ item }) => ({
-//   className: 'FrontWrapper',
-// }))`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 25rem;
-//   height: 25rem;
-// `;
+export const BackContainer = styled.div.attrs(({ item }) => ({
+  className: 'BackContainer',
+}))`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(
+    90deg,
+    rgba(55, 55, 55, 1) 100%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-size: cover;
+  color: #fff;
+`;
 
-// export const FlipCardFront = styled.div.attrs(({ item }) => ({
-//   className: 'FlipCardFront',
-// }))`
-//   backface-visibility: hidden;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
+export const Cities = styled.h5.attrs(({ item }) => ({
+  className: 'Cities',
+}))`
+  font-size: 1rem;
+`;
 
-//   &.front {
-//     transform: rotateY(0);
-//     background-color: #2d2d2d;
-//     color: #fff;
-//   }
+export const BackInfoContainer = styled.div.attrs(({ item }) => ({
+  className: 'BackInfoContainer',
+}))`
+  position: absolute;
+  top: 50px;
 
-//   &.back {
-//     transform: rotateY(180deg);
-//     background-color: #fff;
-//     color: #2d2d2d;
-//   }
-// `;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  ${'' /* justify-content: space-around; */}
+`;
+
+export const Date = styled.div.attrs(({ item }) => ({
+  className: 'Date',
+}))``;
 
 // export const DefaultCardContainer = styled.div.attrs(() => ({
 //   className: 'DefaultCardContainer',
@@ -121,7 +126,7 @@ export const FrontBackContainer = styled.div.attrs(({ item }) => ({
 // }))`
 //   position: absolute;
 //   top: 40%;
-//   left: 22%;
+//   left: 22%;{ item }
 //   opacity: 0;
 
 //   background: url(${(props) => props.img});

@@ -4,30 +4,37 @@ import ReactCardFlip from 'react-card-flip';
 
 import { CardTicketButton } from '../../components/styles/Buttons/Tickets.styled';
 
-import { Image, FrontBackContainer } from '../styles/DefaultCard.styled';
+import {
+  FrontContainer,
+  Bandname,
+  BackContainer,
+  Cities,
+  Date,
+  BackInfoContainer,
+} from '../styles/DefaultCard.styled';
 
 const FlipCard = ({ item }) => {
   const [isFlipped, setIsFlipped] = React.useState(false);
   return (
     <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-      <FrontBackContainer
+      <FrontContainer
+        img={item.img}
         onMouseEnter={() => setIsFlipped((prev) => !prev)}
         className="CardFront"
       >
-        <Image>
-          <p>{item.name}</p>
-        </Image>
-      </FrontBackContainer>
-      <FrontBackContainer
+        <Bandname>{item.name}</Bandname>
+      </FrontContainer>
+      <BackContainer
         img={item.img}
-        alt=""
         onMouseLeave={() => setIsFlipped((prev) => !prev)}
         className="CardBack"
       >
-        <Image>
-          <CardTicketButton>Tickets</CardTicketButton>
-        </Image>
-      </FrontBackContainer>
+        <BackInfoContainer>
+          <Cities>{item.city}</Cities>
+          <Date>{item.date}</Date>
+        </BackInfoContainer>
+        <CardTicketButton>Tickets</CardTicketButton>
+      </BackContainer>
     </ReactCardFlip>
   );
 
