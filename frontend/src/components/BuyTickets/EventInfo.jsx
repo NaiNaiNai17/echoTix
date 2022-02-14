@@ -8,11 +8,12 @@ import {
   TableRow,
 } from '../../components/styles/BuyTickets.styled';
 
-const EventInfo = () => {
+const EventInfo = ({ show }) => {
+  console.log('Eventinfo', show);
   return (
     <EventInfoContainer>
-      <EventCity>Hamburg</EventCity>
-      <EventTitle>Alt-J</EventTitle>
+      <EventCity>{show.venue.location.address.city}</EventCity>
+      <EventTitle>{show.name}</EventTitle>
       <Tables>
         <TableRow>
           <th align="left">Venue</th>
@@ -21,8 +22,8 @@ const EventInfo = () => {
           <th align="left">Available</th>
         </TableRow>
         <TableRow>
-          <td>Große Freiheit 36</td>
-          <td>11.11.2022</td>
+          <td>{show.venue.name}</td>
+          <td>{show.event_date.value}</td>
           <td>32.99</td>
           <td>299</td>
         </TableRow>

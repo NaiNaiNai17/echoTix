@@ -6,11 +6,13 @@ import InfoButtonContainer from '../../components/BuyTickets/InfoButton';
 
 import { EventDataContainer } from '../../components/styles/BuyTickets.styled';
 
-const EventData = () => {
+const EventData = ({ events }) => {
   return (
     <EventDataContainer>
       <InfoButtonContainer />
-      <EventInfo />
+      {events
+        ? events.map((show) => <EventInfo show={show} key={show.id} />)
+        : 'no show'}
       <TicketsInfo />
     </EventDataContainer>
   );
