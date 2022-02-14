@@ -8,12 +8,11 @@ import { EventDataContainer } from '../../components/styles/BuyTickets.styled';
 
 const EventData = ({ events }) => {
   return (
-    <EventDataContainer>
-      <InfoButtonContainer />
+    <EventDataContainer >
       {events
         ? events.map((show) => <EventInfo show={show} key={show.id} />)
         : 'no show'}
-      <TicketsInfo />
+      {/* <TicketsInfo /> */}
     </EventDataContainer>
   );
 };
