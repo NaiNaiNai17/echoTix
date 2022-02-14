@@ -49,7 +49,7 @@ export const squareCards = [
     name: 'Woodkid',
     event_ids: 865800,
     date: '1995-12-17T03:24:00',
-    city: "Bremen",
+    city: 'Bremen',
     // city: [
     //   { cityname: 'Bremen', venue: 'Große Freiheit' },
     //   { cityname: 'Hamburg', venue: 'Große Freiheit' },
