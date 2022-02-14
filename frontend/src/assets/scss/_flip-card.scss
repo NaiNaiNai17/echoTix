@@ -1,5 +1,7 @@
 .flip-card-outer {
   margin: 25px 0;
+  width: 320px;
+  height: 320px;
 
   &.focus-trigger:focus {
     outline: 5px solid greenyellow;
@@ -8,9 +10,8 @@
 
   .flip-card-inner {
     transform-style: preserve-3d;
-    transition: 0.5s linear 0.1s;
+    // transition: 0.5s linear 0.1s;
     position: relative;
-    
 
     &.hover-trigger:hover {
       transform: rotateY(180deg);
@@ -28,17 +29,15 @@
       width: 100%;
       height: 100%;
 
-      &.front {
-        transform: rotateY(0);
-        background-color: #2d2d2d;
-        color: #fff;
-      }
+      // &.front {
+      //   transform: rotateY(0);
+      //   color: #fff;
+      // }
 
-      &.back {
-        transform: rotateY(180deg);
-        background-color: #fff;
-        color: #2d2d2d;
-      }
+      // &.back {
+      //   transform: rotateY(180deg);
+      //   color: #2d2d2d;
+      // }
     }
   }
 }

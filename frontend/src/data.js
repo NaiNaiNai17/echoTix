@@ -4,6 +4,7 @@ export const sliderItems = [
     img: 'https://www.mercedes-benz-arena-berlin.de/assets/img/BonIver_Header_MBA-6e0d0ae303.jpg',
     name: 'Bon Iver',
     date: 'October 31, 2022',
+
     description:
       'With his 2007 debut album, Justin Vernon demonstrated the soul-cleansing properties of isolating yourself from the world in a wooden shed. ',
   },
@@ -47,6 +48,13 @@ export const squareCards = [
     id: 1,
     name: 'Woodkid',
     event_ids: 865800,
+    date: '1995-12-17T03:24:00',
+    city: "Bremen",
+    // city: [
+    //   { cityname: 'Bremen', venue: 'Große Freiheit' },
+    //   { cityname: 'Hamburg', venue: 'Große Freiheit' },
+    //   { cityname: 'Berlin', venue: 'Große Freiheit' },
+    // ],
     img: 'https://s1.ticketm.net/dam/a/772/5fb818c9-7212-4250-a3dc-a37b29609772_1278681_RETINA_PORTRAIT_3_2.jpg',
   },
   {
