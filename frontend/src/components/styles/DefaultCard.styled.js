@@ -13,9 +13,8 @@ export const Bandname = styled.div.attrs(() => ({
 export const FrontContainer = styled.div.attrs(({ item }) => ({
   className: 'FrontContainer',
 }))`
-  margin: 20px;
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,8 +34,8 @@ export const BackContainer = styled.div.attrs(({ item }) => ({
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     90deg,
     rgba(55, 55, 55, 1) 100%,
