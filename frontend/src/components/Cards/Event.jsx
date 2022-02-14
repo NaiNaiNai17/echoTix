@@ -2,13 +2,14 @@ import React from 'react';
 
 import Tickets from '../Buttons/Tickets';
 
-import { EventContainer, Bandname } from '../../components/styles/Event.styled';
+import { EventContainer, Cityname } from '../../components/styles/Event.styled';
 
 const Event = ({ show }) => {
+  console.log('Thats the show', show.venue.location.address.city);
+
   return (
     <EventContainer img={show.images.large.url}>
-      <Bandname>{show.name}</Bandname>
-     
+      <Cityname>{show.venue.location.address.city}</Cityname>
     </EventContainer>
   );
 };
