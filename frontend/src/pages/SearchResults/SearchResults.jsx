@@ -60,7 +60,7 @@ const SearchResults = () => {
 
   return (
     <>
-      <Container>
+      <Container >
         {results
           ? results.map((event) => <Card event={event} key={event.id} />)
           : 'no shows'}
