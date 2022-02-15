@@ -22,10 +22,21 @@ const MainRouter = () => {
   //* UseState
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('');
+  const [dataName, setDataName] = useState('');
+  console.log('this is my dataName', dataName);
 
   return (
     <Router>
-      <SearchContext.Provider value={[results, setResults, search, setSearch]}>
+      <SearchContext.Provider
+        value={{
+          results,
+          setResults,
+          search,
+          setSearch,
+          dataName,
+          setDataName,
+        }}
+      >
         <Navbar />
 
         <main>

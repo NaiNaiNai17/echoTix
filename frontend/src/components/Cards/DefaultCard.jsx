@@ -33,7 +33,14 @@ const FlipCard = ({ item }) => {
             <Cities>{item.city}</Cities>
             <Date>{item.date}</Date>
           </BackInfoContainer>
-          <CardTicketButton>Tickets</CardTicketButton>
+          <CardTicketButton>
+            <a
+              href={item.url}
+              style={{ color: 'white', textDecoration: 'none' }}
+            >
+              Tickets
+            </a>
+          </CardTicketButton>
         </BackContainer>
       </BackSide>
     </Flippy>

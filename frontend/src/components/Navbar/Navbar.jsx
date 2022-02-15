@@ -36,7 +36,7 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [login, setLogin] = useState(true);
-  const [search, setSearch] = useContext(SearchContext);
+  const {search, setSearch} = useContext(SearchContext);
   const navigate = useNavigate();
 
   //* Opens the Login-Modal
@@ -62,16 +62,14 @@ const Navbar = () => {
   return (
     <NavContainer fixed="top">
       <NavWrapper>
-        <NavLeft src={Logo} alt="echotix-logo" onClick={goHome} >
-         
-        </NavLeft>
+        <NavLeft src={Logo} alt="echotix-logo" onClick={goHome}></NavLeft>
         <NavCenter>
           <SearchContainer>
             <Input
               placeholder="Search For Shows"
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
-              value={search}
+              // value={search}
               size="30"
             />
             <FontAwesomeIcon

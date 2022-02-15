@@ -17,7 +17,9 @@ const SubheroItem = ({ item }) => {
       <Info>
         <Title>{item.name}</Title>
         <p>My Description Info</p>
-        <Tickets />
+        <a href={item.url}>
+          <Tickets />
+        </a>
       </Info>
     </SubheroItemContainer>
   );
