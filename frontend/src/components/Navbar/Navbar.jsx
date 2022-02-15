@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
 
 import Badge from '@material-ui/core/Badge';
-import Logo from '../../assets/images/echoTix_Logo.png';
+import Logo from '../../assets/images/imageedit_12_2414757947.png';
 
 import Login from '../Modal/Login';
 
@@ -36,7 +36,7 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [login, setLogin] = useState(true);
-  const {search, setSearch} = useContext(SearchContext);
+  const { search, setSearch } = useContext(SearchContext);
   const navigate = useNavigate();
 
   //* Opens the Login-Modal
@@ -116,7 +116,11 @@ const Navbar = () => {
               icon={faShoppingCart}
               size="3x"
             />
-            <Badge badgeContent={4} color="primary"></Badge>
+            <Badge
+              badgeContent={4}
+              color="primary"
+              badgeStyle={{ backgroundColor: '#00AFD7' }}
+            ></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>

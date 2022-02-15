@@ -60,14 +60,14 @@ const SearchResults = () => {
 
   return (
     <>
-      <Container >
+      <Container>
         {results
           ? results.map((event) => <Card event={event} key={event.id} />)
           : 'no shows'}
+
+        <Events events={events} />
+        <EventData events={events}></EventData>
       </Container>
-      <EventCount />
-      <Events events={events} />
-      <EventData events={events}></EventData>
     </>
   );
 };
