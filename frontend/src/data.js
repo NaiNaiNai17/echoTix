@@ -10,11 +10,13 @@ export const sliderItems = [
   },
   {
     id: 2,
-    img: 'https://www.langweiledich.net/wp-content/uploads/2017/11/Rhye-Taste.jpg',
 
-    name: 'Rhye',
+    img: 'https://www.oeticket.com/obj/media/AT-eventim/teaser/artworks/2021/gregory-porter-kad-tickets-2022-artwork.jpg',
+    name: 'Gregory Porter',
+
     description:
       'Gefühlvoll arrangierte Piano-Tracks, organische Percussion, schwirrende Synthies und eine intensive Stimme',
+
   },
   {
     id: 3,

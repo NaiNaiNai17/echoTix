@@ -60,6 +60,7 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
+
 `;
 
 //* Right
