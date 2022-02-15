@@ -4,7 +4,7 @@ import Card from '../../components/Cards/Card';
 import { Container } from '../../components/styles/Event.styled';
 import axios from '../../util/axiosInstance';
 
-const Cards = () => {
+const Cards = ({ events }) => {
   const [results, setResults] = useState([]);
 
   const getArtists = async () => {

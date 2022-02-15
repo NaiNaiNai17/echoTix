@@ -13,7 +13,7 @@ export const HeroImage = styled.img.attrs(() => ({
   className: 'HeroImage',
 }))`
   width: 100%;
-  height: 20rem;
+  height: 30rem;
   object-fit: cover;
   display: block;
 
@@ -25,7 +25,6 @@ export const HeroImage = styled.img.attrs(() => ({
 export const InfoContainer = styled.div.attrs(() => ({
   className: 'InfoContainer',
 }))`
-  padding-left: 30px;
   position: absolute;
   top: 0;
   left: 0;
@@ -33,8 +32,9 @@ export const InfoContainer = styled.div.attrs(() => ({
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: space-around;
   padding: 50px;
+  padding-left: 100px;
   opacity: 0;
   justify-content: flex-start;
   flex-direction: column;
@@ -43,28 +43,25 @@ export const InfoContainer = styled.div.attrs(() => ({
 
   :hover {
     opacity: 1;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(55, 55, 55, 0.3);
 
     p {
+      background: rgb(55, 55, 55);
       background: linear-gradient(
         90deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(38, 38, 38, 1) 3%
+        rgba(55, 55, 55, 1) 100%,
+        rgba(0, 0, 0, 1) 100%
       );
 
-      font-size: smaller;
+      font-size: 1rem;
       line-height: 1.2rem;
-      padding: 20px;
+      padding: 30px;
       color: #fff;
-      border-radius: 20px;
+      color: #fff;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      opacity: 1;
     }
-  }
-
-  p {
-    color: #fff;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    opacity: 1;
   }
 `;
 
@@ -78,14 +75,13 @@ export const InfoWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: background: rgba(233, 03, 30, 0.8);
 `;
 
 export const Title = styled.h1.attrs(() => ({
   className: 'Title',
 }))`
   color: #fff;
-  font-size: 3rem;
+  font-size: 7rem;
   font-weight: bold;
   font-family: Edo;
   text-align: start;
@@ -94,7 +90,8 @@ export const Title = styled.h1.attrs(() => ({
 export const Description = styled.p.attrs(() => ({
   className: 'Description',
 }))`
-  font-size: 1rem;
+  font-size: 3rem;
   width: 30rem;
   text-align: start;
+  margin: -10px;
 `;

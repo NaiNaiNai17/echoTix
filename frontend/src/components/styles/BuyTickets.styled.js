@@ -6,45 +6,57 @@ export const EventDataContainer = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   flex-direction: column;
-  min-width: 80%;
-
   padding: 50px;
-  background: rgb(216, 243, 218);
-  background: linear-gradient(
-    0deg,
-    rgba(216, 243, 218, 1) 33%,
-    rgba(7, 28, 49, 1) 100%
-  );
 `;
 
 export const EventInfoContainer = styled.div.attrs(() => ({
   className: 'EventInfoContainer',
 }))`
   padding: 40px;
-  background-color: #c4c4c4;
-  height: 40vh;
+  ${'' /* background-color: #c4c4c4; */}
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.7),
+      rgba(200, 200, 200, 0.9)
+    ),
+    url(${(props) => props.img});
+  background-size: cover;
+
+  margin: 10px;
 `;
 
 export const EventTitle = styled.h1.attrs(() => ({
-  className: 'EventDataContainer',
+  className: 'EventTitle',
 }))`
   margin-bottom: 25px;
+  margin-top: 25px;
 `;
 
 export const EventCity = styled.h4.attrs(() => ({
-  className: 'EventDataContainer',
+  className: 'EventCity',
 }))`
   margin-bottom: 5px;
   text-transform: uppercase;
 `;
 
-export const Tables = styled.div.attrs(() => ({
+export const Image = styled.img.attrs(() => ({
+  className: 'Image',
+}))`
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+`;
+
+export const Table = styled.div.attrs(() => ({
   className: 'Table',
 }))`
   width: 100%;
+  margin-top: 20px;
+  margin-top: 20px;
 `;
 
 export const TableRow = styled.tr.attrs(() => ({
@@ -62,25 +74,24 @@ export const TableRow = styled.tr.attrs(() => ({
 
 //* Tickets Data
 
-export const TicketsDataContainer = styled.tr.attrs(() => ({
+export const TicketsDataContainer = styled.div.attrs(() => ({
   className: 'TicketsDataContainer',
 }))`
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  background-color: #e7e5e5;
 `;
 
 export const TicketInfo = styled.div.attrs(() => ({
   className: 'TicketInfo',
 }))`
-  padding: 40px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-top: 20px;
 `;
 
 export const TicketH1 = styled.h1.attrs(() => ({

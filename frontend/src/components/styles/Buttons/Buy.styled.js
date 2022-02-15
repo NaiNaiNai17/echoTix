@@ -5,8 +5,8 @@ export const BuyButton = styled.button.attrs(() => ({
 }))`
   padding: 20px;
   width: 15rem;
-  background-color: red;
-  color: black;
+  background-color: #2e8268;
+  color: white;
   font-size: large;
   display: flex;
   justify-content: center;

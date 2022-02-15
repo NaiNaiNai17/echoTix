@@ -5,7 +5,7 @@ export const SubheroItemContainer = styled.div.attrs(() => ({
 }))`
   flex: 1;
   margin: 10px;
-  height: 20rem;
+  height: 13rem;
   position: relative;
 `;
 
@@ -26,7 +26,7 @@ export const Info = styled.div.attrs(() => ({
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(32, 29, 29, 0.6);
   display: flex;
   justify-content: center;
   flex-direction: column;

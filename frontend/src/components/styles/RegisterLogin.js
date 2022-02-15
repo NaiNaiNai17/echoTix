@@ -15,7 +15,6 @@ export const RegisterContainer = styled.div.attrs(() => ({
 
   display: flex;
   align-items: center;
-  justify-content: center;
 `;
 
 export const LoginContainer = styled.div.attrs(() => ({
@@ -24,7 +23,6 @@ export const LoginContainer = styled.div.attrs(() => ({
   z-index: 99;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,7 +65,6 @@ export const Form = styled.form.attrs(() => ({
 
 export const LoginForm = styled.form.attrs(() => ({
   className: 'LoginForm',
-  
 }))`
   width: 70%;
   padding: 20px;

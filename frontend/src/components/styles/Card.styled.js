@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div.attrs(() => ({
+export const CardContainer = styled.div.attrs(({ show }) => ({
   className: 'CardContainer',
 }))`
   margin: 10px;
@@ -10,10 +10,15 @@ export const CardContainer = styled.div.attrs(() => ({
   align-items: space-between;
   width: 80%;
   height: 300px;
-  background-color: e0e0e0;
-  -webkit-box-shadow: 5px 5px 15px 5px #c6c6c6;
-  box-shadow: 5px 5px 15px 5px #c6c6c6;
   padding: 40px;
+
+  background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.7),
+      rgba(200, 200, 200, 0.1)
+    ),
+    url(${(props) => props.img});
+  background-size: cover;
 `;
 
 export const Eventname = styled.h3.attrs(() => ({
@@ -28,7 +33,7 @@ export const ImageContainer = styled.div.attrs(() => ({
 }))``;
 
 export const Image = styled.img.attrs(() => ({
-  className: 'Container',
+  className: 'Image',
 }))`
   height: 170px;
   width: 170px;
@@ -38,7 +43,3 @@ export const Image = styled.img.attrs(() => ({
     transform: scale(1.1);
   }
 `;
-
-export const DefaultCardContainer = styled.div.attrs(() => ({
-  className: 'CardContainer',
-}))``;

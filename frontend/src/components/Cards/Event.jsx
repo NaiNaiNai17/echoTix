@@ -1,17 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Tickets from '../Buttons/Tickets';
 
-import { EventContainer, Bandname } from '../../components/styles/Event.styled';
+import { EventContainer, Cityname } from '../../components/styles/Event.styled';
 
 const Event = ({ show }) => {
+  const navigate = useNavigate();
+
+  const OnClickCityHandle = () => {
+    navigate(`/eventdetail`, { replace: true });
+  };
+
   return (
-    <EventContainer img={show.images.large.url}>
-      <Bandname>{show.name}</Bandname>
-      {/* <h3>{show.event_date.value}</h3>
-      <h4>{show.day_of_week}</h4>
-      <h5>{show.venue.name}</h5>
-      <h6>{show.name}</h6> */}
+    <EventContainer
+      style={{ cursor: 'pointer' }}
+      onClick={OnClickCityHandle}
+      img={show.images.large.url}
+    >
+      <Cityname>{show.venue.location.address.city}</Cityname>
     </EventContainer>
   );
 };

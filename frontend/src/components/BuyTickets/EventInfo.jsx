@@ -1,32 +1,41 @@
 import React from 'react';
 
+//* IMPORT COMPONENTS
+
+import TicketInfo from '../../components/BuyTickets/TicketsInfo';
+
+//* IMPORT STYLE COMPONENTS
 import {
   EventInfoContainer,
   EventCity,
   EventTitle,
-  Tables,
+  Image,
+  Table,
   TableRow,
 } from '../../components/styles/BuyTickets.styled';
 
-const EventInfo = () => {
+const EventInfo = ({ show }) => {
+  console.log('Eventinfo', show);
   return (
-    <EventInfoContainer>
-      <EventCity>Hamburg</EventCity>
-      <EventTitle>Alt-J</EventTitle>
-      <Tables>
+    <EventInfoContainer img={show.images.large.url}>
+      <EventCity>{show.venue.location.address.city}</EventCity>
+      <hr />
+      <EventTitle>{show.name}</EventTitle>
+      <Image src={show.images.large.url} />
+      <Table>
         <TableRow>
           <th align="left">Venue</th>
           <th align="left">Date</th>
           <th align="left">Price</th>
-          <th align="left">Available</th>
         </TableRow>
         <TableRow>
-          <td>Große Freiheit 36</td>
-          <td>11.11.2022</td>
+          <td>{show.venue.name}</td>
+          <td>{show.event_date.value}</td>
           <td>32.99</td>
-          <td>299</td>
         </TableRow>
-      </Tables>
+      </Table>
+      <hr />
+      <TicketInfo />
     </EventInfoContainer>
   );
 };
