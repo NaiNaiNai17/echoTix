@@ -15,13 +15,7 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    20deg,
-    rgba(255, 255, 255, 1) 23%,
-    rgba(20, 219, 150, 1) 64%,
-    rgba(55, 55, 55, 1) 100%
-  );
+  background: #0b0b0b;
 `;
 
 //* Left
@@ -60,7 +54,6 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
-
 `;
 
 //* Right
@@ -70,7 +63,7 @@ export const NavRight = styled.div.attrs(() => ({
 }))`
   flex: 1;
   display: flex;
-  color: black;
+  color: white;
   align-items: center;
 `;
 //*** Inside Right Side: TREECOUNTER */

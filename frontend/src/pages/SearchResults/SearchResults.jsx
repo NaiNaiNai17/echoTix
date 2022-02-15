@@ -7,7 +7,6 @@ import { SearchContext } from '../../hoc/MainRouter';
 //* IMPORT COMPONENTS_______________________________
 import Card from '../../components/Cards/Card';
 import Events from '../../components/Cards/Events';
-import EventInfo from '../../components/BuyTickets/EventInfo';
 import EventData from '../../components/BuyTickets/EventData';
 
 //* IMPORT STYLE_____________________________________
@@ -21,20 +20,20 @@ import { useSearchParams } from 'react-router-dom';
 const SearchResults = () => {
   const [results, setResults] = useState([]);
   const [events, setEvents] = useState([]);
-  const { search } = useContext(SearchContext);
-
+  const { setDataName } = useContext(SearchContext);
   const [searchParams, setSearchParams] = useSearchParams();
 
   //* Start: Search by Name (attractioname)_________________
   const getEvents = async () => {
     const name = searchParams.get('name');
-    console.log(searchParams);
     const response = await axios.get(
       `/shows/attractions?attractionName=${name}`
     );
-    console.log('Das ist mein neuer console.log', response.data.payload);
+    // console.log('Das ist mein neuer console.log', response.data.payload);
     setResults(response.data.payload.attractions);
-    console.log('Das ist mein neuer Search', response.data.payload.attractions);
+    // console.log('Das ist mein neuer Search', response.data.payload.attractions);
+    console.log('this is my RESULTS', results);
+    // setDataName(response.data.payload.attractions);
     return response.data.payload.attractions;
   };
 
@@ -46,8 +45,8 @@ const SearchResults = () => {
     );
     console.log('This is my RESULT-DATA', results);
     console.log('This is my EVENT-DATA', events);
-    console.log('AttractionsID', attractions[0].event);
-
+    console.log('AttractionsID', attractionIDs);
+    // setDataName(attractionIDs);
     setEvents(response.data.payload.events);
   };
 
@@ -65,10 +64,10 @@ const SearchResults = () => {
         {results
           ? results.map((event) => <Card event={event} key={event.id} />)
           : 'no shows'}
+
+        <Events events={events} />
+        <EventData events={events}></EventData>
       </Container>
-      <EventCount />
-      <Events events={events} />
-      <EventData events={events}></EventData>
     </>
   );
 };

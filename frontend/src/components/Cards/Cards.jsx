@@ -25,7 +25,6 @@ const Cards = ({ events }) => {
         ? results.map((event) => <Card event={event} key={event.id} />)
         : 'no shows'}
     </Container>
-    
   );
 };
 
