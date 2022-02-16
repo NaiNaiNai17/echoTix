@@ -6,6 +6,12 @@ exports.ticketOrder = async(req,res) =>{
 
     try {
         const newBasket = await Basket.create({
+            artistID: body.artistID,
+            eventID: body.eventID,
+            showDate:body.showDate,
+            img:body.img,
+            city:body.city,
+            venue:body.venue,
             ticketDescription:body.ticketDescription,
             price:body.price,
             vat:body.vat,
@@ -44,8 +50,8 @@ exports.listOrderByCustomer = async(req,res) =>{
     const skipRows = (page - 1) * pageSize
 
     try {
-        const orders = await Basket.find({user:req.params.userid})
-        .populate('user')
+        const basket = await Basket.find({customer:req.user._id})
+        .populate('customer')
         .skip(skipRows)
         .limit(pageSize)
 

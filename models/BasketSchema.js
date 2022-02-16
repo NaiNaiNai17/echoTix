@@ -2,6 +2,10 @@ const {Schema, model, SchemaType} = require('mongoose')
 
 
 const basketSchema = new Schema({
+    
+    artistID:{type:Number, required:true},
+    eventID:{type:Number, required:true},
+    img: {data:Buffer, contentType:String},
     ticketDescription:{type:String, required:true},
     price:{type: Number, required: true},
     vat:{type: Number, required: true},
