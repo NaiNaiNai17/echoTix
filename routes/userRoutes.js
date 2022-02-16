@@ -6,6 +6,9 @@ const controller = require('../controller/userController')
 
 router.post('/register', controller.registerUser)
 router.post('/login', controller.login)
+
+router.use(passport.authenticate("jwt", { session: false }));
+
 router.get('/logout', controller.logout)
 
 

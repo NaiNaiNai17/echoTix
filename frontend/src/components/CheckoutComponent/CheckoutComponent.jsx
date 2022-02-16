@@ -100,7 +100,7 @@ const CheckoutComponent =  () => {
                         fontWeight: '300',
                       }}
                     />
-                    <TicketAmount>2</TicketAmount>
+                    <TicketAmount>{basket.length}</TicketAmount>
                     <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
                   <TicketPrice>{basket.price}</TicketPrice>
