@@ -23,6 +23,7 @@ export const LoginContainer = styled.div.attrs(() => ({
   z-index: 99;
   width: 100vw;
   height: 100vh;
+  color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
