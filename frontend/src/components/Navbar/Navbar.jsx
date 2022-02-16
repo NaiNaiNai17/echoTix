@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
 
 import Badge from '@material-ui/core/Badge';
-import Logo from '../../assets/images/echoTix_Logo.png';
+import Logo from '../../assets/images/imageedit_12_2414757947.png';
 
 import Login from '../Modal/Login';
 
@@ -36,7 +36,7 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [login, setLogin] = useState(true);
-  const [search, setSearch] = useContext(SearchContext);
+  const { search, setSearch } = useContext(SearchContext);
   const navigate = useNavigate();
 
   //* Opens the Login-Modal
@@ -52,7 +52,9 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-
+  const checkoutHandler = () =>{
+    navigate('/checkout')
+  }
   //* Going Home
 
   function goHome() {
@@ -62,16 +64,14 @@ const Navbar = () => {
   return (
     <NavContainer fixed="top">
       <NavWrapper>
-        <NavLeft src={Logo} alt="echotix-logo" onClick={goHome} >
-         
-        </NavLeft>
+        <NavLeft src={Logo} alt="echotix-logo" onClick={goHome}></NavLeft>
         <NavCenter>
           <SearchContainer>
             <Input
               placeholder="Search For Shows"
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
-              value={search}
+              // value={search}
               size="30"
             />
             <FontAwesomeIcon
@@ -114,11 +114,16 @@ const Navbar = () => {
             />
 
             <FontAwesomeIcon
+              onClick={checkoutHandler}
               style={{ cursor: 'pointer' }}
               icon={faShoppingCart}
               size="3x"
             />
-            <Badge badgeContent={4} color="primary"></Badge>
+            <Badge
+              badgeContent={4}
+              color="primary"
+              badgeStyle={{ backgroundColor: '#00AFD7' }}
+            ></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>

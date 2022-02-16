@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -26,7 +27,14 @@ class Counter extends React.Component {
   decrement() {
     this.setState({ count: this.state.count - 1 });
   }
+
   render() {
+    // const navigate = useNavigate();
+
+    // const onBuyHandler = () => {
+    //   navigate(`/shoppingcart`, { replace: true });
+    // };
+
     return (
       <CounterContainer>
         <CounterButtonContainer>
@@ -42,7 +50,7 @@ class Counter extends React.Component {
             style={{ width: '75px', height: '75px' }}
           ></Add>
         </CounterButtonContainer>
-        <Buy />
+        <Buy/>
       </CounterContainer>
     );
   }

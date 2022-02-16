@@ -7,6 +7,7 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
 const ticketRoutes = require('./routes/ticketRoutes')
+const basketRoutes = require('./routes/basketRoutes')
 
 require('dotenv').config()
 
@@ -46,6 +47,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${
 
 app.use('/user',userRoutes)
 app.use('/shows',ticketRoutes)
+app.use('/tickets', basketRoutes)
 
 //3001
 app.listen(PORT, console.log(`server is running on ${PORT}`) )

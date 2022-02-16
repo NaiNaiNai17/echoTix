@@ -6,6 +6,8 @@ export const Container = styled.div.attrs(() => ({
   padding: 20px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const EventsContainer = styled.div.attrs(() => ({
@@ -14,7 +16,6 @@ export const EventsContainer = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 40px;
 `;
 
 export const EventCount = styled.h2.attrs(() => ({
@@ -28,7 +29,7 @@ export const Cityname = styled.h2.attrs(() => ({
   className: 'Cityname',
 }))`
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 7vh;
   text-align: center;
   line-break: normal;
 `;
@@ -55,5 +56,3 @@ export const EventContainer = styled.div.attrs(({ show }) => ({
   box-shadow: 5px 5px 15px 5px #f7f7f7;
   color: #fff;
 `;
-
-

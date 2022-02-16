@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div.attrs(({ show }) => ({
+export const CardContainer = styled.div.attrs(() => ({
   className: 'CardContainer',
 }))`
   margin: 10px;
@@ -11,11 +11,10 @@ export const CardContainer = styled.div.attrs(({ show }) => ({
   width: 80%;
   height: 300px;
   padding: 40px;
-
   background: linear-gradient(
       to left,
       rgba(0, 0, 0, 0.7),
-      rgba(200, 200, 200, 0.1)
+      rgba(200, 200, 200, 0.9)
     ),
     url(${(props) => props.img});
   background-size: cover;

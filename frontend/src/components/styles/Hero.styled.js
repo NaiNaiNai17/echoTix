@@ -38,30 +38,25 @@ export const InfoContainer = styled.div.attrs(() => ({
   opacity: 0;
   justify-content: flex-start;
   flex-direction: column;
+  opacity: 1;
+  background: rgba(55, 55, 55, 0.3);
 
-  ${'' /* opacity: 0; */}
+  p {
+    background: rgb(55, 55, 55);
+    background: linear-gradient(
+      90deg,
+      rgba(55, 55, 55, 1) 100%,
+      rgba(0, 0, 0, 1) 100%
+    );
 
-  :hover {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding: 30px;
+    color: #fff;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     opacity: 1;
-    background: rgba(55, 55, 55, 0.3);
-
-    p {
-      background: rgb(55, 55, 55);
-      background: linear-gradient(
-        90deg,
-        rgba(55, 55, 55, 1) 100%,
-        rgba(0, 0, 0, 1) 100%
-      );
-
-      font-size: 1rem;
-      line-height: 1.2rem;
-      padding: 30px;
-      color: #fff;
-      color: #fff;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      opacity: 1;
-    }
   }
 `;
 

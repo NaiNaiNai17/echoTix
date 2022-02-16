@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
+import axios from '../../util/axiosInstance'
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -36,35 +37,56 @@ import {
   SummaryButton,
 } from '../../components/styles/Checkout.styled';
 
-const CheckoutComponent = () => {
+const CheckoutComponent =  () => {
+
+  const [basketLines,setBasketLines] = useState([])
+  useEffect(() => {
+    loadBasketLines()
+   
+  }, [])
+
+  const loadBasketLines = async () =>{
+   try {
+     const res = await axios.get('/tickets/basket')
+     if(res.status === 200){
+      setBasketLines(res.data.basket)
+     }
+   } catch (error) {
+     console.error('error happened', error)
+   }
+  }
+
   return (
     <CheckoutContainer>
       <WrapAll>
+
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
             <TopButton>Continue Shopping</TopButton>
-            <TopText>Quantatity(4)</TopText>
+            <TopText>Quantity(4)</TopText>
             <TopButton type="filled">Checkout Now</TopButton>
           </CheckoutTop>
           <CheckoutBottom>
             <Info>
-              <Ticket>
+              {basketLines.map((basket)=>(
+                <Ticket>
+        
                 <TicketDetail>
-                  <Image src="https://i.discogs.com/DWQBYCvcOP4mh5ZVwMfHT0v0mD_mh_5rM63T_OzWask/rs:fit/g:sm/q:90/h:595/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTE0/NjQ5MTEtMTU4NjYx/MDc3MS03NzQzLmdp/Zg.jpeg" />
+                  <Image src={basket.img} />
                   <Details>
-                    <City>Hamburg</City>
-                    <EventName>Karate</EventName>
+                    <City>{basket.city}</City>
+                    <EventName>{basket.ticketDescription}</EventName>
                     <Venue>
                       <b>Venue:</b>
-                      <div>Große Freiheit 36</div>
+                      <div>{basket.venue}</div>
                     </Venue>
                     <Date>
                       <b>Date</b>
-                      <div>11.11.2022</div>
+                      <div>{basket.showDate}</div>
                     </Date>
                     <EventID>
-                      <b>EventID</b>
+                      <b>{basket.eventID}</b>
                       <div></div>
                     </EventID>
                   </Details>
@@ -78,12 +100,14 @@ const CheckoutComponent = () => {
                         fontWeight: '300',
                       }}
                     />
-                    <TicketAmount>2</TicketAmount>
+                    <TicketAmount>{basket.length}</TicketAmount>
                     <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
-                  <TicketPrice>EUR 30</TicketPrice>
+                  <TicketPrice>{basket.price}</TicketPrice>
                 </PriceDetail>
               </Ticket>
+              ))}
+              
               <Hr />
               <Ticket>
                 <TicketDetail>

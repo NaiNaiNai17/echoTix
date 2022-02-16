@@ -15,7 +15,8 @@ import {
 } from '../../components/styles/BuyTickets.styled';
 
 const EventInfo = ({ show }) => {
-  console.log('Eventinfo', show);
+  console.log('Eventinfo', show ? 'Show' : 'Noshow');
+
   return (
     <EventInfoContainer img={show.images.large.url}>
       <EventCity>{show.venue.location.address.city}</EventCity>
