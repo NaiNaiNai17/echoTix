@@ -3,7 +3,6 @@ import styled from 'styled-components/macro';
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
-  height: 8rem;
   color: #fff;
   overflow: hidden;
 `;
