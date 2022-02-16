@@ -13,6 +13,7 @@ import EventData from '../pages/BuyTickets/BuyTickets';
 import Register from '../components/Register/Register';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
+import CheckoutComponent from '../components/CheckoutComponent/CheckoutComponent';
 
 //* Use Context
 export const SearchContext = createContext();
@@ -48,6 +49,7 @@ const MainRouter = () => {
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/searchresult/*" element={<SearchResults />} />
             <Route path="/eventdetail" element={<EventData />} />
+            <Route path="/shoppingcart" element={<Checkout />} />
           </Routes>
         </main>
         <Footer />
