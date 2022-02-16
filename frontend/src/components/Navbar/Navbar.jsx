@@ -52,7 +52,9 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-
+  const checkoutHandler = () =>{
+    navigate('/checkout')
+  }
   //* Going Home
 
   function goHome() {
@@ -112,6 +114,7 @@ const Navbar = () => {
             />
 
             <FontAwesomeIcon
+              onClick={checkoutHandler}
               style={{ cursor: 'pointer' }}
               icon={faShoppingCart}
               size="3x"
