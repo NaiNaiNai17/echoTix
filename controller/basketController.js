@@ -10,8 +10,9 @@ exports.ticketOrder = async(req,res) =>{
             price:body.price,
             vat:body.vat,
             fee:body.fee,
-            trees:body.trees,
-            customer:body.customer
+            totalIncVat:body.vat,
+            trees:body.trees, //0.5
+            customer:body.customer //id
         })
         return res.status(200).json({message: 'Basket Created', newBasket})
     } catch (error) {
