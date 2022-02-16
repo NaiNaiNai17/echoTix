@@ -29,7 +29,7 @@ export const Cityname = styled.h2.attrs(() => ({
   className: 'Cityname',
 }))`
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 7vh;
   text-align: center;
   line-break: normal;
 `;

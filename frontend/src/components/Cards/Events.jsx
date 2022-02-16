@@ -4,11 +4,13 @@ import Event from './Event';
 
 import { EventsContainer } from '../../components/styles/Event.styled';
 
-const Events = ({ events }) => {
+const Events = ({ events, onEventClicked }) => {
   return (
     <EventsContainer>
       {events
-        ? events.map((show) => <Event show={show} key={show.id} />)
+        ? events.map((show) => (
+            <Event onEventClicked={onEventClicked} show={show} key={show.id} />
+          ))
         : 'no show'}
     </EventsContainer>
   );

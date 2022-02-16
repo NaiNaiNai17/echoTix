@@ -5,11 +5,13 @@ import Tickets from '../Buttons/Tickets';
 
 import { EventContainer, Cityname } from '../../components/styles/Event.styled';
 
-const Event = ({ show }) => {
+const Event = ({ show, onEventClicked }) => {
   const navigate = useNavigate();
 
-  const OnClickCityHandle = () => {
-    navigate(`/eventdetail`, { replace: true });
+  const OnClickCityHandle = (e) => {
+    e.preventDefault();
+    onEventClicked(show)
+    
   };
 
   return (
@@ -18,7 +20,9 @@ const Event = ({ show }) => {
       onClick={OnClickCityHandle}
       img={show.images.large.url}
     >
-      <Cityname>{show.venue.location.address.city}</Cityname>
+      <Cityname style={{ overflow: 'hidden' }}>
+        {show.venue.location.address.city}
+      </Cityname>
     </EventContainer>
   );
 };
