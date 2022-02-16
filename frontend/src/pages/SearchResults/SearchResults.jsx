@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from '../../util/axiosInstance';
+import { useNavigate } from 'react-router-dom';
 
 //* IMPORT CONTEXT__________________________________
 import { SearchContext } from '../../hoc/MainRouter';
@@ -18,10 +19,12 @@ import { useSearchParams } from 'react-router-dom';
 //* FUNCTION START___________________________________
 
 const SearchResults = () => {
+  const navigate = useNavigate();
   const [results, setResults] = useState([]);
   const [events, setEvents] = useState([]);
   const { setDataName } = useContext(SearchContext);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [currentEventSelected, setCurrentEventSelected] = useState(null);
 
   //* Start: Search by Name (attractioname)_________________
   const getEvents = async () => {
@@ -39,15 +42,20 @@ const SearchResults = () => {
 
   //* Start: Search by Event_ID'S (event_ids)_________________
   const getEventDetails = async (attractions) => {
-    const attractionIDs = attractions[0].id;
-    const response = await axios.get(
-      `/shows/events?attractionIDs=${attractionIDs}`
-    );
-    console.log('This is my RESULT-DATA', results);
-    console.log('This is my EVENT-DATA', events);
-    console.log('AttractionsID', attractionIDs);
-    // setDataName(attractionIDs);
-    setEvents(response.data.payload.events);
+    if (attractions[0]) {
+      const attractionIDs = attractions[0].id;
+      const response = await axios.get(
+        `/shows/events?attractionIDs=${attractionIDs}`
+      );
+      console.log('This is my RESULT-DATA', results);
+      console.log('This is my EVENT-DATA', events);
+      console.log('AttractionsID', attractionIDs);
+      // setDataName(attractionIDs);
+      setEvents(response.data.payload.events);
+    } else {
+      console.log('no attractions', attractions);
+      navigate(`/noshows`, { replace: true });
+    }
   };
 
   useEffect(() => {
@@ -65,8 +73,25 @@ const SearchResults = () => {
           ? results.map((event) => <Card event={event} key={event.id} />)
           : 'no shows'}
 
-        <Events events={events} />
-        <EventData events={events}></EventData>
+        {currentEventSelected ? (
+          <>
+            <button
+              onClick={() => {
+                setCurrentEventSelected(null);
+              }}
+            >
+              Back
+            </button>
+            <EventData show={currentEventSelected}></EventData>
+          </>
+        ) : (
+          <Events
+            events={events}
+            onEventClicked={(show) => {
+              setCurrentEventSelected(show);
+            }}
+          />
+        )}
       </Container>
     </>
   );

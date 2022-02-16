@@ -7,13 +7,12 @@ import Checkout from '../pages/Checkout/Checkout';
 import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
 import SearchResults from '../pages/SearchResults/SearchResults';
-import EventData from '../pages/BuyTickets/BuyTickets';
 
 //* IMPORT COMPONENTS____________________________
 import Register from '../components/Register/Register';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
-import CheckoutComponent from '../components/CheckoutComponent/CheckoutComponent';
+import EventInfo from '../components/BuyTickets/EventInfo';
 
 //* Use Context
 export const SearchContext = createContext();
@@ -48,7 +47,7 @@ const MainRouter = () => {
             <Route path="/noshows" element={<NoShows />} />
             <Route path="/notfound" element={<NotFound />} />
             <Route path="/searchresult/*" element={<SearchResults />} />
-            <Route path="/eventdetail" element={<EventData />} />
+            <Route path="/eventdetail" element={<EventInfo />} />
             <Route path="/shoppingcart" element={<Checkout />} />
           </Routes>
         </main>
