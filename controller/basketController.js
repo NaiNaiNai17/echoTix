@@ -12,9 +12,44 @@ exports.ticketOrder = async(req,res) =>{
             fee:body.fee,
             trees:body.trees,
             customer:body.customer
-
         })
+        return res.status(200).json({message: 'Basket Created', newBasket})
     } catch (error) {
+        return res.status(400).json({message: 'Error creating Basket'})
         
+    }
+}
+
+exports.listOrder = async(req,res) =>{
+    const page = Number(req.query.page) || 1
+    const pageSize = Number(req.query.pageSize) || 10
+
+    const skipRows = (page -1) * pageSize
+
+    try {
+        const orders = await Basket.find().skip(skipRows).limit(pageSize)
+
+        return res.status(200).json({message: 'list of orders', orders})
+    } catch (error) {
+        return res.status(400).json({message: 'Error listing Orders'})
+    }
+}
+
+exports.listOrderByCustomer = async(req,res) =>{
+
+    const page = Number(req,query.page) || 1
+    const pageSize = Number(req.query.pageSize) || 10
+
+    const skipRows = (page - 1) * pageSize
+
+    try {
+        const orders = await Basket.find({user:req.params.userid})
+        .populate('user')
+        .skip(skipRows)
+        .limit(pageSize)
+
+        return res.status(200).json({message:'list of orders', basket})
+    } catch (error) {
+        return res.status(400).json({message:'Error cannot list order'})
     }
 }

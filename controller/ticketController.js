@@ -104,7 +104,7 @@ const getMinPrice = async (id) =>{
       // check the prices and return the minimum
       return response.data
     }).catch(error =>{
-      return error
+      return {}
     })
     
 }
@@ -115,32 +115,47 @@ const getMinPrice = async (id) =>{
  * @returns 
  */
 exports.showInfo = async (req, res) => {
-  const eventRes = await axios.get(process.env.EVENTS_API)
-  const dataArr = await Promise.all(eventRes.data.events.map(async (e) =>{
 
-    const dataObj = {
-      id: e.id,
-      title: e.name,
-      img: e.images,
-      date:e.event_date,
-      url:e.url,
-      venue:e.venue.name,
-      address: [
-        e.venue.location.address.address,
-        e.venue.location.address.postal_code,
-        e.venue.location.address.city,
+  try {
+    const eventRes = await axios.get(process.env.EVENTS_API)
+    const dataArr = await Promise.all(eventRes.data.events.map(async (e) =>{
+  
+      const dataObj = {
+        id: e.id,
+        title: e.name,
+        img: e.images,
+        date:e.event_date,
+        url:e.url,
+        venue:e.venue.name,
+  
+        address: [
+          e.venue.location.address.address,
+          e.venue.location.address.postal_code,
+          e.venue.location.address.city,
+  
+        ]
+      }
+  
+      prices = await getMinPrice(e.id)
+      if(prices.event) {
+        dataObj.prices = prices.event.price_types[0].price_levels[0].face_value
+      } else {
+        return dataObj.prices = 20
+      }
+  
+      return dataObj
+    }))
 
-      ]
-    }
+    return res.status(200).json({ message: "list", payload: dataArr });
+  } catch(error) {
+    res.status(500).json({ message: "error" })
+  }
 
-    prices = await getMinPrice(e.id)
-    dataObj.price = prices.event.price_types[0].price_levels[0].face_value
-    console.log(dataObj.price)
-    return dataObj
+  
 
-}))
 
-  return res.status(200).json({ message: "list", payload: dataArr });
+
+  // return res.status(200).json({ message: "list", payload: dataArr });
 };
 
 
