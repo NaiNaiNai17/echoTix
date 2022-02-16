@@ -11,4 +11,5 @@ export const BuyButton = styled.button.attrs(() => ({
   display: flex;
   justify-content: center;
   border-radius: 100px;
+  cursor: pointer;
 `;

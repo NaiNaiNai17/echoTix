@@ -10,7 +10,6 @@ const EventData = ({ events }) => {
       {events
         ? events.map((show) => <EventInfo show={show} key={show.id} />)
         : 'no show'}
-      {/* <TicketsInfo /> */}
     </EventDataContainer>
   );
 };
