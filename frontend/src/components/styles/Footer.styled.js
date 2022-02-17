@@ -45,11 +45,17 @@ export const SocialIcon = styled.div.attrs(() => ({
   height: 40px;
   border-radius: 50%;
   color: white;
-  background-color: #2a9d8f;
+  background-color: rgba(55, 55, 55);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
+
+  :hover {
+    background-color: rgba(20, 219, 150, 1);
+  }
+  }
 `;
 
 //* Footer Center
@@ -61,12 +67,15 @@ export const FooterCenter = styled.div.attrs(() => ({
   padding: 20px;
   color: white;
   background-color: #184e77;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const FooterTitle = styled.h3.attrs(() => ({
   className: 'FooterTitle',
 }))`
-  margin-bottom: 20px;
+  ${'' /* margin-bottom: 20px; */}
 `;
 
 export const FooterList = styled.ul.attrs(() => ({
@@ -75,8 +84,10 @@ export const FooterList = styled.ul.attrs(() => ({
   margin: 0px;
   padding: 0px;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  ${
+    '' /* display: flex;
+  flex-wrap: wrap; */
+  }
 `;
 
 export const FooterListItem = styled.li.attrs(() => ({
