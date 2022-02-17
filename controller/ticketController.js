@@ -160,6 +160,7 @@ exports.showInfo = async (req, res) => {
 
 
 
+
 exports.searchByName = async (req,res)=>{
 //  const attraction = req.query
   //  const string = req.query

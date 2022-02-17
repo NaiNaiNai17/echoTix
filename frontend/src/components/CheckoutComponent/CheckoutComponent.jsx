@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../util/axiosInstance'
 
 //* Icons Import
@@ -37,8 +38,9 @@ import {
   SummaryButton,
 } from '../../components/styles/Checkout.styled';
 
-const CheckoutComponent =  () => {
 
+const CheckoutComponent =  () => {
+const navigate = useNavigate()
   const [basketLines,setBasketLines] = useState([])
   useEffect(() => {
     loadBasketLines()
@@ -56,6 +58,10 @@ const CheckoutComponent =  () => {
    }
   }
 
+  const continueShopping = () =>{
+    navigate('/')
+  }
+
   return (
     <CheckoutContainer>
       <WrapAll>
@@ -63,7 +69,7 @@ const CheckoutComponent =  () => {
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
-            <TopButton>Continue Shopping</TopButton>
+            <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
             <TopText>Quantity(4)</TopText>
             <TopButton type="filled">Checkout Now</TopButton>
           </CheckoutTop>
