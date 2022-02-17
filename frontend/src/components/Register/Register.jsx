@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from '../../util/axiosInstance'
 
 import {
   RegisterContainer,
@@ -13,6 +14,7 @@ import {
 } from '../styles/RegisterLogin';
 
 const Register = () => {
+   
   return (
     <RegisterContainer>
       <Wrapper>

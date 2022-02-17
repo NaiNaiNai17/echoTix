@@ -11,7 +11,7 @@ const Events = ({ events, onEventClicked }) => {
         ? events.map((show) => (
             <Event onEventClicked={onEventClicked} show={show} key={show.id} />
           ))
-        : 'no show'}
+        : null}
     </EventsContainer>
   );
 };
