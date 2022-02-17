@@ -15,6 +15,7 @@ import {
   RegisterButton,
 } from '../styles/RegisterLogin';
 
+
 const submitHandler = (e) => {
   e.preventDefault();
   console.log('submit');

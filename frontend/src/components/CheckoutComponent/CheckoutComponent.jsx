@@ -70,12 +70,12 @@ const navigate = useNavigate()
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
             <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
-            <TopText>Quantity(4)</TopText>
+            <TopText>Quantity</TopText>
             <TopButton type="filled">Checkout Now</TopButton>
           </CheckoutTop>
           <CheckoutBottom>
             <Info>
-              {basketLines.map((basket)=>(
+              {basketLines ? basketLines.map((basket)=>(
                 <Ticket>
         
                 <TicketDetail>
@@ -112,59 +112,34 @@ const navigate = useNavigate()
                   <TicketPrice>{basket.price}</TicketPrice>
                 </PriceDetail>
               </Ticket>
-              ))}
+              )): 'No card items'}
               
               <Hr />
-              <Ticket>
-                <TicketDetail>
-                  <Image src="https://i.discogs.com/UkAHVId2CtYN8zmwzjFF3k5KLFTwQuAYfJaSWR-7RUY/rs:fit/g:sm/q:90/h:548/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTIz/NDgxODAtMTUwMjEy/MDkxMy01NjgxLmpw/ZWc.jpeg" />
-                  <Details>
-                    <City>Berlin</City>
-                    <EventName>Damien Jurado</EventName>
-                    <Venue>
-                      <b>Venue:</b>
-                      <div>Astra</div>
-                    </Venue>
-                    <Date>
-                      <b>Date</b>
-                      <div>22.11.2022</div>
-                    </Date>
-                    <EventID>
-                      <b>EventID</b>
-                      <div></div>
-                    </EventID>
-                  </Details>
-                </TicketDetail>
-                <PriceDetail>
-                  <TicketAmountCountainer>
-                    <Remove style={{ width: '75px', height: '75px' }} />
-                    <TicketAmount>2</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
-                  </TicketAmountCountainer>
-                  <TicketPrice>EUR 20</TicketPrice>
-                </PriceDetail>
-              </Ticket>
-            </Info>
-            <Summary>
+              {basketLines ? basketLines.map((basket)=>( 
+                <Summary>
               <SummaryTitle>Order Summary</SummaryTitle>
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>EUR 50</SummaryItemPrice>
+                <SummaryItemPrice>{basket.totalIncVat}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
                 <SummaryItemText>Donation</SummaryItemText>
                 <SummaryItemPrice>EUR 20</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax (19% MwST)</SummaryItemText>
-                <SummaryItemPrice>EUR 5</SummaryItemPrice>
+                <SummaryItemText>Tax {basket.vat}</SummaryItemText>
+                <SummaryItemPrice>{basket.fee}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>EUR 50</SummaryItemPrice>
+                <SummaryItemPrice>{basket.totalIncVat}</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>
+              )) : 'none'}
+
+            </Info>
+            
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>

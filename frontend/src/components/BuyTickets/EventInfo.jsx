@@ -3,6 +3,8 @@ import React from 'react';
 //* IMPORT COMPONENTS
 
 import TicketInfo from '../../components/BuyTickets/TicketsInfo';
+import Counter from '../../components/BuyTickets/Counter';
+
 
 //* IMPORT STYLE COMPONENTS
 import {
@@ -31,12 +33,13 @@ const EventInfo = ({ show }) => {
         </TableRow>
         <TableRow>
           <td>{show.venue.name}</td>
-          <td>{show.event_date.value}</td>
+          <td>{new Date(show.event_date.value).toLocaleString()}</td> 
           <td>{show.showPrice}</td>
         </TableRow>
       </Table>
       <hr />
       <TicketInfo />
+      <Counter />
     </EventInfoContainer>
   );
 };

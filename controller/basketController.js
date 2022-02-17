@@ -16,7 +16,7 @@ exports.ticketOrder = async(req,res) =>{
             price:body.price,
             vat:body.vat,
             fee:body.fee,
-            totalIncVat:body.vat,
+            totalIncVat:body.totalIncvat,
             trees:body.trees, //0.5
             customer:body.customer //id
         })
