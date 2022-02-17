@@ -100,13 +100,15 @@ const auth = require('../middleware/auth')
 const getMinPrice = async (id) =>{
     
     return axios.get(`https://app.ticketmaster.eu/mfxapi/v2/events/${id}/prices?domain=germany&lang&price_level_ids&apikey=${process.env.API_KEY}`)
-    .then(response=>{ 
-      // check the prices and return the minimum
-      return response.data
-    }).catch(error =>{
-      return {}
-    })
     
+    
+}
+
+exports.getPricing = async (req,res) =>{
+  const {eventID} = req.query
+  const results = await getMinPrice(eventID)
+ return res.status(200).json({message: 'price by id', payload: results.data.event.price_types[0].price_levels[0].face_value })
+
 }
 /**
  * parse only data we need from ticketmaster api 
@@ -170,4 +172,10 @@ exports.searchByName = async (req,res)=>{
 
   return res.status(200).json({message:'search results', payload: response.data})
 
+}
+
+exports.eventDetails = async ( req,res) =>{
+  const {attractionIDs} = req.query
+  const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/events?domain=germany&prices&price_level_ids&min_price&max_price&price_excl_fees&domain&lang&attraction_ids=${attractionIDs}&category_ids=10001&subcategory_ids&event_ids&event_name&venue_ids&city_ids&country_ids&postal_code&lat&long&radius&eventdate_from=2022-02-27T10:01:00Z&eventdate_to=2023-12-27T10:01:00Z&offsaledate_to&offsaledate_from&min_price&max_price&price_excl_fees&seats_available&cancelled&&is_not_package&sort_by&order&rows&start&exclude_external&apikey=${process.env.API_KEY}`)
+  return res.status(200).json({message: 'event details', payload: response.data})
 }

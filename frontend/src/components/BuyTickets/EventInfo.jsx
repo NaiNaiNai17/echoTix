@@ -32,7 +32,7 @@ const EventInfo = ({ show }) => {
         <TableRow>
           <td>{show.venue.name}</td>
           <td>{show.event_date.value}</td>
-          <td>32.99</td>
+          <td>{show.showPrice}</td>
         </TableRow>
       </Table>
       <hr />

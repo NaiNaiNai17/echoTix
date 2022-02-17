@@ -6,10 +6,10 @@ import {
   Image,
 } from '../../components/styles/Card.styled';
 
-const Card = ({ event }) => {
+const Card = ({ event, onEventClicked }) => {
   console.log('image', event);
   return (
-    <>
+    <div onClick={()=>onEventClicked(event)}>
       {event ? (
         <CardContainer
           img={
@@ -44,7 +44,7 @@ const Card = ({ event }) => {
       ) : (
         ''
       )}
-    </>
+    </div>
   );
 };
 
