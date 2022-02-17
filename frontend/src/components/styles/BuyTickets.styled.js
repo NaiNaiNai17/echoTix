@@ -6,7 +6,6 @@ export const EventDataContainer = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 50px;
 `;
 
 export const EventInfoContainer = styled.div.attrs(() => ({
