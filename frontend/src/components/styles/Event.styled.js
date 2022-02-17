@@ -56,3 +56,12 @@ export const EventContainer = styled.div.attrs(({ show }) => ({
   box-shadow: 5px 5px 15px 5px #f7f7f7;
   color: #fff;
 `;
+
+export const GoBack = styled.button.attrs(() => ({
+  className: 'Cityname',
+}))`
+  font-weight: 300;
+  font-size: 7vh;
+  text-align: center;
+  line-break: normal;
+`;

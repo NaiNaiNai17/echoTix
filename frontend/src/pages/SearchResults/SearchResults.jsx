@@ -12,6 +12,7 @@ import EventData from '../../components/BuyTickets/EventData';
 
 //* IMPORT STYLE_____________________________________
 import { Container, EventCount } from '../../components/styles/Event.styled';
+import { GoBackButton } from '../../components/styles/Buttons/GoBack.styled';
 
 //* IMPORT TOOLS_____________________________________
 import { useSearchParams } from 'react-router-dom';
@@ -25,7 +26,8 @@ const SearchResults = () => {
   const { setDataName } = useContext(SearchContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentEventSelected, setCurrentEventSelected] = useState(null);
-  const [currentAttractionsSelected, setCurrentAttractionsSelected] = useState(null)
+  const [currentAttractionsSelected, setCurrentAttractionsSelected] =
+    useState(null);
 
   //* Start: Search by Name (attractioname)_________________
   const getEvents = async () => {
@@ -47,10 +49,7 @@ const SearchResults = () => {
       const attractionIDs = attraction.id;
       const response = await axios.get(
         `/shows/eventdetails?attractionIDs=${attractionIDs}`
-
       );
-
-      
 
       console.log('This is my RESULT-DATA', results);
       console.log('This is my EVENT-DATA', events);
@@ -62,13 +61,13 @@ const SearchResults = () => {
     }
   };
 
-  const getPricesByID = async (id) =>{
-    const response = await axios.get(`/shows/getprice?eventID=${id}`)
-    return response.data.payload
-  }
+  const getPricesByID = async (id) => {
+    const response = await axios.get(`/shows/getprice?eventID=${id}`);
+    return response.data.payload;
+  };
   useEffect(() => {
-    setCurrentEventSelected(null)
-    setEvents(null)
+    setCurrentEventSelected(null);
+    setEvents(null);
     getEvents().then((attractions) => {
       // getEventDetails(attractions);
     });
@@ -80,26 +79,42 @@ const SearchResults = () => {
     <>
       <Container>
         {results
-          ? results.map((event) => <Card onEventClicked={(event)=>{ getEventDetails(event);}}  event={event} key={event.id} />)
+          ? results.map((event) => (
+              <Card
+                onEventClicked={(event) => {
+                  getEventDetails(event);
+                }}
+                event={event}
+                key={event.id}
+              />
+            ))
           : 'no shows'}
 
         {currentEventSelected ? (
           <>
-            <button
+            {/* <GoBackButton
               onClick={() => {
                 setCurrentEventSelected(null);
               }}
             >
-              Back
-            </button>
+              Go Back
+            </GoBackButton> */}
+            <GoBackButton
+              onClick={() => {
+                setCurrentEventSelected(null);
+              }}
+            >
+              Go Back
+            </GoBackButton>
+
             <EventData show={currentEventSelected}></EventData>
           </>
         ) : (
           <Events
             events={events}
             onEventClicked={async (show) => {
-              const showPrice = await getPricesByID(show.id)
-               show.showPrice = showPrice
+              const showPrice = await getPricesByID(show.id);
+              show.showPrice = showPrice;
               setCurrentEventSelected(show);
             }}
           />
