@@ -24,6 +24,7 @@ const MainRouter = () => {
   const [search, setSearch] = useState('');
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
+  const [customer, setCustomer] = useState({ id: '' });
 
   console.log('this is my dataName', dataName);
 

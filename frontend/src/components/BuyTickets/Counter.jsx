@@ -26,7 +26,10 @@ const Counter = () =>{
   } 
   
   const decrement =()=> {
-  setState(state - 1 );
+    if (state >= 1){
+      setState(state - 1 )
+    }
+  
   setCounter(state)
 }
 
