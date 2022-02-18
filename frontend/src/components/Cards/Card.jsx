@@ -1,25 +1,28 @@
 import React from 'react';
 import {
+  MainCardContainer,
   CardContainer,
   Eventname,
   ImageContainer,
   Image,
+  ShowCount,
 } from '../../components/styles/Card.styled';
 
 const Card = ({ event, onEventClicked }) => {
   console.log('image', event);
   return (
-    <div onClick={()=>onEventClicked(event)}>
+    <MainCardContainer
+      onClick={() => onEventClicked(event)}
+      img={
+        !event.images
+          ? 'https://images.unsplash.com/photo-1595971294624-80bcf0d7eb24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
+          : event.images.standard.url
+          ? event.images.standard.url
+          : event.images.large.url
+      }
+    >
       {event ? (
-        <CardContainer
-          img={
-            !event.images
-              ? 'https://images.unsplash.com/photo-1595971294624-80bcf0d7eb24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80'
-              : event.images.standard.url
-              ? event.images.standard.url
-              : event.images.large.url
-          }
-        >
+        <CardContainer>
           <h2>Top Search Results:</h2>
           <hr />
           <Eventname>{event.name}</Eventname>
@@ -33,18 +36,17 @@ const Card = ({ event, onEventClicked }) => {
                   : event.images.large.url
               }
             />
-            <h3>
-              {' '}
+            <ShowCount>
               {event.event_count > 0
-                ? event.event_count
+                ? `${event.event_count} Shows available`
                 : 'There are No Shows available'}
-            </h3>
+            </ShowCount>
           </ImageContainer>
         </CardContainer>
       ) : (
         ''
       )}
-    </div>
+    </MainCardContainer>
   );
 };
 

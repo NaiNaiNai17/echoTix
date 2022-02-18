@@ -40,6 +40,7 @@ export const EventCity = styled.h4.attrs(() => ({
 }))`
   margin-bottom: 5px;
   text-transform: uppercase;
+  font-size: 3rem;
 `;
 
 export const Image = styled.img.attrs(() => ({

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div.attrs(() => ({
-  className: 'CardContainer',
+export const MainCardContainer = styled.div.attrs(() => ({
+  className: 'MainCardContainer',
 }))`
   margin: 10px;
   display: flex;
@@ -20,6 +20,10 @@ export const CardContainer = styled.div.attrs(() => ({
   background-size: cover;
 `;
 
+export const CardContainer = styled.div.attrs(() => ({
+  className: 'CardContainer',
+}))``;
+
 export const Eventname = styled.h3.attrs(() => ({
   className: 'Eventname',
 }))`
@@ -29,16 +33,24 @@ export const Eventname = styled.h3.attrs(() => ({
 
 export const ImageContainer = styled.div.attrs(() => ({
   className: 'ImageContainer',
-}))``;
+}))`
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const Image = styled.img.attrs(() => ({
   className: 'Image',
 }))`
-  height: 170px;
-  width: 170px;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
+`;
 
-  &:hover {
-    transform: scale(1.1);
-  }
+export const ShowCount = styled.h3.attrs(() => ({
+  className: 'ShowCount',
+}))`
+  font-size: 2rem;
+  color: #fff;
 `;
