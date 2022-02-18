@@ -44,14 +44,13 @@ const Footer = () => {
         <FooterList>
           <FooterListItem>Home</FooterListItem>
           <FooterListItem>Shopping Cart</FooterListItem>
-          <FooterListItem>AGB</FooterListItem>
           <FooterListItem>Impressum</FooterListItem>
-          <FooterListItem>Afforestation</FooterListItem>
-          <FooterListItem>Afforestation</FooterListItem>
         </FooterList>
         <SocialContainer>
           <SocialIcon>
-            <FacebookIcon color="3B5999" />
+            <a href="https://de-de.facebook.com/">
+              <FacebookIcon color="3B5999" />
+            </a>
           </SocialIcon>
           <SocialIcon>
             <InstagramIcon color="E4405F" />
