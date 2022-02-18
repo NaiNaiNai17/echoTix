@@ -23,6 +23,8 @@ const MainRouter = () => {
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState('');
   const [dataName, setDataName] = useState('');
+  const [counter, setCounter] = useState('');
+
   console.log('this is my dataName', dataName);
 
   return (
@@ -35,6 +37,7 @@ const MainRouter = () => {
           setSearch,
           dataName,
           setDataName,
+          setCounter
         }}
       >
         <Navbar />

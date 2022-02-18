@@ -1,5 +1,4 @@
 import React from 'react';
-import Counter from '../../components/BuyTickets/Counter';
 import Buy from '../../components/Buttons/Buy';
 
 import {
@@ -14,7 +13,7 @@ const TicketsInfo = () => {
       <TicketsDataContainer>
         <TicketInfo>
           <TicketH1>Get Your Tickets</TicketH1>
-          <Counter />
+
         </TicketInfo>
       </TicketsDataContainer>
     
