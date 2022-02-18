@@ -18,6 +18,7 @@ export const CardTicketButton = styled.button.attrs(() => ({
   className: 'CardTicketButton',
 }))`
   padding: 10px;
+  margin-bottom: 40px;
   width: 10rem;
   background-color: #2e8268;
   color: #fff;
