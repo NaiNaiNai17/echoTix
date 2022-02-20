@@ -22,7 +22,7 @@ import { useSearchParams } from 'react-router-dom';
 const SearchResults = () => {
   const navigate = useNavigate();
   const [results, setResults] = useState([]);
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]); // needs to be accessible from the Buttons/Buy.tsx to mainrouter
   const { setDataName } = useContext(SearchContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentEventSelected, setCurrentEventSelected] = useState(null);
