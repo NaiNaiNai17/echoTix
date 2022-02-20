@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
 
 export const SubheroItemContainer = styled.div.attrs(() => ({
   className: 'SubheroItemContainer',
@@ -42,6 +43,8 @@ export const Info = styled.div.attrs(() => ({
     margin-bottom: 1rem;
     transform: scale(1.25);
   }
+
+  ${mobile({ opacity: '1' })};
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -51,4 +54,6 @@ export const Title = styled.h1.attrs(() => ({
   font-size: 4rem;
   font-weight: bold;
   font-family: Edo;
+
+  ${mobile({ fontSize: '3rem' })};
 `;

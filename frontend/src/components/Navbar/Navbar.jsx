@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
+import { mobile } from '../../responsive';
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
@@ -52,9 +53,9 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-  const checkoutHandler = () =>{
-    navigate('/checkout')
-  }
+  const checkoutHandler = () => {
+    navigate('/checkout');
+  };
   //* Going Home
 
   function goHome() {
@@ -74,12 +75,12 @@ const Navbar = () => {
               // value={search}
               size="30"
             />
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faSearch}
               onClick={searchHandler}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
-            />
+            /> */}
           </SearchContainer>
         </NavCenter>
 
