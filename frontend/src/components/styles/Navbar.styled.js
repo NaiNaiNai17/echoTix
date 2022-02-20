@@ -5,6 +5,9 @@ export const NavContainer = styled.div.attrs(() => ({
 }))`
   color: #fff;
   overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
