@@ -1,11 +1,14 @@
 import React from 'react';
+
 import {
   MainCardContainer,
+  ResultContainer,
   CardContainer,
   Eventname,
   ImageContainer,
   Image,
   ShowCount,
+  ShowButton,
 } from '../../components/styles/Card.styled';
 
 const Card = ({ event, onEventClicked }) => {
@@ -23,9 +26,18 @@ const Card = ({ event, onEventClicked }) => {
     >
       {event ? (
         <CardContainer>
-          <h2>Top Search Results:</h2>
+          <ResultContainer>
+            <h2>Top Search Results:</h2>
+            <ShowCount>
+              {event.event_count > 0
+                ? `${event.event_count} Shows available`
+                : 'There are No Shows available'}
+            </ShowCount>
+          </ResultContainer>
+
           <hr />
           <Eventname>{event.name}</Eventname>
+
           <ImageContainer>
             <Image
               src={
@@ -36,11 +48,8 @@ const Card = ({ event, onEventClicked }) => {
                   : event.images.large.url
               }
             />
-            <ShowCount>
-              {event.event_count > 0
-                ? `${event.event_count} Shows available`
-                : 'There are No Shows available'}
-            </ShowCount>
+
+            <ShowButton>Shows</ShowButton>
           </ImageContainer>
         </CardContainer>
       ) : (

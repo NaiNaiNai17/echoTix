@@ -9,7 +9,7 @@ export const MainCardContainer = styled.div.attrs(() => ({
   flex-direction: column;
   align-items: space-between;
   width: 80%;
-  height: 300px;
+  height: 400px;
   padding: 40px;
   background: linear-gradient(
       to left,
@@ -20,9 +20,25 @@ export const MainCardContainer = styled.div.attrs(() => ({
   background-size: cover;
 `;
 
+export const ResultContainer = styled.div.attrs(() => ({
+  className: 'ResultContainer',
+}))`
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline;
+  h2 {
+    margin-right: 30px;
+  }
+`;
+
 export const CardContainer = styled.div.attrs(() => ({
   className: 'CardContainer',
-}))``;
+}))`
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+`;
 
 export const Eventname = styled.h3.attrs(() => ({
   className: 'Eventname',
@@ -34,18 +50,46 @@ export const Eventname = styled.h3.attrs(() => ({
 export const ImageContainer = styled.div.attrs(() => ({
   className: 'ImageContainer',
 }))`
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
+  height: 200px;
+  width: 200px;
 `;
 
 export const Image = styled.img.attrs(() => ({
   className: 'Image',
 }))`
-  height: 200px;
-  width: 200px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
+  cursor: pointer;
+
+  :hover {
+    box-shadow: 0 0 10px 5px;
+    opacity: 1;
+  }
+`;
+
+export const ShowButton = styled.button.attrs(() => ({
+  className: 'ShowButton',
+}))`
+  position: absolute;
+  top: 30%;
+  left: 13%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  width: 10rem;
+  background-color: transparent;
+
+  color: white;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+  cursor: pointer;
+  :hover {
+    background-color: #2e8268;
+  }
 `;
 
 export const ShowCount = styled.h3.attrs(() => ({
