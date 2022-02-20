@@ -8,6 +8,7 @@ export const NavContainer = styled.div.attrs(() => ({
   position: sticky;
   top: 0;
   z-index: 99;
+  background-color: rgb(56, 58, 57);
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -17,7 +18,8 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #0b0b0b;
+
+  ${'' /* background: #0b0b0b; */}
 `;
 
 //* Left

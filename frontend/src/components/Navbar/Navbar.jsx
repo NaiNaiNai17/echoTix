@@ -32,6 +32,7 @@ import {
   NavWrapper,
   Input,
 } from '../../components/styles/Navbar.styled';
+import { useEffect } from 'react';
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -52,9 +53,9 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-  const checkoutHandler = () =>{
-    navigate('/checkout')
-  }
+  const checkoutHandler = () => {
+    navigate('/checkout');
+  };
   //* Going Home
 
   function goHome() {
@@ -62,7 +63,7 @@ const Navbar = () => {
   }
 
   return (
-    <NavContainer fixed="top">
+    <NavContainer>
       <NavWrapper>
         <NavLeft src={Logo} alt="echotix-logo" onClick={goHome}></NavLeft>
         <NavCenter>
