@@ -30,7 +30,7 @@ export const LoginContainer = styled.div.attrs(() => ({
   position: fixed;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 100%;
   transform: translate(-20%, -30%);
 `;
 
