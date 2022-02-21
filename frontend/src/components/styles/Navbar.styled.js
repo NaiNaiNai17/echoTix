@@ -1,4 +1,6 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
+import { tablet } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
@@ -14,8 +16,8 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #0b0b0b;
   flex-flow: row nowrap;
+  ${tablet({ padding: '0px', width: '100px' })};
 `;
 
 //* Left
@@ -31,6 +33,7 @@ export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
   flex: 1;
+  ${mobile({ width: '200px' })};
 `;
 //* Search Box
 
@@ -44,6 +47,7 @@ export const SearchContainer = styled.div.attrs(() => ({
   color: black;
   padding: 10px 40px 10px 5px;
   background-color: #fff;
+  ${mobile({ width: '80px' })};
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -54,6 +58,7 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
+  ${mobile({ width: '80px' })};
 `;
 
 //* Right
@@ -65,7 +70,19 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
-  
+
+  ${tablet({
+    display: 'none',
+    flexFlow: 'column nowrap',
+    backgroundColor: 'black',
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    height: '100vh',
+    width: '100vw',
+    paddingTop: '3.5rem',
+    zIndex: '99',
+  })};
 `;
 //*** Inside Right Side: TREECOUNTER */
 export const TreecountNumber = styled.span.attrs(() => ({
@@ -91,12 +108,18 @@ export const NavUserItem = styled.div.attrs(() => ({
 }))`
   display: flex;
   justify-content: space-around;
-
+  ${tablet({
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '20px',
+  })};
   .MuiBadge-colorPrimary {
     background-color: gray;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    top: 30px;
+    right: 30px;
 
     span {
       size: 30px;
@@ -109,8 +132,35 @@ export const NavUserItem = styled.div.attrs(() => ({
 export const BurgerMenue = styled.div.attrs(() => ({
   className: 'BurgerMenue',
 }))`
-  width: 60%;
+  height: 40px;
+  position: relative;
+  top: 33px;
+  right: 0px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-flow: column nowrap;
+
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    background: ${({ open }) => (open ? '#ccc' : '#333')};
+    padding: 2px;
+    margin: 1px;
+    border-radius: 10px;
+    transform-origin: 1px;
+
+    &:nth-child(1) {
+      transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
+    }
+
+    &:nth-child(2) {
+      transform: ${({ open }) =>
+        open ? 'translateX(100%)' : 'translateX(0%)'};
+      opacitiy: ${({ open }) => (open ? 0 : 1)};
+    }
+
+    &:nth-child(3) {
+      transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
+    }
+  }
 `;

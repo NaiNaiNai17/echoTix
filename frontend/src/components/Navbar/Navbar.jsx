@@ -7,6 +7,10 @@ import Logo from '../../assets/images/imageedit_12_2414757947.png';
 
 import Login from '../Modal/Login';
 
+//* Import Component
+
+import Burger from '../Navbar/Burger';
+
 //* Imported Icons from Fontawesome
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,9 +56,9 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-  const checkoutHandler = () =>{
-    navigate('/checkout')
-  }
+  const checkoutHandler = () => {
+    navigate('/checkout');
+  };
   //* Going Home
 
   function goHome() {
@@ -62,7 +66,7 @@ const Navbar = () => {
   }
 
   return (
-    <NavContainer fixed="top">
+    <NavContainer>
       <NavWrapper>
         <NavLeft src={Logo} alt="echotix-logo" onClick={goHome}></NavLeft>
         <NavCenter>
@@ -71,8 +75,7 @@ const Navbar = () => {
               placeholder="Search For Shows"
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
-              // value={search}
-              size="30"
+              value={search}
             />
             <FontAwesomeIcon
               icon={faSearch}
@@ -85,8 +88,17 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
-            <TreecountNumber>43.333</TreecountNumber>
-            <FontAwesomeIcon icon={faSeedling} size="3x" />
+            {/* <TreecountNumber>43.333</TreecountNumber> */}
+            <FontAwesomeIcon
+              icon={faSeedling}
+              size="3x"
+              style={{
+                cursor: 'pointer',
+                backgroundColor: 'transparent',
+                border: 'none',
+                padding: '30px',
+              }}
+            />
           </NavTreecount>
           <NavUserItem>
             <FontAwesomeIcon
@@ -98,7 +110,7 @@ const Navbar = () => {
                 display: login ? 'block' : 'none',
                 backgroundColor: 'transparent',
                 border: 'none',
-                paddingRight: '30px',
+                padding: '30px',
               }}
             />
             <FontAwesomeIcon
@@ -109,13 +121,13 @@ const Navbar = () => {
                 display: login ? 'block' : 'none',
                 backgroundColor: 'transparent',
                 border: 'none',
-                paddingRight: '30px',
+                padding: '30px',
               }}
             />
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', padding: '30px' }}
               icon={faShoppingCart}
               size="3x"
             />
@@ -124,10 +136,10 @@ const Navbar = () => {
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
+            <Burger />
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
-        
       </NavWrapper>
     </NavContainer>
   );

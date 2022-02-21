@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react';
+
+import { BurgerMenue } from '../../components/styles/Navbar.styled';
 
 const Burger = () => {
+  const [open, setOpen] = useState(false);
   return (
-    <div>Burger</div>
-  )
-}
+    <BurgerMenue open={open} onClick={() => setOpen(!open)}>
+      <div />
+      <div />
+      <div />
+    </BurgerMenue>
+  );
+};
 
-export default Burger
+export default Burger;
