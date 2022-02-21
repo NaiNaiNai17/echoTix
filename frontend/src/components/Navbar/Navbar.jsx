@@ -1,18 +1,17 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
+import axios from '../../util/axiosInstance';
+import Logout from '../Logout/Logout';
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
-
 import Login from '../Modal/Login';
 
 //* Import Component
-
-import Burger from '../Navbar/Burger';
+import Burger from './Burger';
 
 //* Imported Icons from Fontawesome
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -39,9 +38,21 @@ import {
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
-  const [login, setLogin] = useState(true);
-  const { search, setSearch } = useContext(SearchContext);
+  const { loggedIn, search, setSearch } = useContext(SearchContext);
   const navigate = useNavigate();
+
+  // const LoggingOut = () =>{
+  //   useEffect(() => {
+  //     async function logout(){
+  //       const response = await axios.get('/user/logout')
+  //       console.log(response)
+  //       navigate('/')
+  //     }
+  //     setTimeout(()=>{
+  //       logout()
+  //   },1000)
+  //   }, [])
+  // }
 
   //* Opens the Login-Modal
   const openModal = () => {
@@ -75,12 +86,13 @@ const Navbar = () => {
               placeholder="Search For Shows"
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
-              value={search}
+              // value={search}
+              size="30"
             />
             <FontAwesomeIcon
               icon={faSearch}
               onClick={searchHandler}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
             />
           </SearchContainer>
@@ -88,17 +100,8 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
-            {/* <TreecountNumber>43.333</TreecountNumber> */}
-            <FontAwesomeIcon
-              icon={faSeedling}
-              size="3x"
-              style={{
-                cursor: 'pointer',
-                backgroundColor: 'transparent',
-                border: 'none',
-                padding: '30px',
-              }}
-            />
+            <TreecountNumber>43.333</TreecountNumber>
+            <FontAwesomeIcon icon={faSeedling} size="3x" />
           </NavTreecount>
           <NavUserItem>
             <FontAwesomeIcon
@@ -107,27 +110,30 @@ const Navbar = () => {
               size="3x"
               style={{
                 cursor: 'pointer',
-                display: login ? 'block' : 'none',
+                display: loggedIn ? 'none' : 'block',
                 backgroundColor: 'transparent',
                 border: 'none',
-                padding: '30px',
+                paddingRight: '30px',
               }}
             />
-            <FontAwesomeIcon
-              icon={faSignOutAlt}
-              size="3x"
-              style={{
-                cursor: 'pointer',
-                display: login ? 'block' : 'none',
-                backgroundColor: 'transparent',
-                border: 'none',
-                padding: '30px',
-              }}
-            />
+            <div>
+              <FontAwesomeIcon
+                onClick={() => navigate('/logout')}
+                icon={faSignOutAlt}
+                size="3x"
+                style={{
+                  cursor: 'pointer',
+                  display: loggedIn ? 'block' : 'none',
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  paddingRight: '30px',
+                }}
+              />
+            </div>
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
-              style={{ cursor: 'pointer', padding: '30px' }}
+              style={{ cursor: 'pointer' }}
               icon={faShoppingCart}
               size="3x"
             />
@@ -136,10 +142,10 @@ const Navbar = () => {
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
-            <Burger />
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
+        <Burger/>
       </NavWrapper>
     </NavContainer>
   );

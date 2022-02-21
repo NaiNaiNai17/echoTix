@@ -6,7 +6,6 @@ export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   color: #fff;
-  overflow: hidden;
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -70,19 +69,6 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
-
-  ${tablet({
-    display: 'none',
-    flexFlow: 'column nowrap',
-    backgroundColor: 'black',
-    position: 'fixed',
-    top: '0',
-    right: '0',
-    height: '100vh',
-    width: '100vw',
-    paddingTop: '3.5rem',
-    zIndex: '99',
-  })};
 `;
 //*** Inside Right Side: TREECOUNTER */
 export const TreecountNumber = styled.span.attrs(() => ({
@@ -133,21 +119,29 @@ export const BurgerMenue = styled.div.attrs(() => ({
   className: 'BurgerMenue',
 }))`
   height: 40px;
-  position: relative;
-  top: 33px;
-  right: 0px;
-  display: flex;
-  justify-content: space-evenly;
+  position: fixed;
+  top: 40px;
+  right: 20px;
+  display: none;
+  justify-content: space-around;
   flex-flow: column nowrap;
+  padding-left: 50px;
+  z-index: 120;
+
+  ${mobile({
+    display: 'flex',
+    justifyContent: ' space-around',
+    flexFlow: 'column nowrap',
+  })};
 
   div {
-    width: 2rem;
+    width: 38px;
     height: 0.25rem;
-    background: ${({ open }) => (open ? '#ccc' : '#333')};
-    padding: 2px;
-    margin: 1px;
+    background-color: ${({ open }) => (open ? '#ccc' : '#fff')};
+    padding: 1px;
     border-radius: 10px;
     transform-origin: 1px;
+    transition: all 0.3s linear;
 
     &:nth-child(1) {
       transform: ${({ open }) => (open ? 'rotate(45deg)' : 'rotate(0)')};
@@ -155,7 +149,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
 
     &:nth-child(2) {
       transform: ${({ open }) =>
-        open ? 'translateX(100%)' : 'translateX(0%)'};
+        open ? 'translateX(200%)' : 'translateX(0%)'};
       opacitiy: ${({ open }) => (open ? 0 : 1)};
     }
 
@@ -163,4 +157,49 @@ export const BurgerMenue = styled.div.attrs(() => ({
       transform: ${({ open }) => (open ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
+`;
+
+export const ToggleContainer = styled.div.attrs(() => ({
+  className: 'ToggleContainer',
+}))`
+  display: none;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: Edo;
+  list-style: none;
+  overflow: hidden;
+  color: black;
+  background: rgb(231, 254, 236);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    60deg,
+    rgb(255, 255, 255) 30%,
+    rgba(41, 209, 158, 0.7) 60%,
+    rgba(4, 52, 41, 1) 100%
+  );
+
+  ul {
+    padding-top: 100px;
+
+    li {
+      font-family: Edo;
+      list-style: none;
+    }
+  }
+
+  ${mobile({
+    display: 'flex',
+    transform: `${({ open }) =>
+      open ? 'translateX(0%)' : 'translateX(100%)'}`,
+    flexFlow: 'column nowrap',
+    justifyContent: 'flexStart',
+    backgroundColor: 'black',
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    height: '100vh',
+    width: '100vw',
+    zIndex: '99',
+  })};
 `;
