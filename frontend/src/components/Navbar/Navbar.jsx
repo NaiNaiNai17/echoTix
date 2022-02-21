@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
+import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance'
 import Logout from '../Logout/Logout'
 
@@ -95,10 +96,14 @@ const Navbar = () => {
             <FontAwesomeIcon
               icon={faSearch}
               onClick={searchHandler}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
+
+            /> 
+
               
-            />
+           
+
           </SearchContainer>
         </NavCenter>
 

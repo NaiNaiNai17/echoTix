@@ -1,14 +1,25 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   color: #fff;
+
+  height: 120px;
+  background: rgba(52, 52, 52);
+  ${mobile({
+    height: '4rem',
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+  })};
   overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 99;
   background-color: rgb(56, 58, 57);
+
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -19,7 +30,14 @@ export const NavWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
 
+  ${mobile({
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '5px 5px',
+  })};
+
   ${'' /* background: #0b0b0b; */}
+
 `;
 
 //* Left
@@ -28,6 +46,7 @@ export const NavLeft = styled.img.attrs(() => ({
 }))`
   width: 200px;
   cursor: pointer;
+  ${mobile({ width: '7rem' })};
 `;
 
 //* Center
@@ -35,6 +54,7 @@ export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
   flex: 1;
+  ${mobile({ flex: '0' })};
 `;
 //* Search Box
 
@@ -48,6 +68,7 @@ export const SearchContainer = styled.div.attrs(() => ({
   color: black;
   padding: 10px 40px 10px 5px;
   background-color: #fff;
+  ${mobile({ padding: '0px 20px 0px 5px', width: '12rem' })};
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -58,6 +79,7 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
+  ${mobile({ width: '100%' })};
 `;
 
 //* Right
@@ -69,6 +91,8 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
+  ${'' /* ${mobile({ fontSize: '0.5rem', flex: '2' })}; */}
+  ${mobile({ display: 'none' })};
 `;
 //*** Inside Right Side: TREECOUNTER */
 export const TreecountNumber = styled.span.attrs(() => ({
@@ -77,6 +101,7 @@ export const TreecountNumber = styled.span.attrs(() => ({
   margin-right: 30px;
   font-size: 2rem;
   font-weight: bold;
+  ${mobile({ display: 'none' })};
 `;
 
 export const NavTreecount = styled.div.attrs(() => ({
@@ -86,6 +111,7 @@ export const NavTreecount = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+  ${mobile({ display: 'none' })};
 `;
 
 //*** Inside Right Side: USERICONS */

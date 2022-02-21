@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
 
 export const SubheroContainer = styled.div.attrs(() => ({
   className: 'SubheroContainer',
@@ -13,4 +14,5 @@ export const SubheroContainer = styled.div.attrs(() => ({
     rgba(20, 219, 150, 1) 64%,
     rgba(55, 55, 55, 1) 100%
   );
+  ${mobile({ flexDirection: 'column' })};
 `;
