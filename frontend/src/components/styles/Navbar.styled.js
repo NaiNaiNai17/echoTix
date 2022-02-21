@@ -15,6 +15,7 @@ export const NavWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
   background: #0b0b0b;
+  flex-flow: row nowrap;
 `;
 
 //* Left
@@ -64,6 +65,7 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
+  
 `;
 //*** Inside Right Side: TREECOUNTER */
 export const TreecountNumber = styled.span.attrs(() => ({
@@ -100,4 +102,15 @@ export const NavUserItem = styled.div.attrs(() => ({
       size: 30px;
     }
   }
+`;
+
+//* Burger Menue
+
+export const BurgerMenue = styled.div.attrs(() => ({
+  className: 'BurgerMenue',
+}))`
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

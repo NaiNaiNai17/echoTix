@@ -127,6 +127,7 @@ const Navbar = () => {
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
+        
       </NavWrapper>
     </NavContainer>
   );
