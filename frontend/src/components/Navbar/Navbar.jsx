@@ -1,6 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
+import axios from '../../util/axiosInstance'
+import Logout from '../Logout/Logout'
+
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
@@ -33,12 +36,26 @@ import {
   Input,
 } from '../../components/styles/Navbar.styled';
 
+
+
 const Navbar = () => {
+
   const [showModal, setShowModal] = useState(false);
-  const [login, setLogin] = useState(true);
-  const { search, setSearch } = useContext(SearchContext);
+  const { loggedIn,search, setSearch } = useContext(SearchContext);
   const navigate = useNavigate();
 
+  // const LoggingOut = () =>{
+  //   useEffect(() => {
+  //     async function logout(){
+  //       const response = await axios.get('/user/logout')
+  //       console.log(response)
+  //       navigate('/')
+  //     }
+  //     setTimeout(()=>{
+  //       logout()  
+  //   },1000) 
+  //   }, [])
+  // }
   //* Opens the Login-Modal
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -79,6 +96,7 @@ const Navbar = () => {
               onClick={searchHandler}
               style={{ cursor: 'pointer' }}
               size="2x"
+              
             />
           </SearchContainer>
         </NavCenter>
@@ -95,23 +113,25 @@ const Navbar = () => {
               size="3x"
               style={{
                 cursor: 'pointer',
-                display: login ? 'block' : 'none',
+                display: loggedIn ? 'none':'block',
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
             />
+            <div>
             <FontAwesomeIcon
-              icon={faSignOutAlt}
+            onClick={()=> navigate('/logout')}
+            icon={faSignOutAlt}
               size="3x"
               style={{
                 cursor: 'pointer',
-                display: login ? 'block' : 'none',
+                display: loggedIn ? 'block':'none',
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
-            />
+            /></div>
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
