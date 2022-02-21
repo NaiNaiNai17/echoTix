@@ -5,6 +5,7 @@ export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   color: #fff;
+
   height: 120px;
   background: rgba(52, 52, 52);
   ${mobile({
@@ -13,6 +14,12 @@ export const NavContainer = styled.div.attrs(() => ({
     display: 'flex',
     alignItems: 'center',
   })};
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: rgb(56, 58, 57);
+
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -22,11 +29,15 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   ${mobile({
     alignItems: 'center',
     justifyContent: 'flex-start',
     padding: '5px 5px',
   })};
+
+  ${'' /* background: #0b0b0b; */}
+
 `;
 
 //* Left
