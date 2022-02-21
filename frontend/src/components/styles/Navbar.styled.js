@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
 import { tablet } from '../../responsive';
+import { tabletSmall } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
@@ -16,7 +17,8 @@ export const NavWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
   flex-flow: row nowrap;
-  ${tablet({ padding: '0px', width: '100px' })};
+  ${tablet({ padding: '10px 20px', width: '100px' })};
+  ${tabletSmall({ padding: '5px 10px', width: '50px' })};
 `;
 
 //* Left
@@ -31,8 +33,9 @@ export const NavLeft = styled.img.attrs(() => ({
 export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
-  flex: 1;
-  ${mobile({ width: '200px' })};
+  width: 400px;
+  ${mobile({ width: '150px' })};
+  ${tablet({ width: '300px' })};
 `;
 //* Search Box
 
@@ -52,12 +55,14 @@ export const SearchContainer = styled.div.attrs(() => ({
 export const Input = styled.input.attrs(() => ({
   className: 'Input',
 }))`
+  width: 300px;
   font-size: 1.5rem;
   box-shadow: none;
   border: 0;
   outline: none;
   text-align: left;
   ${mobile({ width: '80px' })};
+  ${tablet({ width: '200px' })};
 `;
 
 //* Right
@@ -70,6 +75,7 @@ export const NavRight = styled.div.attrs(() => ({
   color: white;
   align-items: center;
 `;
+
 //*** Inside Right Side: TREECOUNTER */
 export const TreecountNumber = styled.span.attrs(() => ({
   className: 'TreecountNumber',
@@ -86,6 +92,7 @@ export const NavTreecount = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+  ${tablet({ width: '150px', padding: '0px' })};
 `;
 
 //*** Inside Right Side: USERICONS */
@@ -95,17 +102,17 @@ export const NavUserItem = styled.div.attrs(() => ({
   display: flex;
   justify-content: space-around;
   ${tablet({
-    flexDirection: 'column',
     alignItems: 'center',
-    padding: '20px',
+    padding: '0px',
   })};
   .MuiBadge-colorPrimary {
     background-color: gray;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    top: 30px;
-    right: 30px;
+    top: 0px;
+    right: 0px;
+    ${tablet({ top: '-15px', right: '5px' })};
 
     span {
       size: 30px;

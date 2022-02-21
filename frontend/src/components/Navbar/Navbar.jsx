@@ -100,7 +100,7 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
-            <TreecountNumber>43.333</TreecountNumber>
+            {/* <TreecountNumber>43.333</TreecountNumber> */}
             <FontAwesomeIcon icon={faSeedling} size="3x" />
           </NavTreecount>
           <NavUserItem>
@@ -145,7 +145,7 @@ const Navbar = () => {
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
-        <Burger/>
+        <Burger />
       </NavWrapper>
     </NavContainer>
   );
