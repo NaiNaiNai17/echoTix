@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import axios from '../../util/axiosInstance';
 import { useNavigate } from 'react-router-dom';
+import {SearchContext} from '../../hoc/MainRouter'
 
 import {
   LoginContainer,
@@ -16,16 +17,20 @@ import {
 } from '../styles/RegisterLogin';
 
 
+const Login = ({ showModal, setShowModal }) => {
+  const {setLoggedIn, loggedIn} = useContext(SearchContext)
+  const navigate = useNavigate();
+
 const submitHandler = (e) => {
-  e.preventDefault();
+  e.preventDefault()
+  setShowModal(false)
+  navigate('/register')
   console.log('submit');
 };
 
-const Login = ({ showModal, setShowModal }) => {
-  const navigate = useNavigate();
-
   const onSubmitHandle = async (e) => {
     e.preventDefault();
+
 
     const formData = new FormData(e.target);
 
@@ -39,13 +44,16 @@ const Login = ({ showModal, setShowModal }) => {
         'http://localhost:3001/user/login',
         data
       );
+      setShowModal(false);
+      setLoggedIn(true);
       console.log('user is logged in');
       navigate('/');
+
     } catch (error) {
       console.log(error, 'cannot log user in');
     }
   };
-
+console.log('from loggedIn')
   return (
     <>
       {showModal ? (
@@ -53,7 +61,7 @@ const Login = ({ showModal, setShowModal }) => {
           <Wrapper>
             <CloseLoginButton
               aria-label="Close Login"
-              onClick={() => setShowModal((prev) => !prev)}
+              onClick={() => setShowModal(false)}
             />
             <Title>Login</Title>
             <LoginForm onSubmit={onSubmitHandle}>
@@ -70,12 +78,15 @@ const Login = ({ showModal, setShowModal }) => {
                 type="password"
               ></Input>
 
-              <ButtonContainer>
-                <Button submitHandler={submitHandler}>Login</Button>
+              
+                <Button >Login</Button>
+                </LoginForm>
+                <ButtonContainer>
+                
                 <GoogleButton>Login in with Google</GoogleButton>
-                <RegisterButton>Register</RegisterButton>
+                <RegisterButton onClick={submitHandler}>Register</RegisterButton>
               </ButtonContainer>
-            </LoginForm>
+            
           </Wrapper>
         </LoginContainer>
       ) : null}
