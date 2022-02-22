@@ -18,6 +18,7 @@ import {
 
 const EventInfo = ({ show }) => {
   console.log('Eventinfo', show ? 'Show' : 'Noshow');
+  console.log(show)
 
   return (
     <EventInfoContainer img={show.images.large.url}>
@@ -39,7 +40,7 @@ const EventInfo = ({ show }) => {
       </Table>
       <hr />
       <TicketInfo />
-      <Counter />
+      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} showDate={new Date(show.event_date.value).toLocaleString()}/>
     </EventInfoContainer>
   );
 };

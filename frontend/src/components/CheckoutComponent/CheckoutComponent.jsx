@@ -1,6 +1,5 @@
 import React,{useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../../util/axiosInstance'
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -49,10 +48,11 @@ const navigate = useNavigate()
 
   const loadBasketLines = async () =>{
    try {
-     const res = await axios.get('/tickets/basket')
-     if(res.status === 200){
-      setBasketLines(res.data.basket)
-     }
+     //const res = await axios.get('/tickets/basket')
+     const basketContents = JSON.parse(sessionStorage.getItem("basket")) || [];
+     //if(res.status === 200){
+      setBasketLines(basketContents)
+     //}
    } catch (error) {
      console.error('error happened', error)
    }
@@ -61,7 +61,7 @@ const navigate = useNavigate()
   const continueShopping = () =>{
     navigate('/')
   }
-
+  
   return (
     <CheckoutContainer>
       <WrapAll>
@@ -92,24 +92,25 @@ const navigate = useNavigate()
                       <div>{basket.showDate}</div>
                     </Date>
                     <EventID>
-                      <b>{basket.eventID}</b>
+                      <b>{basket.id}</b>
                       <div></div>
                     </EventID>
                   </Details>
                 </TicketDetail>
                 <PriceDetail>
                   <TicketAmountCountainer>
-                    <Remove
+                    {/* <Remove
                       style={{
                         width: '75px',
                         height: '75px',
                         fontWeight: '300',
                       }}
-                    />
-                    <TicketAmount>{basket.length}</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
+                    /> */}
+                    
+                    <TicketAmount>{basket.qty}</TicketAmount>
+                    {/* <Add style={{ width: '75px', height: '75px' }} /> */}
                   </TicketAmountCountainer>
-                  <TicketPrice>{basket.price}</TicketPrice>
+                  <TicketPrice>{basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>
               </Ticket>
               )): 'No card items'}
@@ -118,21 +119,22 @@ const navigate = useNavigate()
               {basketLines ? basketLines.map((basket)=>( 
                 <Summary>
               <SummaryTitle>Order Summary</SummaryTitle>
+      
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>{basket.totalIncVat}</SummaryItemPrice>
+                <SummaryItemPrice>{basket.price * basket.qty}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
                 <SummaryItemText>Donation</SummaryItemText>
                 <SummaryItemPrice>EUR 20</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax {basket.vat}</SummaryItemText>
+                <SummaryItemText>Tax {basket.price * basket.qty * 0.19}</SummaryItemText>
                 <SummaryItemPrice>{basket.fee}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>{basket.totalIncVat}</SummaryItemPrice>
+                <SummaryItemPrice>{(basket.price * basket.qty) +basket.price * basket.qty * 0.19 + '0' }</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>

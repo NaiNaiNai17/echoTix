@@ -36,7 +36,6 @@ import {
   NavWrapper,
   Input,
 } from '../../components/styles/Navbar.styled';
-import { useEffect } from 'react';
 
 
 

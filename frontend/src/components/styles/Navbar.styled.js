@@ -15,7 +15,7 @@ export const NavContainer = styled.div.attrs(() => ({
     alignItems: 'center',
   })};
   overflow: hidden;
-  position: sticky;
+  // position: sticky;
   top: 0;
   z-index: 99;
   background-color: rgb(56, 58, 57);
