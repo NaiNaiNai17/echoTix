@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mobile } from '../../responsive';
 
 export const MainCardContainer = styled.div.attrs(() => ({
   className: 'MainCardContainer',
@@ -18,6 +19,10 @@ export const MainCardContainer = styled.div.attrs(() => ({
     ),
     url(${(props) => props.img});
   background-size: cover;
+  ${mobile({
+    height: '300px',
+    padding: '25px',
+  })};
 `;
 
 export const ResultContainer = styled.div.attrs(() => ({
@@ -28,6 +33,9 @@ export const ResultContainer = styled.div.attrs(() => ({
   align-items: last baseline;
   h2 {
     margin-right: 30px;
+    ${mobile({
+      fontSize: '1rem',
+    })};
   }
 `;
 
@@ -37,14 +45,19 @@ export const CardContainer = styled.div.attrs(() => ({
   h3 {
     margin-top: 20px;
     margin-bottom: 20px;
+    ${mobile({
+      fontSize: '1rem',
+    })};
   }
 `;
 
-export const Eventname = styled.h3.attrs(() => ({
+export const Eventname = styled.h1.attrs(() => ({
   className: 'Eventname',
 }))`
   font-weight: 300;
   font-size: 3rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
 `;
 
 export const ImageContainer = styled.div.attrs(() => ({
@@ -62,6 +75,10 @@ export const Image = styled.img.attrs(() => ({
   width: 100%;
   object-fit: cover;
   cursor: pointer;
+  ${mobile({
+    height: '80%',
+    width: '80%',
+  })};
 
   :hover {
     box-shadow: 0 0 10px 5px;

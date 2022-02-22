@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
 
 export const EventDataContainer = styled.div.attrs(() => ({
   className: 'EventDataContainer',
@@ -6,6 +7,9 @@ export const EventDataContainer = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   flex-direction: column;
+  ${mobile({
+    width: '80%',
+  })};
 `;
 
 export const EventInfoContainer = styled.div.attrs(() => ({
@@ -24,7 +28,6 @@ export const EventInfoContainer = styled.div.attrs(() => ({
     ),
     url(${(props) => props.img});
   background-size: cover;
-
   margin: 10px;
 `;
 
@@ -41,6 +44,9 @@ export const EventCity = styled.h4.attrs(() => ({
   margin-bottom: 5px;
   text-transform: uppercase;
   font-size: 3rem;
+  ${mobile({
+    fontSize: '2rem',
+  })};
 `;
 
 export const Image = styled.img.attrs(() => ({
@@ -57,18 +63,34 @@ export const Table = styled.div.attrs(() => ({
   width: 100%;
   margin-top: 20px;
   margin-top: 20px;
+  ${mobile({
+    width: '80%',
+  })};
 `;
 
 export const TableRow = styled.tr.attrs(() => ({
   className: 'TableRow',
 }))`
+  ${mobile({
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'space-between',
+  })};
   th {
     width: 20rem;
     font-size: x-large;
+    ${mobile({
+      width: '0px',
+      fontSize: 'small',
+    })};
   }
   td {
     width: 25%;
     font-size: large;
+    ${mobile({
+      width: '0px',
+      fontSize: 'small',
+    })};
   }
 `;
 
@@ -99,4 +121,8 @@ export const TicketH1 = styled.h1.attrs(() => ({
 }))`
   margin-bottom: 25px;
   width: 100%;
+  ${mobile({
+    fontSize: '1.5rem',
+    textAlign: 'center',
+  })};
 `;
