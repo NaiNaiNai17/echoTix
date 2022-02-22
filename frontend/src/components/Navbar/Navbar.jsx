@@ -1,18 +1,21 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
+
 import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance'
 import Logout from '../Logout/Logout'
 
 
+
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
-
 import Login from '../Modal/Login';
 
-//* Imported Icons from Fontawesome
+//* Import Component
+import Burger from './Burger';
 
+//* Imported Icons from Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -43,7 +46,9 @@ import { useEffect } from 'react';
 const Navbar = () => {
 
   const [showModal, setShowModal] = useState(false);
-  const { loggedIn,search, setSearch } = useContext(SearchContext);
+
+  const { loggedIn, search, setSearch } = useContext(SearchContext);
+
   const navigate = useNavigate();
 
   // const LoggingOut = () =>{
@@ -54,10 +59,13 @@ const Navbar = () => {
   //       navigate('/')
   //     }
   //     setTimeout(()=>{
-  //       logout()  
-  //   },1000) 
+
+  //       logout()
+  //   },1000)
   //   }, [])
   // }
+
+
   //* Opens the Login-Modal
   const openModal = () => {
     setShowModal((prev) => !prev);
@@ -109,7 +117,7 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
-            <TreecountNumber>43.333</TreecountNumber>
+            {/* <TreecountNumber>43.333</TreecountNumber> */}
             <FontAwesomeIcon icon={faSeedling} size="3x" />
           </NavTreecount>
           <NavUserItem>
@@ -119,6 +127,7 @@ const Navbar = () => {
               size="3x"
               style={{
                 cursor: 'pointer',
+
                 display: loggedIn ? 'none':'block',
                 backgroundColor: 'transparent',
                 border: 'none',
@@ -133,11 +142,28 @@ const Navbar = () => {
               style={{
                 cursor: 'pointer',
                 display: loggedIn ? 'block':'none',
+
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
-            /></div>
+
+            />
+            <div>
+              <FontAwesomeIcon
+                onClick={() => navigate('/logout')}
+                icon={faSignOutAlt}
+                size="3x"
+                style={{
+                  cursor: 'pointer',
+                  display: loggedIn ? 'block' : 'none',
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  paddingRight: '30px',
+                }}
+              />
+            </div>
+
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
@@ -153,6 +179,7 @@ const Navbar = () => {
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
+        <Burger />
       </NavWrapper>
     </NavContainer>
   );
