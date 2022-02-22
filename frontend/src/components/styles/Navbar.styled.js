@@ -49,7 +49,8 @@ export const SearchContainer = styled.div.attrs(() => ({
   color: black;
   padding: 10px 40px 10px 5px;
   background-color: #fff;
-  ${mobile({ width: '80px' })};
+  ${mobile({ width: '80px', display: 'none' })};
+  ${tablet({ width: '250px' })};
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -62,7 +63,7 @@ export const Input = styled.input.attrs(() => ({
   outline: none;
   text-align: left;
   ${mobile({ width: '80px' })};
-  ${tablet({ width: '200px' })};
+  ${tablet({ width: '250px' })};
 `;
 
 //* Right
@@ -74,6 +75,7 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
+  ${tablet({ display: 'none' })};
 `;
 
 //*** Inside Right Side: TREECOUNTER */
@@ -135,10 +137,11 @@ export const BurgerMenue = styled.div.attrs(() => ({
   padding-left: 50px;
   z-index: 120;
 
-  ${mobile({
+  ${tablet({
     display: 'flex',
     justifyContent: ' space-around',
     flexFlow: 'column nowrap',
+    top: '23px',
   })};
 
   div {
@@ -196,7 +199,6 @@ export const ToggleContainer = styled.div.attrs(() => ({
   }
 
   ${mobile({
-    display: 'flex',
     transform: `${({ open }) =>
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
