@@ -15,6 +15,8 @@ export const RegisterContainer = styled.div.attrs(() => ({
 
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const LoginContainer = styled.div.attrs(() => ({
@@ -83,9 +85,11 @@ export const Input = styled.input.attrs(() => ({
   min-width: 65%;
   margin: 20px 10px 0px 0px;
   padding: 10px 45px;
+  font-size: 1.5rem;
   ::placeholder {
    color: black;
    text-align: center;
+   font-size: 1.5rem;
 `;
 
 export const ButtonContainer = styled.div.attrs(() => ({
@@ -103,11 +107,12 @@ export const GoogleButton = styled.button.attrs(() => ({
 }))`
   width: 100%;
   border: none;
-  padding: 15px 20px;
+  padding: 25px 20px;
   background-color: #e7e5e5;
   border-radius: 20px;
   margin: 20px 10px 0px 0px;
   cursor: pointer;
+  font-size: 1rem;
 `;
 
 export const Button = styled.button.attrs(() => ({
@@ -115,11 +120,12 @@ export const Button = styled.button.attrs(() => ({
 }))`
   width: 100%;
   border: none;
-  padding: 15px 20px;
+  padding: 25px 20px;
   background-color: #30ab86;
   border-radius: 20px;
   margin: 20px 10px 0px 0px;
   cursor: pointer;
+  font-size: 1.5rem;
 `;
 
 export const Agreement = styled.span.attrs(() => ({
@@ -153,4 +159,17 @@ export const RegisterButton = styled.button.attrs(() => ({
   border-radius: 20px;
   margin: 20px 10px 0px 0px;
   cursor: pointer;
+`;
+
+export const Registrated = styled.h3.attrs(() => ({
+  className: 'Registrated',
+}))`
+  width: 90%;
+  border: none;
+  padding: 15px 20px;
+  background-color: #201d1d;
+  color: white;
+  border-radius: 20px;
+  margin: 20px 10px 20px 10px;
+  text-align: center;
 `;
