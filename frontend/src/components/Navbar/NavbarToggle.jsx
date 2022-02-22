@@ -4,7 +4,7 @@ import { ToggleContainer } from '../styles/Navbar.styled';
 
 const NavbarToggle = ({ open }) => {
   return (
-    <ToggleContainer>
+    <ToggleContainer open={open}>
       <ul>
         <li>Home</li>
         <li>Login</li>

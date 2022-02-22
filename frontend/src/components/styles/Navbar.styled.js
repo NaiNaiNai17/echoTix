@@ -199,6 +199,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
   }
 
   ${mobile({
+    display: 'flex',
     transform: `${({ open }) =>
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
@@ -209,6 +210,6 @@ export const ToggleContainer = styled.div.attrs(() => ({
     right: '0',
     height: '100vh',
     width: '100vw',
-    zIndex: '99',
+    zIndex: '200',
   })};
 `;
