@@ -1,8 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
-import axios from '../../util/axiosInstance';
-import Logout from '../Logout/Logout';
+
+import { mobile } from '../../responsive';
+import axios from '../../util/axiosInstance'
+import Logout from '../Logout/Logout'
+
+
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
@@ -35,10 +39,16 @@ import {
   NavWrapper,
   Input,
 } from '../../components/styles/Navbar.styled';
+import { useEffect } from 'react';
+
+
 
 const Navbar = () => {
+
   const [showModal, setShowModal] = useState(false);
+
   const { loggedIn, search, setSearch } = useContext(SearchContext);
+
   const navigate = useNavigate();
 
   // const LoggingOut = () =>{
@@ -49,10 +59,12 @@ const Navbar = () => {
   //       navigate('/')
   //     }
   //     setTimeout(()=>{
+
   //       logout()
   //   },1000)
   //   }, [])
   // }
+
 
   //* Opens the Login-Modal
   const openModal = () => {
@@ -94,7 +106,12 @@ const Navbar = () => {
               onClick={searchHandler}
               style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
-            />
+
+            /> 
+
+              
+           
+
           </SearchContainer>
         </NavCenter>
 
@@ -110,11 +127,27 @@ const Navbar = () => {
               size="3x"
               style={{
                 cursor: 'pointer',
-                display: loggedIn ? 'none' : 'block',
+
+                display: loggedIn ? 'none':'block',
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
+            />
+            <div>
+            <FontAwesomeIcon
+            onClick={()=> navigate('/logout')}
+            icon={faSignOutAlt}
+              size="3x"
+              style={{
+                cursor: 'pointer',
+                display: loggedIn ? 'block':'none',
+
+                backgroundColor: 'transparent',
+                border: 'none',
+                paddingRight: '30px',
+              }}
+
             />
             <div>
               <FontAwesomeIcon
@@ -130,6 +163,7 @@ const Navbar = () => {
                 }}
               />
             </div>
+
 
             <FontAwesomeIcon
               onClick={checkoutHandler}

@@ -13,6 +13,7 @@ import Register from '../components/Register/Register';
 import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import EventInfo from '../components/BuyTickets/EventInfo';
+import Logout from '../components/Logout/Logout';
 
 //* Use Context
 export const SearchContext = createContext();
@@ -25,6 +26,8 @@ const MainRouter = () => {
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
+  const [loggedIn, setLoggedIn] = useState(false)
+
 
   console.log('this is my dataName', dataName);
 
@@ -38,7 +41,10 @@ const MainRouter = () => {
           setSearch,
           dataName,
           setDataName,
-          setCounter
+          setCounter,
+          loggedIn,
+          setLoggedIn
+          
         }}
       >
         <Navbar />
@@ -53,6 +59,7 @@ const MainRouter = () => {
             <Route path="/searchresult/*" element={<SearchResults />} />
             <Route path="/eventdetail" element={<EventInfo />} />
             <Route path="/shoppingcart" element={<Checkout />} />
+            <Route path="/logout" element={<Logout />} />
           </Routes>
         </main>
         <Footer />

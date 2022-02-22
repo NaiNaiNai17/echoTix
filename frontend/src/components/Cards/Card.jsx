@@ -8,7 +8,7 @@ import {
   ImageContainer,
   Image,
   ShowCount,
-  ShowButton,
+  
 } from '../../components/styles/Card.styled';
 
 const Card = ({ event, onEventClicked }) => {
@@ -49,7 +49,7 @@ const Card = ({ event, onEventClicked }) => {
               }
             />
 
-            <ShowButton>Shows</ShowButton>
+            
           </ImageContainer>
         </CardContainer>
       ) : (

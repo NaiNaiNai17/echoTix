@@ -1,12 +1,15 @@
 import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
+
 import { tablet } from '../../responsive';
 import { tabletSmall } from '../../responsive';
+
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   color: #fff;
+
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -16,9 +19,11 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   flex-flow: row nowrap;
   ${tablet({ padding: '10px 20px', width: '100px' })};
   ${tabletSmall({ padding: '5px 10px', width: '50px' })};
+
 `;
 
 //* Left
@@ -27,15 +32,18 @@ export const NavLeft = styled.img.attrs(() => ({
 }))`
   width: 200px;
   cursor: pointer;
+  ${mobile({ width: '7rem' })};
 `;
 
 //* Center
 export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
+
   width: 400px;
   ${mobile({ width: '150px' })};
   ${tablet({ width: '300px' })};
+
 `;
 //* Search Box
 
@@ -49,8 +57,10 @@ export const SearchContainer = styled.div.attrs(() => ({
   color: black;
   padding: 10px 40px 10px 5px;
   background-color: #fff;
+
   ${mobile({ width: '80px', display: 'none' })};
   ${tablet({ width: '250px' })};
+
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -62,8 +72,10 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
+
   ${mobile({ width: '80px' })};
   ${tablet({ width: '250px' })};
+
 `;
 
 //* Right
@@ -75,7 +87,9 @@ export const NavRight = styled.div.attrs(() => ({
   display: flex;
   color: white;
   align-items: center;
+
   ${tablet({ display: 'none' })};
+
 `;
 
 //*** Inside Right Side: TREECOUNTER */
@@ -85,6 +99,7 @@ export const TreecountNumber = styled.span.attrs(() => ({
   margin-right: 30px;
   font-size: 2rem;
   font-weight: bold;
+  ${mobile({ display: 'none' })};
 `;
 
 export const NavTreecount = styled.div.attrs(() => ({
@@ -94,7 +109,9 @@ export const NavTreecount = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+
   ${tablet({ width: '150px', padding: '0px' })};
+
 `;
 
 //*** Inside Right Side: USERICONS */
