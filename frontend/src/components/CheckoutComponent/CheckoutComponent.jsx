@@ -39,6 +39,9 @@ import {
 
 
 const CheckoutComponent =  () => {
+
+
+
 const navigate = useNavigate()
   const [basketLines,setBasketLines] = useState([])
   useEffect(() => {
@@ -61,7 +64,22 @@ const navigate = useNavigate()
   const continueShopping = () =>{
     navigate('/')
   }
-  
+
+  const removeBasketItem = (id) =>{
+   const result = basketLines.findIndex((ticket)=>{ 
+     return ticket.id === id
+   })
+  const newValue= basketLines.splice(result, 1)
+  setBasketLines(newValue)
+  sessionStorage.setItem('basket', JSON.stringify(newValue))
+}
+  const subTotal = basketLines.reduce((previousValue, currentValue) => {
+    const cost = currentValue.price * currentValue.qty;
+    return previousValue + cost;
+  }, 0);
+
+  const tax = subTotal * 0.19
+  const totalIncTax = tax + subTotal
   return (
     <CheckoutContainer>
       <WrapAll>
@@ -70,7 +88,6 @@ const navigate = useNavigate()
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
             <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
-            <TopText>Quantity</TopText>
             <TopButton type="filled">Checkout Now</TopButton>
           </CheckoutTop>
           <CheckoutBottom>
@@ -99,16 +116,17 @@ const navigate = useNavigate()
                 </TicketDetail>
                 <PriceDetail>
                   <TicketAmountCountainer>
-                    {/* <Remove
+                    <Remove
+                    onClick={()=>removeBasketItem(basket.id)}
                       style={{
                         width: '75px',
                         height: '75px',
                         fontWeight: '300',
                       }}
-                    /> */}
+                    />
                     
                     <TicketAmount>{basket.qty}</TicketAmount>
-                    {/* <Add style={{ width: '75px', height: '75px' }} /> */}
+                    <Add style={{ width: '75px', height: '75px' }} />
                   </TicketAmountCountainer>
                   <TicketPrice>{basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>
@@ -116,32 +134,30 @@ const navigate = useNavigate()
               )): 'No card items'}
               
               <Hr />
-              {basketLines ? basketLines.map((basket)=>( 
                 <Summary>
               <SummaryTitle>Order Summary</SummaryTitle>
       
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>{basket.price * basket.qty}</SummaryItemPrice>
+                <SummaryItemPrice>{subTotal}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
                 <SummaryItemText>Donation</SummaryItemText>
                 <SummaryItemPrice>EUR 20</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax {basket.price * basket.qty * 0.19}</SummaryItemText>
-                <SummaryItemPrice>{basket.fee}</SummaryItemPrice>
+                <SummaryItemText>Tax {tax.toFixed(2)}</SummaryItemText>
+                <SummaryItemPrice></SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>{(basket.price * basket.qty) +basket.price * basket.qty * 0.19 + '0' }</SummaryItemPrice>
+                <SummaryItemPrice>{totalIncTax.toFixed(2)}</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>
-              )) : 'none'}
 
             </Info>
-            
+           
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>
