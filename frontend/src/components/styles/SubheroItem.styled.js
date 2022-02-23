@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-import { mobile } from '../../responsive';
+
+import { tablet } from '../../responsive';
 
 export const SubheroItemContainer = styled.div.attrs(() => ({
   className: 'SubheroItemContainer',
@@ -36,6 +37,9 @@ export const Info = styled.div.attrs(() => ({
 
   :hover {
     opacity: 1;
+    h1 {
+      ${tablet({ fontSize: '2rem' })};
+    }
   }
   p {
     color: #fff;
