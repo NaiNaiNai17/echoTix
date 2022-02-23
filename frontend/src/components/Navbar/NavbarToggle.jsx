@@ -4,14 +4,18 @@ import { ToggleContainer } from '../styles/Navbar.styled';
 
 const NavbarToggle = ({ open }) => {
   return (
-    <ToggleContainer open={open}>
-      <ul>
-        <li>Home</li>
-        <li>Login</li>
-        <li>Shopping Cart</li>
-        <li>Impressum</li>
-      </ul>
-    </ToggleContainer>
+    <>
+      {open ? (
+        <ToggleContainer open={open}>
+          <ul>
+            <li>Home</li>
+            <li>Login</li>
+            <li>Shopping Cart</li>
+            <li>Impressum</li>
+          </ul>
+        </ToggleContainer>
+      ) : null}
+    </>
   );
 };
 

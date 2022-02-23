@@ -73,7 +73,7 @@ export const SearchContainer = styled.div.attrs(() => ({
   padding: 10px 40px 10px 5px;
   background-color: #fff;
 
-  ${mobile({ width: '80px', display: 'none' })};
+  ${mobile({ width: '80px',  padding: "5px 40px 5px 5px"})};
   ${tablet({ width: '250px' })};
 `;
 
@@ -208,6 +208,8 @@ export const ToggleContainer = styled.div.attrs(() => ({
   className: 'ToggleContainer',
 }))`
   display: none;
+  position: absolute;
+  top: 56px !important;
   color: #fff;
   font-size: 4rem;
   font-weight: bold;
@@ -215,6 +217,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
   list-style: none;
   overflow: hidden;
   color: black;
+  z-index: 500;
   background: rgb(231, 254, 236);
   background: rgb(255, 255, 255);
   background: linear-gradient(
@@ -234,17 +237,14 @@ export const ToggleContainer = styled.div.attrs(() => ({
   }
 
   ${mobile({
-    display: 'block',
+    display: 'inline',
     transform: `${({ open }) =>
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
     justifyContent: 'flexStart',
-    backgroundColor: 'black',
-
     top: '0',
     right: '0',
     height: '100vh',
     width: '100vw',
-    zIndex: '200',
   })};
 `;
