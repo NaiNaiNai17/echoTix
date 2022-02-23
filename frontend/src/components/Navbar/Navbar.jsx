@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SearchContext } from '../../hoc/MainRouter';
+import { CartContext, SearchContext } from '../../hoc/MainRouter';
 import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance'
 import Logout from '../Logout/Logout'
@@ -46,6 +46,7 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
 
   const { loggedIn, search, setSearch } = useContext(SearchContext);
+  const { cartQty, setCartQty } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -71,6 +72,7 @@ const Navbar = () => {
   function goHome() {
     navigate('/');
   }
+
 
   return (
     <NavContainer>

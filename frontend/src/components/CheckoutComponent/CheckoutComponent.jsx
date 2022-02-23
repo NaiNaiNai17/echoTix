@@ -66,12 +66,29 @@ const navigate = useNavigate()
   }
 
   const removeBasketItem = (id) =>{
-   const result = basketLines.findIndex((ticket)=>{ 
+   const result = basketLines.findIndex((ticket)=>{
+     
      return ticket.id === id
    })
-  const newValue= basketLines.splice(result, 1)
-  setBasketLines(newValue)
-  sessionStorage.setItem('basket', JSON.stringify(newValue))
+   if(basketLines[result].qty > 1){
+      const newBasketline = basketLines[result]
+      newBasketline.qty = newBasketline.qty -1
+     const newArray = [...basketLines]
+     sessionStorage.setItem('basket', JSON.stringify(newArray))
+
+     setBasketLines(newArray)
+     } else {
+       console.log(result)
+       console.log(basketLines)
+       const duplicateArray = [...basketLines]
+       duplicateArray.splice(result,1)
+      // const newValue= basketLines.splice(result, 1)
+      setBasketLines(duplicateArray)
+      sessionStorage.setItem('basket', JSON.stringify(duplicateArray))
+
+     }
+
+
 }
   const subTotal = basketLines.reduce((previousValue, currentValue) => {
     const cost = currentValue.price * currentValue.qty;
@@ -126,7 +143,7 @@ const navigate = useNavigate()
                     />
                     
                     <TicketAmount>{basket.qty}</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
+                    {/* <Add style={{ width: '75px', height: '75px' }} /> */}
                   </TicketAmountCountainer>
                   <TicketPrice>{basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>

@@ -42,9 +42,10 @@ const navigate = useNavigate()
       console.log(error, 'cannot log user in');
     }
     
-    // setTimeout(()=>{
-    //   navigate('/')
-    // })
+    setTimeout(()=>{
+      <h1>Registration Complete</h1>
+      navigate('/')
+    }, 2000)
   }
 
   
