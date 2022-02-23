@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
-
 import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance'
 import Logout from '../Logout/Logout'
@@ -49,20 +48,6 @@ const Navbar = () => {
   const { loggedIn, search, setSearch } = useContext(SearchContext);
 
   const navigate = useNavigate();
-
-  // const LoggingOut = () =>{
-  //   useEffect(() => {
-  //     async function logout(){
-  //       const response = await axios.get('/user/logout')
-  //       console.log(response)
-  //       navigate('/')
-  //     }
-  //     setTimeout(()=>{
-
-  //       logout()
-  //   },1000)
-  //   }, [])
-  // }
 
 
   //* Opens the Login-Modal
@@ -149,18 +134,7 @@ const Navbar = () => {
 
             />
             </div>
-              <FontAwesomeIcon
-                onClick={() => navigate('/logout')}
-                icon={faSignOutAlt}
-                size="3x"
-                style={{
-                  cursor: 'pointer',
-                  display: loggedIn ? 'block' : 'none',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  paddingRight: '30px',
-                }}
-              />
+             
            
 
 
