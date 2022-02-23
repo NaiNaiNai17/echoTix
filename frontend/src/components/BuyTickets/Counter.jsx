@@ -16,21 +16,21 @@ import {
 
 
 
-const Counter = () =>{
+const Counter = ({id, price, img, venue, showDate}) =>{
   const {setCounter} = useContext(SearchContext)
-  const [state, setState]= useState(0)
+  const [quantity, setQuantity]= useState(0)
 
   const increment = ()=> {
-    setState( state + 1 );
-    setCounter(state)
+    setQuantity( quantity + 1 );
+    setCounter(quantity)
   } 
   
   const decrement =()=> {
-    if (state >= 1){
-      setState(state - 1 )
+    if (quantity >= 1){
+      setQuantity(quantity - 1 )
     }
   
-  setCounter(state)
+  setCounter(quantity)
 }
 
     return (
@@ -41,14 +41,14 @@ const Counter = () =>{
             style={{ width: '75px', height: '75px' }}
           ></Remove>
           <CounterNumber style={{ fontSize: '2em' }}>
-            {state}
+            {quantity}
           </CounterNumber>
           <Add
             onClick={() => increment()}
             style={{ width: '75px', height: '75px' }}
           ></Add>
         </CounterButtonContainer>
-        <Buy/>
+        <Buy id={id} price={price} qty={quantity} img={img} venue={venue} showDate={showDate}/>
       </CounterContainer>
     );
   }
