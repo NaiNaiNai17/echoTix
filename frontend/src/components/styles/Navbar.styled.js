@@ -17,6 +17,7 @@ export const NavContainer = styled.div.attrs(() => ({
     display: 'flex',
     alignItems: 'center',
   })};
+
   overflow: hidden;
   // position: sticky;
   top: 0;
@@ -34,9 +35,14 @@ export const NavWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
 
-  flex-flow: row nowrap;
-  ${tablet({ padding: '10px 20px', width: '100px' })};
-  ${tabletSmall({ padding: '5px 10px', width: '50px' })};
+
+  ${mobile({
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '5px 5px',
+  })};
+
+  ${'' /* background: #0b0b0b; */}
 
 `;
 

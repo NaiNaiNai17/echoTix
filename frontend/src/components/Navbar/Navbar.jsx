@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../hoc/MainRouter';
 
 import { mobile } from '../../responsive';
-import axios from '../../util/axiosInstance'
-import Logout from '../Logout/Logout'
-
+import axios from '../../util/axiosInstance';
+import Logout from '../Logout/Logout';
 
 
 import Badge from '@material-ui/core/Badge';
@@ -41,29 +40,12 @@ import {
 } from '../../components/styles/Navbar.styled';
 
 
-
 const Navbar = () => {
-
   const [showModal, setShowModal] = useState(false);
 
   const { loggedIn, search, setSearch } = useContext(SearchContext);
 
   const navigate = useNavigate();
-
-  // const LoggingOut = () =>{
-  //   useEffect(() => {
-  //     async function logout(){
-  //       const response = await axios.get('/user/logout')
-  //       console.log(response)
-  //       navigate('/')
-  //     }
-  //     setTimeout(()=>{
-
-  //       logout()
-  //   },1000)
-  //   }, [])
-  // }
-
 
   //* Opens the Login-Modal
   const openModal = () => {
@@ -105,12 +87,7 @@ const Navbar = () => {
               onClick={searchHandler}
               style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
-
-            /> 
-
-              
-           
-
+            />
           </SearchContainer>
         </NavCenter>
 
@@ -127,13 +104,15 @@ const Navbar = () => {
               style={{
                 cursor: 'pointer',
 
-                display: loggedIn ? 'none':'block',
-                backgroundColor: 'transparent',
+    display: loggedIn ? 'none' : 'block',
+
+            backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
             />
             <div>
+
             <FontAwesomeIcon
             onClick={()=> navigate('/logout')}
             icon={faSignOutAlt}
@@ -149,19 +128,6 @@ const Navbar = () => {
 
             />
             </div>
-              <FontAwesomeIcon
-                onClick={() => navigate('/logout')}
-                icon={faSignOutAlt}
-                size="3x"
-                style={{
-                  cursor: 'pointer',
-                  display: loggedIn ? 'block' : 'none',
-                  backgroundColor: 'transparent',
-                  border: 'none',
-                  paddingRight: '30px',
-                }}
-              />
-           
 
 
             <FontAwesomeIcon
