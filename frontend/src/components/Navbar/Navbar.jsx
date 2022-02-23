@@ -39,7 +39,6 @@ import {
   NavWrapper,
   Input,
 } from '../../components/styles/Navbar.styled';
-import { useEffect } from 'react';
 
 
 
@@ -149,7 +148,7 @@ const Navbar = () => {
               }}
 
             />
-            <div>
+            </div>
               <FontAwesomeIcon
                 onClick={() => navigate('/logout')}
                 icon={faSignOutAlt}
@@ -162,7 +161,7 @@ const Navbar = () => {
                   paddingRight: '30px',
                 }}
               />
-            </div>
+           
 
 
             <FontAwesomeIcon
@@ -178,6 +177,8 @@ const Navbar = () => {
             ></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
+
+          
         </NavRight>
         <Burger />
       </NavWrapper>

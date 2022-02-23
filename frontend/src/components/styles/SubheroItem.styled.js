@@ -48,7 +48,6 @@ export const Info = styled.div.attrs(() => ({
     transform: scale(1.25);
   }
 
-  ${mobile({ opacity: '1' })};
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -59,5 +58,5 @@ export const Title = styled.h1.attrs(() => ({
   font-weight: bold;
   font-family: Edo;
 
-  ${mobile({ fontSize: '3rem' })};
+  
 `;
