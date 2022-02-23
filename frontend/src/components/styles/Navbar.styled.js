@@ -9,6 +9,20 @@ export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
   color: #fff;
+  height: 120px;
+  background: rgba(52, 52, 52);
+  ${mobile({
+    height: '4rem',
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+  })};
+  overflow: hidden;
+  // position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: rgb(56, 58, 57);
+
 
 `;
 
