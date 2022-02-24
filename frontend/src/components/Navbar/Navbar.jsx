@@ -99,7 +99,7 @@ const Navbar = () => {
             {/* <TreecountNumber>43.333</TreecountNumber> */}
             <FontAwesomeIcon icon={faSeedling} size="3x" />
             <Badge
-              badgeContent={treeCount}
+              badgeContent={treeCount.toFixed(2)}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
