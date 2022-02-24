@@ -5,7 +5,6 @@ import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance';
 import Logout from '../Logout/Logout';
 
-
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
 import Login from '../Modal/Login';
@@ -38,10 +37,8 @@ import {
   Input,
 } from '../../components/styles/Navbar.styled';
 
-
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
-
   const { loggedIn, search, setSearch } = useContext(SearchContext);
   const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
 
@@ -50,7 +47,8 @@ const Navbar = () => {
 
   //* Opens the Login-Modal
   const openModal = () => {
-    setShowModal((prev) => !prev);
+    // setShowModal((prev) => !prev);
+    setShowModal(!showModal);
   };
 
   //* Console: Showing if the input-field is active
@@ -113,31 +111,28 @@ const Navbar = () => {
               style={{
                 cursor: 'pointer',
 
-    display: loggedIn ? 'none' : 'block',
-
-            backgroundColor: 'transparent',
-                border: 'none',
-                paddingRight: '30px',
-              }}
-            />
-            <div>
-
-            <FontAwesomeIcon
-            onClick={()=> navigate('/logout')}
-            icon={faSignOutAlt}
-              size="3x"
-              style={{
-                cursor: 'pointer',
-                display: loggedIn ? 'block':'none',
+                display: loggedIn ? 'none' : 'block',
 
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
-
             />
-            </div>
+            <div>
+              <FontAwesomeIcon
+                onClick={() => navigate('/logout')}
+                icon={faSignOutAlt}
+                size="3x"
+                style={{
+                  cursor: 'pointer',
+                  display: loggedIn ? 'block' : 'none',
 
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  paddingRight: '30px',
+                }}
+              />
+            </div>
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
@@ -152,10 +147,8 @@ const Navbar = () => {
             ></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
-
-          
         </NavRight>
-        <Burger />
+        <Burger showModal={showModal} setShowModal={setShowModal} />
       </NavWrapper>
     </NavContainer>
   );

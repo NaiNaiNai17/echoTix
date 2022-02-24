@@ -9,7 +9,7 @@ export const NavContainer = styled.div.attrs(() => ({
   height: 120px;
   background: rgba(52, 52, 52);
   ${mobile({
-    height: '4rem',
+    height: '5rem',
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
@@ -73,7 +73,7 @@ export const SearchContainer = styled.div.attrs(() => ({
   padding: 10px 40px 10px 5px;
   background-color: #fff;
 
-  ${mobile({ width: '80px',  padding: "5px 40px 5px 5px"})};
+  ${mobile({ width: '80px', padding: '5px 40px 5px 5px' })};
   ${tablet({ width: '250px' })};
 `;
 
@@ -176,7 +176,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
     display: 'flex',
     justifyContent: ' space-around',
     flexFlow: 'column nowrap',
-    top: '8px',
+    top: '15px',
   })};
 
   div {
@@ -209,7 +209,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
 }))`
   display: none;
   position: absolute;
-  top: 56px !important;
+  top: 70px !important;
   color: #fff;
   font-size: 4rem;
   font-weight: bold;
@@ -223,18 +223,34 @@ export const ToggleContainer = styled.div.attrs(() => ({
   background: linear-gradient(
     60deg,
     rgb(255, 255, 255) 30%,
-    rgba(41, 209, 158, 0.7) 60%,
+    rgba(41, 209, 158) 60%,
     rgba(4, 52, 41, 1) 100%
   );
 
   ul {
-    padding-top: 100px;
-
+    padding-top: 50px;
+    }
+    
     li {
       font-family: Edo;
       list-style: none;
+
+      :hover {
+        color: #fff;
+      }
     }
   }
+  ${tablet({
+    display: 'inline',
+    transform: `${({ open }) =>
+      open ? 'translateX(0%)' : 'translateX(100%)'}`,
+    flexFlow: 'column nowrap',
+    justifyContent: 'flexStart',
+    top: '120px !important',
+    right: '0',
+    height: '100vh',
+    width: '100vw',
+  })};
 
   ${mobile({
     display: 'inline',
@@ -242,7 +258,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
     justifyContent: 'flexStart',
-    top: '0',
+    top: '70px !important',
     right: '0',
     height: '100vh',
     width: '100vw',
