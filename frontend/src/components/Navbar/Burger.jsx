@@ -13,7 +13,7 @@ const Burger = () => {
         <div />
         <div />
       </BurgerMenue>
-      <NavbarToggle open={open} />
+      <NavbarToggle open={open} setOpen={setOpen} />
     </>
   );
 };
