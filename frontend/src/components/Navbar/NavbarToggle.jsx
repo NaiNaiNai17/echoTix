@@ -26,28 +26,21 @@ const NavbarToggle = ({ open }) => {
       {open ? (
         <ToggleContainer open={open}>
           <ul>
-            <a href="">
-              <li onClick={goHome} style={{ cursor: 'pointer' }}>
-                Home
-              </li>
-            </a>
-            <a href="">
-              <li onClick={register} style={{ cursor: 'pointer' }}>
-                Login
-              </li>
-            </a>
-            <a href="">
-              <li onClick={register} style={{ cursor: 'pointer' }}>
-                Register
-              </li>
-            </a>
+            <li onClick={goHome} style={{ cursor: 'pointer' }}>
+              Home
+            </li>
 
-            <a href="">
-              <li>Shopping Cart</li>
-            </a>
-            <a href="">
-              <li>Impressum</li>
-            </a>
+            <li onClick={register} style={{ cursor: 'pointer' }}>
+              Login
+            </li>
+
+            <li onClick={register} style={{ cursor: 'pointer' }}>
+              Register
+            </li>
+
+            <li onClick={shoppingCart}>Shopping Cart</li>
+
+            <li>Impressum</li>
           </ul>
         </ToggleContainer>
       ) : null}
