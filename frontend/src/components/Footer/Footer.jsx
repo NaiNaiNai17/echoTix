@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainLogo from '../../assets/images/echoTix_Logo.png';
 
 //* Social Icons Import
@@ -27,6 +28,20 @@ import {
 } from '../../components/styles/Footer.styled';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  function goHome() {
+    navigate('/');
+  }
+
+  function shoppingcart() {
+    navigate('/shoppingcart');
+  }
+
+  function impressum() {
+    navigate('/impressum');
+  }
+
   return (
     <FooterContainer>
       <FooterLeft>
@@ -42,9 +57,9 @@ const Footer = () => {
       <FooterCenter>
         <FooterTitle>Usefull Links</FooterTitle>
         <FooterList>
-          <FooterListItem>Home</FooterListItem>
-          <FooterListItem>Shopping Cart</FooterListItem>
-          <FooterListItem>Impressum</FooterListItem>
+          <FooterListItem onClick={goHome}>Home</FooterListItem>
+          <FooterListItem onClick={shoppingcart}>Shopping Cart</FooterListItem>
+          <FooterListItem onClick={impressum}>Impressum</FooterListItem>
         </FooterList>
         <SocialContainer>
           <SocialIcon>
