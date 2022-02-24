@@ -66,12 +66,29 @@ const navigate = useNavigate()
   }
 
   const removeBasketItem = (id) =>{
-   const result = basketLines.findIndex((ticket)=>{ 
+   const result = basketLines.findIndex((ticket)=>{
+     
      return ticket.id === id
    })
-  const newValue= basketLines.splice(result, 1)
-  setBasketLines(newValue)
-  sessionStorage.setItem('basket', JSON.stringify(newValue))
+   if(basketLines[result].qty > 1){
+      const newBasketline = basketLines[result]
+      newBasketline.qty = newBasketline.qty -1
+     const newArray = [...basketLines]
+     sessionStorage.setItem('basket', JSON.stringify(newArray))
+
+     setBasketLines(newArray)
+     } else {
+       console.log(result)
+       console.log(basketLines)
+       const duplicateArray = [...basketLines]
+       duplicateArray.splice(result,1)
+      // const newValue= basketLines.splice(result, 1)
+      setBasketLines(duplicateArray)
+      sessionStorage.setItem('basket', JSON.stringify(duplicateArray))
+
+     }
+
+
 }
   const subTotal = basketLines.reduce((previousValue, currentValue) => {
     const cost = currentValue.price * currentValue.qty;
@@ -80,6 +97,7 @@ const navigate = useNavigate()
 
   const tax = subTotal * 0.19
   const totalIncTax = tax + subTotal
+  const treesPlanted = ((0.10 * subTotal)  /5).toFixed(2)
   return (
     <CheckoutContainer>
       <WrapAll>
@@ -126,9 +144,9 @@ const navigate = useNavigate()
                     />
                     
                     <TicketAmount>{basket.qty}</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
+                    {/* <Add style={{ width: '75px', height: '75px' }} /> */}
                   </TicketAmountCountainer>
-                  <TicketPrice>{basket.price * basket.qty}</TicketPrice>
+                  <TicketPrice>€{basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>
               </Ticket>
               )): 'No card items'}
@@ -139,19 +157,19 @@ const navigate = useNavigate()
       
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>{subTotal}</SummaryItemPrice>
+                <SummaryItemPrice>€{subTotal}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Donation</SummaryItemText>
-                <SummaryItemPrice>EUR 20</SummaryItemPrice>
+                <SummaryItemText>Trees Planted</SummaryItemText>
+                <SummaryItemPrice>{treesPlanted}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax {tax.toFixed(2)}</SummaryItemText>
+                <SummaryItemText>Tax €{tax.toFixed(2)}</SummaryItemText>
                 <SummaryItemPrice></SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>{totalIncTax.toFixed(2)}</SummaryItemPrice>
+                <SummaryItemPrice>€{totalIncTax.toFixed(2)}</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>
