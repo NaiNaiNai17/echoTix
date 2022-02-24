@@ -15,12 +15,17 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import EventInfo from '../components/BuyTickets/EventInfo';
 import Logout from '../components/Logout/Logout';
+import Login from '../components/Modal/Login'
 
 //* Use Context
 export const SearchContext = createContext();
 export const CartContext = createContext()
 
 const MainRouter = () => {
+  const loginSession = JSON.parse(sessionStorage.getItem("login")) || {
+   
+    loggedIn: false,
+  };
   //* UseContext
   //* UseState
   const [results, setResults] = useState([]);
@@ -29,16 +34,30 @@ const MainRouter = () => {
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
 
-  const [loggedIn, setLoggedIn] = useState(false)
+  const [loggedIn, setLoggedIn] = useState(loginSession['loggedIn'])
   const [cartQty, setCartQty] = useState(0)
+  const [treeCount, setTreeCount] = useState(0)
 
   useEffect(() => {
     const cartItems = JSON.parse(sessionStorage.getItem('basket'))
     setCartQty(cartItems.length)
+    let totalAmount = 0
+    cartItems.forEach((ticket)=>{
+      totalAmount = totalAmount + (ticket.qty * ticket.price)
+      
+    })
+    console.log(totalAmount)
+    const treeAmount = (totalAmount * 0.1) /5
+    setTreeCount(treeAmount)
     
   }, [])
   
-
+  useEffect(() => {
+    sessionStorage.setItem(
+      "login",
+      JSON.stringify({  loggedIn: loggedIn })
+    );
+  }, [ loggedIn]);
 
   console.log('this is my dataName', dataName);
 
@@ -47,7 +66,9 @@ const MainRouter = () => {
       <CartContext.Provider 
       value={{
         cartQty,
-        setCartQty
+        setCartQty,
+        treeCount,
+        setTreeCount
       }}>
        
       
@@ -62,6 +83,7 @@ const MainRouter = () => {
           setCounter,
           loggedIn,
           setLoggedIn,
+          
         }}
       >
         <Navbar />
@@ -77,6 +99,7 @@ const MainRouter = () => {
             <Route path="/eventdetail" element={<EventInfo />} />
             <Route path="/shoppingcart" element={<Checkout />} />
             <Route path="/impressum" element={<Impressum />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>
         </main>

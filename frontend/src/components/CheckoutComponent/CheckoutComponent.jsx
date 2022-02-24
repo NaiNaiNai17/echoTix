@@ -61,6 +61,7 @@ const navigate = useNavigate()
    }
   }
 
+  
   const continueShopping = () =>{
     navigate('/')
   }

@@ -107,7 +107,13 @@ const getMinPrice = async (id) =>{
 exports.getPricing = async (req,res) =>{
   const {eventID} = req.query
   const results = await getMinPrice(eventID)
- return res.status(200).json({message: 'price by id', payload: results.data.event.price_types[0].price_levels[0].face_value })
+  console.log(results.data.event)
+  if(results.data.event.price_types.length < 1){
+    return res.status(200).json({message: 'Price is 20 euro,',payload:20})
+  } else {
+     return res.status(200).json({message: 'price by id', payload: results.data.event.price_types[0].price_levels[0].face_value })
+
+  }
 
 }
 /**
