@@ -18,6 +18,7 @@ useEffect(() => {
    setLoggedIn(false)
   console.log(response)
   setCartQty(0)
+  sessionStorage.clear();
   navigate('/')
 } 
     
