@@ -164,13 +164,21 @@ exports.showInfo = async (req, res) => {
 
 
 exports.searchByName = async (req,res)=>{
-//  const attraction = req.query
-  //  const string = req.query
-   const { attractionName } = req.query
-   const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${attractionName}&domain=germany&apikey=${process.env.API_KEY}`)
-  //  console.log(res.attractions)
 
-  return res.status(200).json({message:'search results', payload: response.data})
+
+   const { attractionName } = req.query
+   try {
+     const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${attractionName}&domain=germany&apikey=${process.env.API_KEY}`)
+  //  console.log(res.attractions)
+      return res.status(200).json({message:'search results', payload: response.data})
+
+   } catch (error) {
+     console.log(error)
+     return res.status(500).json({message: 'error happened', error})
+     
+   }
+   
+
 
 }
 

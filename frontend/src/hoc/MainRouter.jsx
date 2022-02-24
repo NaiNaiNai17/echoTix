@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //* IMPORT PAGES________________________________
@@ -18,6 +18,7 @@ import Logout from '../components/Logout/Logout';
 
 //* Use Context
 export const SearchContext = createContext();
+export const CartContext = createContext()
 
 const MainRouter = () => {
   //* UseContext
@@ -27,12 +28,29 @@ const MainRouter = () => {
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
-  const [loggedIn, setLoggedIn] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [cartQty, setCartQty] = useState(0)
+
+  useEffect(() => {
+    const cartItems = JSON.parse(sessionStorage.getItem('basket'))
+    setCartQty(cartItems.length)
+    
+  }, [])
+  
+
 
   console.log('this is my dataName', dataName);
 
   return (
     <Router>
+      <CartContext.Provider 
+      value={{
+        cartQty,
+        setCartQty
+      }}>
+       
+      
       <SearchContext.Provider
         value={{
           results,
@@ -64,6 +82,7 @@ const MainRouter = () => {
         </main>
         <Footer />
       </SearchContext.Provider>
+      </CartContext.Provider>
     </Router>
   );
 };
