@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ImageContainer, BTL } from '../../components/styles/BackToLive';
+import { ImageContainer, BTL } from '../../components/styles/BackToLive.styled';
 
 const BackToLive = () => {
   return (

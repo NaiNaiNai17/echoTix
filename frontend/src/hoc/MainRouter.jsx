@@ -7,6 +7,7 @@ import Checkout from '../pages/Checkout/Checkout';
 import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
 import SearchResults from '../pages/SearchResults/SearchResults';
+import Impressum from '../pages/Impressum/Impressum';
 
 //* IMPORT COMPONENTS____________________________
 import Register from '../components/Register/Register';
@@ -27,6 +28,7 @@ const MainRouter = () => {
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
+
   const [loggedIn, setLoggedIn] = useState(false)
   const [cartQty, setCartQty] = useState(0)
 
@@ -36,6 +38,7 @@ const MainRouter = () => {
     
   }, [])
   
+
 
   console.log('this is my dataName', dataName);
 
@@ -58,8 +61,7 @@ const MainRouter = () => {
           setDataName,
           setCounter,
           loggedIn,
-          setLoggedIn
-          
+          setLoggedIn,
         }}
       >
         <Navbar />
@@ -74,6 +76,7 @@ const MainRouter = () => {
             <Route path="/searchresult/*" element={<SearchResults />} />
             <Route path="/eventdetail" element={<EventInfo />} />
             <Route path="/shoppingcart" element={<Checkout />} />
+            <Route path="/impressum" element={<Impressum />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>
         </main>
