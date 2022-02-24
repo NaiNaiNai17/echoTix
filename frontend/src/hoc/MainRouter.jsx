@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 //* IMPORT PAGES________________________________
@@ -28,7 +28,7 @@ const MainRouter = () => {
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
   const [loggedIn, setLoggedIn] = useState(false)
-  const [cartQty, setCartQty] = useState=(0)
+  const [cartQty, setCartQty] = useState(0)
 
   useEffect(() => {
     const cartItems = JSON.parse(sessionStorage.getItem('basket'))

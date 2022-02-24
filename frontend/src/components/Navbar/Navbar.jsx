@@ -147,7 +147,7 @@ const Navbar = () => {
               size="3x"
             />
             <Badge
-              badgeContent={4}
+              badgeContent={cartQty}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>

@@ -97,6 +97,7 @@ const navigate = useNavigate()
 
   const tax = subTotal * 0.19
   const totalIncTax = tax + subTotal
+  const treesPlanted = ((0.10 * subTotal)  /5).toFixed(2)
   return (
     <CheckoutContainer>
       <WrapAll>
@@ -145,7 +146,7 @@ const navigate = useNavigate()
                     <TicketAmount>{basket.qty}</TicketAmount>
                     {/* <Add style={{ width: '75px', height: '75px' }} /> */}
                   </TicketAmountCountainer>
-                  <TicketPrice>{basket.price * basket.qty}</TicketPrice>
+                  <TicketPrice>€{basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>
               </Ticket>
               )): 'No card items'}
@@ -156,19 +157,19 @@ const navigate = useNavigate()
       
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>{subTotal}</SummaryItemPrice>
+                <SummaryItemPrice>€{subTotal}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Donation</SummaryItemText>
-                <SummaryItemPrice>EUR 20</SummaryItemPrice>
+                <SummaryItemText>Trees Planted</SummaryItemText>
+                <SummaryItemPrice>{treesPlanted}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax {tax.toFixed(2)}</SummaryItemText>
+                <SummaryItemText>Tax €{tax.toFixed(2)}</SummaryItemText>
                 <SummaryItemPrice></SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>{totalIncTax.toFixed(2)}</SummaryItemPrice>
+                <SummaryItemPrice>€{totalIncTax.toFixed(2)}</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>
