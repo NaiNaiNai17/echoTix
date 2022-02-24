@@ -7,6 +7,7 @@ const NavbarToggle = ({ open }) => {
   const navigate = useNavigate();
   function goHome() {
     navigate('/');
+    
   }
 
   function login() {
@@ -19,6 +20,10 @@ const NavbarToggle = ({ open }) => {
 
   function shoppingCart() {
     navigate('/shoppingcart');
+  }
+
+  function impressum() {
+    navigate('/impressum');
   }
 
   return (
@@ -38,9 +43,13 @@ const NavbarToggle = ({ open }) => {
               Register
             </li>
 
-            <li onClick={shoppingCart}>Shopping Cart</li>
+            <li onClick={shoppingCart} style={{ cursor: 'pointer' }}>
+              Shopping Cart
+            </li>
 
-            <li>Impressum</li>
+            <li onClick={impressum} style={{ cursor: 'pointer' }}>
+              Impressum
+            </li>
           </ul>
         </ToggleContainer>
       ) : null}

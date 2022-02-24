@@ -229,18 +229,28 @@ export const ToggleContainer = styled.div.attrs(() => ({
 
   ul {
     padding-top: 50px;
-
-    a {
-      color: black;
-      :hover {
-        color: white;
-      }
     }
+    
     li {
       font-family: Edo;
       list-style: none;
+
+      :hover {
+        color: #fff;
+      }
     }
   }
+  ${tablet({
+    display: 'inline',
+    transform: `${({ open }) =>
+      open ? 'translateX(0%)' : 'translateX(100%)'}`,
+    flexFlow: 'column nowrap',
+    justifyContent: 'flexStart',
+    top: '120px !important',
+    right: '0',
+    height: '100vh',
+    width: '100vw',
+  })};
 
   ${mobile({
     display: 'inline',
@@ -248,19 +258,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
     justifyContent: 'flexStart',
-    top: '0',
-    right: '0',
-    height: '100vh',
-    width: '100vw',
-  })};
-
-  ${tablet({
-    display: 'inline',
-    transform: `${({ open }) =>
-      open ? 'translateX(0%)' : 'translateX(100%)'}`,
-    flexFlow: 'column nowrap',
-    justifyContent: 'flexStart',
-    top: "120px !important",
+    top: '70px !important',
     right: '0',
     height: '100vh',
     width: '100vw',
