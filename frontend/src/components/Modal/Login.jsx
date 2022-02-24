@@ -47,7 +47,7 @@ const submitHandler = (e) => {
       setShowModal(false);
       setLoggedIn(true);
       console.log('user is logged in');
-      navigate('/');
+      // navigate('/');
 
     } catch (error) {
       console.log(error, 'cannot log user in');

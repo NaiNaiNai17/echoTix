@@ -43,7 +43,7 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
 
   const { loggedIn, search, setSearch } = useContext(SearchContext);
-  const { cartQty, setCartQty } = useContext(CartContext);
+  const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -95,9 +95,16 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
+          
             {/* <TreecountNumber>43.333</TreecountNumber> */}
             <FontAwesomeIcon icon={faSeedling} size="3x" />
+            <Badge
+              badgeContent={treeCount.toFixed(2)}
+              color="primary"
+              badgeStyle={{ backgroundColor: '#00AFD7' }}
+            ></Badge>
           </NavTreecount>
+          
           <NavUserItem>
             <FontAwesomeIcon
               onClick={openModal}
