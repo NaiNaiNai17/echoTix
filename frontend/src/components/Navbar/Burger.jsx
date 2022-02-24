@@ -4,7 +4,7 @@ import NavbarToggle from './NavbarToggle';
 
 import { BurgerMenue } from '../../components/styles/Navbar.styled';
 
-const Burger = () => {
+const Burger = ({ showModal, setShowModal }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -13,7 +13,12 @@ const Burger = () => {
         <div />
         <div />
       </BurgerMenue>
-      <NavbarToggle open={open} setOpen={setOpen} />
+      <NavbarToggle
+        open={open}
+        setOpen={setOpen}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
     </>
   );
 };

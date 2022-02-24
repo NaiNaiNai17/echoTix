@@ -8,8 +8,6 @@ const {  setLoggedIn } = useContext(SearchContext);
 
 const navigate= useNavigate()
 
-
-
 useEffect(() => {
   async function logout(){
   const response = await axios.get('/user/logout')
@@ -18,8 +16,6 @@ useEffect(() => {
   navigate('/')
 } 
     
-
-   
   setTimeout(()=>{
     logout()   
   },1000)

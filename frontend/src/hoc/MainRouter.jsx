@@ -8,6 +8,7 @@ import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
 import SearchResults from '../pages/SearchResults/SearchResults';
 import Impressum from '../pages/Impressum/Impressum';
+import Login from '../pages/Login/Login';
 
 //* IMPORT COMPONENTS____________________________
 import Register from '../components/Register/Register';
@@ -59,6 +60,7 @@ const MainRouter = () => {
             <Route path="/eventdetail" element={<EventInfo />} />
             <Route path="/shoppingcart" element={<Checkout />} />
             <Route path="/impressum" element={<Impressum />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
           </Routes>
         </main>
