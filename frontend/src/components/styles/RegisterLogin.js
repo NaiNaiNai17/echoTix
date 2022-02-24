@@ -4,6 +4,8 @@ import { MdClose } from 'react-icons/md';
 export const RegisterContainer = styled.div.attrs(() => ({
   className: 'RegisterContainer',
 }))`
+  display:flex;
+  justify-content:center;
   z-index: 99;
   width: 100vw;
   height: 100vh;

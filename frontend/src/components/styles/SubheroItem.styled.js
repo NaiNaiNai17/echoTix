@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
 
+import { mobile } from '../../responsive';
 import { tablet } from '../../responsive';
 
 export const SubheroItemContainer = styled.div.attrs(() => ({
@@ -18,6 +19,7 @@ export const Image = styled.img.attrs(() => ({
   height: 100%;
   object-fit: cover;
   display: block;
+  ${mobile({ height: '150px' })};
 `;
 
 export const Info = styled.div.attrs(() => ({
@@ -47,7 +49,6 @@ export const Info = styled.div.attrs(() => ({
     margin-bottom: 1rem;
     transform: scale(1.25);
   }
-
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -57,6 +58,4 @@ export const Title = styled.h1.attrs(() => ({
   font-size: 4rem;
   font-weight: bold;
   font-family: Edo;
-
-  
 `;

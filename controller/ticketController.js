@@ -107,7 +107,13 @@ const getMinPrice = async (id) =>{
 exports.getPricing = async (req,res) =>{
   const {eventID} = req.query
   const results = await getMinPrice(eventID)
- return res.status(200).json({message: 'price by id', payload: results.data.event.price_types[0].price_levels[0].face_value })
+  console.log(results.data.event)
+  if(results.data.event.price_types.length < 1){
+    return res.status(200).json({message: 'Price is 20 euro,',payload:20})
+  } else {
+     return res.status(200).json({message: 'price by id', payload: results.data.event.price_types[0].price_levels[0].face_value })
+
+  }
 
 }
 /**
@@ -164,13 +170,21 @@ exports.showInfo = async (req, res) => {
 
 
 exports.searchByName = async (req,res)=>{
-//  const attraction = req.query
-  //  const string = req.query
-   const { attractionName } = req.query
-   const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${attractionName}&domain=germany&apikey=${process.env.API_KEY}`)
-  //  console.log(res.attractions)
 
-  return res.status(200).json({message:'search results', payload: response.data})
+
+   const { attractionName } = req.query
+   try {
+     const response = await axios.get(`https://app.ticketmaster.eu/mfxapi/v2/attractions?attraction_name=${attractionName}&domain=germany&apikey=${process.env.API_KEY}`)
+  //  console.log(res.attractions)
+      return res.status(200).json({message:'search results', payload: response.data})
+
+   } catch (error) {
+     console.log(error)
+     return res.status(500).json({message: 'error happened', error})
+     
+   }
+   
+
 
 }
 

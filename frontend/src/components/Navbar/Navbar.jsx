@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SearchContext } from '../../hoc/MainRouter';
-
+import { CartContext, SearchContext } from '../../hoc/MainRouter';
 import { mobile } from '../../responsive';
 import axios from '../../util/axiosInstance';
 import Logout from '../Logout/Logout';
@@ -41,8 +40,10 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const { loggedIn, search, setSearch } = useContext(SearchContext);
+  const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
 
   const navigate = useNavigate();
+
 
   //* Opens the Login-Modal
   const openModal = () => {
@@ -66,6 +67,7 @@ const Navbar = () => {
   function goHome() {
     navigate('/');
   }
+
 
   return (
     <NavContainer>
@@ -91,9 +93,16 @@ const Navbar = () => {
 
         <NavRight>
           <NavTreecount>
+          
             {/* <TreecountNumber>43.333</TreecountNumber> */}
             <FontAwesomeIcon icon={faSeedling} size="3x" />
+            <Badge
+              badgeContent={treeCount.toFixed(2)}
+              color="primary"
+              badgeStyle={{ backgroundColor: '#00AFD7' }}
+            ></Badge>
           </NavTreecount>
+          
           <NavUserItem>
             <FontAwesomeIcon
               onClick={openModal}
@@ -132,7 +141,7 @@ const Navbar = () => {
               size="3x"
             />
             <Badge
-              badgeContent={4}
+              badgeContent={cartQty}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>

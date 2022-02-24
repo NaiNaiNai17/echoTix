@@ -179,3 +179,87 @@ export const squareCards = [
     img: 'https://s1.ticketm.net/dam/a/dde/91b4d9fc-2ba1-4629-895c-26cfc25bbdde_1454481_RETINA_PORTRAIT_3_2.jpg',
   },
 ];
+
+export const impressum = [
+  {
+    id: 1,
+    name: 'Nai Fowler',
+    technology: [
+      {
+        img: 'https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg',
+      },
+      {
+        img: 'https://reactrouter.com/react-square.png',
+      },
+      {
+        img: 'http://static1.squarespace.com/static/586bd48d03596e5605450cee/5c97fe63e79c70b6f148ef79/5c998053597f9200012916bc/1581464388043/axios.png?format=1500w',
+      },
+      {
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNZCmqukOnJrrIwMI5MNWNHXkKhV7_fkFqOIoUQwnHc9-OCKFLsY6d6PP4TsRfPjJA7OM&usqp=CAU',
+      },
+      {
+        img: 'https://daveceddia.com/images/react-and-express-square.png',
+      },
+      {
+        img: 'https://s3-ap-southeast-1.amazonaws.com/homepage-media/wp-content/uploads/2020/05/19094352/nodejs_logo.png',
+      },
+      {
+        img: 'https://coursework.vschool.io/content/images/2016/06/jwt.png',
+      },
+      {
+        img: 'https://img.stackshare.io/package/19054/default_2be036aaca5c71baf790e00f1ef80dd37a625905.png',
+      },
+      {
+        img: 'https://walde.co/wp-content/uploads/2016/08/npm-coaster.png',
+      },
+    ],
+
+    responsibility: 'Backend',
+    github: 'https://github.com/NaiNaiNai17/',
+    telephone: '0176 717 46 859',
+    email: 'fowler.naimah@gmail.com',
+    website: 'https://naimah.club',
+    img: 'https://avatars.githubusercontent.com/u/28714475?v=4',
+  },
+  {
+    id: 2,
+    name: 'Lars Nemeth',
+    technology: [
+      {
+        img: 'https://static.tildacdn.com/tild3165-3964-4936-b837-346665326130/unnamed.jpg',
+      },
+      {
+        img: 'https://reactrouter.com/react-square.png',
+      },
+      {
+        img: 'http://static1.squarespace.com/static/586bd48d03596e5605450cee/5c97fe63e79c70b6f148ef79/5c998053597f9200012916bc/1581464388043/axios.png?format=1500w',
+      },
+      {
+        img: 'https://www.styled-components.com/atom.png',
+      },
+      {
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN8Tx9iRNvGT8DHU7NRWY7ZNfTLaKBDCcm7pzoNLTnRt5R7TOO1JDc51wq3czgqG161xQ&usqp=CAU',
+      },
+      {
+        img: 'https://pbs.twimg.com/profile_images/1491038861224517637/s-H1KgWO_400x400.png',
+      },
+      {
+        img: 'https://pbs.twimg.com/profile_images/1366808543773384704/8qFXRmFc_400x400.png',
+      },
+      {
+        img: 'https://static.viget.com/icon-figma.png',
+      },
+      {
+        img: 'https://walde.co/wp-content/uploads/2016/08/npm-coaster.png',
+      },
+    ],
+
+    responsibility: 'Frontend',
+    github: 'https://github.com/LarsNemeth',
+    email: 'lars.nemeth@posteo.de',
+    telephone: '0179 900 62 19',
+    website: 'radiotape.de',
+
+    img: 'https://avatars.githubusercontent.com/u/79976600?v=4',
+  },
+];

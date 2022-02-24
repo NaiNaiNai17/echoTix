@@ -20,7 +20,7 @@ axiosApiInstance.interceptors.response.use(config => {
     console.log("A respones has been received");
     return config;
 }, error => {
-    console.log("Error response has been received", error.response);
+    console.log("Error response has been received", error);
 
     if(error.response.status === 401){
         console.log("We hit 401, token must not be valid");

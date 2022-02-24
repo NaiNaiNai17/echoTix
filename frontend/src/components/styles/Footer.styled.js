@@ -111,6 +111,7 @@ export const FooterListItem = styled.li.attrs(() => ({
 }))`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 //* Footer Right
