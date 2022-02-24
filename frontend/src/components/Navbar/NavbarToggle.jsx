@@ -30,7 +30,7 @@ const NavbarToggle = ({ open }) => {
               Home
             </li>
 
-            <li onClick={register} style={{ cursor: 'pointer' }}>
+            <li onClick={login} style={{ cursor: 'pointer' }}>
               Login
             </li>
 
