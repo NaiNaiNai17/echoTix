@@ -15,17 +15,17 @@ const navigate= useNavigate()
 useEffect(() => {
   async function logout(){
   const response = await axios.get('/user/logout')
-   setLoggedIn(false)
+  setLoggedIn(false)
   console.log(response)
   setCartQty(0)
-  sessionStorage.clear();
   navigate('/')
 } 
     
 
    
   setTimeout(()=>{
-    logout()   
+    logout()
+    sessionStorage.clear();   
   },1000)
 }, [])
     
