@@ -40,12 +40,20 @@ const MainRouter = () => {
 
   useEffect(() => {
     const cartItems = JSON.parse(sessionStorage.getItem('basket'))
-    setCartQty(cartItems.length)
+    if (cartItems !== null){
+      setCartQty(cartItems.length)
+    } else{
+      
+    }
+    
     let totalAmount = 0
-    cartItems.forEach((ticket)=>{
+    if (cartItems !== null){
+      cartItems.forEach((ticket)=>{
       totalAmount = totalAmount + (ticket.qty * ticket.price)
       
     })
+    }
+    
     console.log(totalAmount)
     const treeAmount = (totalAmount * 0.1) /5
     setTreeCount(treeAmount)
