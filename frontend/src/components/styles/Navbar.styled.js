@@ -1,9 +1,6 @@
 import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
-
 import { tablet } from '../../responsive';
-import { tabletSmall } from '../../responsive';
-
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
@@ -17,13 +14,12 @@ export const NavContainer = styled.div.attrs(() => ({
     display: 'flex',
     alignItems: 'center',
   })};
+
   overflow: hidden;
   // position: sticky;
   top: 0;
   z-index: 99;
   background-color: rgb(56, 58, 57);
-
-
 `;
 
 export const NavWrapper = styled.div.attrs(() => ({
@@ -34,10 +30,17 @@ export const NavWrapper = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
 
-  flex-flow: row nowrap;
-  ${tablet({ padding: '10px 20px', width: '100px' })};
-  ${tabletSmall({ padding: '5px 10px', width: '50px' })};
+  ${mobile({
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '5px 5px',
+  })};
 
+  ${tablet({
+    width: '400px',
+  })};
+
+  ${'' /* background: #0b0b0b; */}
 `;
 
 //* Left
@@ -53,11 +56,9 @@ export const NavLeft = styled.img.attrs(() => ({
 export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
-
   width: 400px;
   ${mobile({ width: '150px' })};
   ${tablet({ width: '300px' })};
-
 `;
 //* Search Box
 
@@ -72,9 +73,8 @@ export const SearchContainer = styled.div.attrs(() => ({
   padding: 10px 40px 10px 5px;
   background-color: #fff;
 
-  ${mobile({ width: '80px', display: 'none' })};
+  ${mobile({ width: '80px',  padding: "5px 40px 5px 5px"})};
   ${tablet({ width: '250px' })};
-
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -89,7 +89,6 @@ export const Input = styled.input.attrs(() => ({
 
   ${mobile({ width: '80px' })};
   ${tablet({ width: '250px' })};
-
 `;
 
 //* Right
@@ -103,7 +102,6 @@ export const NavRight = styled.div.attrs(() => ({
   align-items: center;
 
   ${tablet({ display: 'none' })};
-
 `;
 
 //*** Inside Right Side: TREECOUNTER */
@@ -125,7 +123,6 @@ export const NavTreecount = styled.div.attrs(() => ({
   align-items: center;
 
   ${tablet({ width: '150px', padding: '0px' })};
-
 `;
 
 //*** Inside Right Side: USERICONS */
@@ -160,7 +157,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
 }))`
   height: 40px;
   position: fixed;
-  top: 40px;
+  ${'' /* top: 40px; */}
   right: 20px;
   display: none;
   justify-content: space-around;
@@ -172,7 +169,14 @@ export const BurgerMenue = styled.div.attrs(() => ({
     display: 'flex',
     justifyContent: ' space-around',
     flexFlow: 'column nowrap',
-    top: '23px',
+    top: '38px',
+  })};
+
+  ${mobile({
+    display: 'flex',
+    justifyContent: ' space-around',
+    flexFlow: 'column nowrap',
+    top: '8px',
   })};
 
   div {
@@ -204,6 +208,8 @@ export const ToggleContainer = styled.div.attrs(() => ({
   className: 'ToggleContainer',
 }))`
   display: none;
+  position: absolute;
+  top: 56px !important;
   color: #fff;
   font-size: 4rem;
   font-weight: bold;
@@ -211,6 +217,7 @@ export const ToggleContainer = styled.div.attrs(() => ({
   list-style: none;
   overflow: hidden;
   color: black;
+  z-index: 500;
   background: rgb(231, 254, 236);
   background: rgb(255, 255, 255);
   background: linear-gradient(
@@ -230,17 +237,14 @@ export const ToggleContainer = styled.div.attrs(() => ({
   }
 
   ${mobile({
-    display: 'flex',
+    display: 'inline',
     transform: `${({ open }) =>
       open ? 'translateX(0%)' : 'translateX(100%)'}`,
     flexFlow: 'column nowrap',
     justifyContent: 'flexStart',
-    backgroundColor: 'black',
-    position: 'fixed',
     top: '0',
     right: '0',
     height: '100vh',
     width: '100vw',
-    zIndex: '200',
   })};
 `;

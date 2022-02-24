@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../responsive';
 
 export const Container = styled.div.attrs(() => ({
   className: 'Container',
@@ -29,9 +30,12 @@ export const Cityname = styled.h2.attrs(() => ({
   className: 'Cityname',
 }))`
   font-weight: 300;
-  font-size: 7vh;
+  font-size: 5vh;
   text-align: center;
   line-break: normal;
+  ${mobile({
+    fontSize: '3rem',
+  })};
 `;
 
 export const EventContainer = styled.div.attrs(({ show }) => ({
@@ -64,4 +68,7 @@ export const GoBack = styled.button.attrs(() => ({
   font-size: 7vh;
   text-align: center;
   line-break: normal;
+  ${mobile({
+    fontSize: '1rem',
+  })};
 `;
