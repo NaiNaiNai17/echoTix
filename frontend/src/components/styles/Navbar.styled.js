@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
 import { tablet } from '../../responsive';
+import { mobileMini } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
@@ -75,6 +76,7 @@ export const SearchContainer = styled.div.attrs(() => ({
 
   ${mobile({ width: '80px', padding: '5px 40px 5px 5px' })};
   ${tablet({ width: '250px' })};
+  ${mobileMini({ width: '150px' })};
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -89,6 +91,7 @@ export const Input = styled.input.attrs(() => ({
 
   ${mobile({ width: '80px' })};
   ${tablet({ width: '250px' })};
+  ${mobileMini({ width: '150px' })};
 `;
 
 //* Right

@@ -17,7 +17,7 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import EventInfo from '../components/BuyTickets/EventInfo';
 import Logout from '../components/Logout/Logout';
-import Login from '../components/Modal/Login'
+
 
 //* Use Context
 export const SearchContext = createContext();
