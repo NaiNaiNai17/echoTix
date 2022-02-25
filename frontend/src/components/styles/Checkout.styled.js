@@ -31,8 +31,7 @@ export const CheckoutWrapper = styled.div.attrs(() => ({
 
   ${mobile({
     flexDirection: 'column',
-
-    width: '25rem',
+    width: '90%',
   })};
 `;
 
@@ -44,12 +43,17 @@ export const CartTitle = styled.h1.attrs(() => ({
 `;
 
 export const CheckoutTop = styled.div.attrs(() => ({
-  className: 'CheckoutContainer',
+  className: 'CheckoutTop',
 }))`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+
+  ${mobile({
+    display: 'flex',
+    justifyContent: 'center',
+  })};
 `;
 
 export const TopButton = styled.button.attrs(() => ({
@@ -82,6 +86,15 @@ export const Info = styled.div.attrs(() => ({
   className: 'Info',
 }))`
   flex: 3;
+  height: 100%;
+`;
+
+export const BuyContainer = styled.div.attrs(() => ({
+  className: 'BuyContainer',
+}))`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 `;
 
 //* Order Details
@@ -213,10 +226,10 @@ export const Summary = styled.div.attrs(() => ({
   border: 0.5 solid lightgray;
   border-radius: 10px;
   padding: 20px;
-  height: 60vh;
+  height: 100%;
   background-color: white;
   ${mobile({
-    width: '25rem',
+    width: '20rem',
   })};
 `;
 

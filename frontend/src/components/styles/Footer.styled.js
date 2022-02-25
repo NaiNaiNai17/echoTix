@@ -136,8 +136,16 @@ export const PaymentIconsContainer = styled.div.attrs(() => ({
   className: 'PaymentIconsContainer',
 }))`
   display: flex;
-  justify-content: center;
-  margin: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+
+  div {
+    width: 150px;
+
+    ${mobile({
+      width: '4rem',
+    })};
+  }
 `;
 
 export const PaymentIconOrderSummary = styled.div.attrs(() => ({
@@ -151,6 +159,10 @@ export const PaymentIconOrderSummary = styled.div.attrs(() => ({
   :hover {
     transform: scale(1.1);
   }
+
+  ${mobile({
+    margin: '5px',
+  })};
 `;
 
 export const PaymentIcons = styled.div.attrs(() => ({

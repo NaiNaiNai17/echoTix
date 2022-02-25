@@ -114,6 +114,7 @@ export const TreecountNumber = styled.span.attrs(() => ({
   margin-right: 30px;
   font-size: 2rem;
   font-weight: bold;
+
   ${mobile({ display: 'none' })};
 `;
 
@@ -124,6 +125,19 @@ export const NavTreecount = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .MuiBadge-colorPrimary {
+    background-color: rgba(41, 209, 158);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: -24px;
+    right: 0px;
+    ${tablet({ top: '-15px', right: '5px' })};
+
+    span {
+      size: 30px;
+    }
 
   ${tablet({ width: '150px', padding: '0px' })};
 `;
@@ -138,8 +152,9 @@ export const NavUserItem = styled.div.attrs(() => ({
     alignItems: 'center',
     padding: '0px',
   })};
+
   .MuiBadge-colorPrimary {
-    background-color: gray;
+    background-color: rgba(41, 209, 158);
     width: 30px;
     height: 30px;
     border-radius: 50%;

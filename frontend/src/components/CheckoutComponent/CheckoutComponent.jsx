@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ChangeHighlight from 'react-change-highlight';
+
+//* Component Import
+
+import Buy from '../Buttons/Buy';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -42,12 +47,14 @@ import {
   SummaryItem,
   SummaryItemText,
   SummaryItemPrice,
-  SummaryButton,
+  BuyContainer,
 } from '../../components/styles/Checkout.styled';
 
 const CheckoutComponent = () => {
   const navigate = useNavigate();
   const [basketLines, setBasketLines] = useState([]);
+  const [activeTab, setActiveTab] = useState(false);
+
   useEffect(() => {
     loadBasketLines();
   }, []);
@@ -150,7 +157,6 @@ const CheckoutComponent = () => {
                   ))
                 : 'No card items'}
 
-              <Hr />
               <Summary>
                 <SummaryTitle>Order Summary</SummaryTitle>
 
@@ -170,18 +176,27 @@ const CheckoutComponent = () => {
                   <SummaryItemText>Total</SummaryItemText>
                   <SummaryItemPrice>€{totalIncTax.toFixed(2)}</SummaryItemPrice>
                 </SummaryItem>
-                <SummaryButton>Checkout Now</SummaryButton>
+
                 <PaymentIconsContainer>
-                  <PaymentIconOrderSummary>
-                    <Visa style={{ margin: 3, width: 80 }} />
-                  </PaymentIconOrderSummary>
-                  <PaymentIconOrderSummary>
-                    <Giropay style={{ margin: 3, width: 80 }} />
-                  </PaymentIconOrderSummary>
-                  <PaymentIconOrderSummary>
-                    <Bitcoin style={{ margin: 3, width: 50 }} />
-                  </PaymentIconOrderSummary>
+                  <div onClick={() => setActiveTab(0)}>
+                    <Giropay
+                      className={activeTab === 0 ? 'active' : 'inactive'}
+                    />
+                  </div>
+
+                  <div onClick={() => setActiveTab(1)}>
+                    <Visa className={activeTab === 1 ? 'active' : 'inactive'} />
+                  </div>
+
+                  <div onClick={() => setActiveTab(2)}>
+                    <Bitcoin
+                      className={activeTab === 2 ? 'active' : 'inactive'}
+                    />
+                  </div>
                 </PaymentIconsContainer>
+                <BuyContainer>
+                  <Buy />
+                </BuyContainer>
               </Summary>
             </Info>
           </CheckoutBottom>
