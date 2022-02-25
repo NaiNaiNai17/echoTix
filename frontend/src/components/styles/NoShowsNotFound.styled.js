@@ -22,12 +22,12 @@ export const NoShowMessage = styled.div.attrs(() => ({
 }))`
   width: 50%;
   height: 50vh;
-  background-color: red;
   opacity: 0.6;
-  color: #fff;
+  color: black;
   font-size: 3rem;
   text-align: center;
   display: flex;
+  justify-content:center;
   align-items: center;
   padding: 20px;
   -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000,

@@ -9,6 +9,7 @@ import NotFound from '../pages/NotFound/NotFound';
 import SearchResults from '../pages/SearchResults/SearchResults';
 import Impressum from '../pages/Impressum/Impressum';
 import Login from '../pages/Login/Login';
+import ThankYou from '../pages/Checkout/EnjoyTheShow'
 
 
 //* IMPORT COMPONENTS____________________________
@@ -110,6 +111,7 @@ const MainRouter = () => {
             <Route path="/impressum" element={<Impressum />} />
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
+            <Route path="/thankyou" element={<ThankYou />} />
           </Routes>
         </main>
         <Footer />

@@ -70,6 +70,14 @@ const CheckoutComponent = () => {
     }
   };
 
+  const buyNow = () =>{
+    
+    setTimeout(() => {
+      alert('Are you sure?')
+      navigate('/thankyou')
+    }, 2000);
+    
+  }
   const continueShopping = () => {
     navigate('/');
   };
@@ -194,7 +202,16 @@ const CheckoutComponent = () => {
                 </div>
               </PaymentIconsContainer>
               <BuyContainer>
-                <Buy />
+                <button onClick={buyNow} style={{  padding: '20px',
+  width: '15rem',
+  backgroundColor: '#2e8268',
+  color: 'white',
+  fontSize: 'large',
+  display: 'flex',
+  justifyContent: 'center',
+  borderRadius: '100px',
+  cursor: 'pointer '}}>Buy</button>
+              
               </BuyContainer>
             </Info>
           </CheckoutBottom>
