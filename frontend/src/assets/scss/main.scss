@@ -1,6 +1,5 @@
 @import 'flip-card';
 
-
 body {
   background: rgb(231, 254, 236);
   background: rgb(255, 255, 255);
@@ -15,4 +14,14 @@ body {
 a {
   text-decoration: none;
   color: #fff;
+}
+
+.inactive {
+  border: 0px solid blue;
+}
+
+.active {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(41, 209, 158, 0.7) 0px -12px 30px, rgba(41, 209, 158, 0.7) 0px 4px 6px,
+    rgba(41, 209, 158, 0.7) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

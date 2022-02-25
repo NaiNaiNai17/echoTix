@@ -1,9 +1,21 @@
-import React,{useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+//* Component Import
+
+import Buy from '../Buttons/Buy';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
 import Remove from '@material-ui/icons/RemoveCircleOutline';
+
+//* Payment Icons Import
+import { Visa, Giropay, Bitcoin } from 'react-pay-icons';
+
+import {
+  PaymentIconsContainer,
+  PaymentIconOrderSummary,
+} from '../../components/styles/Footer.styled';
 
 import {
   CheckoutContainer,
@@ -34,83 +46,75 @@ import {
   SummaryItem,
   SummaryItemText,
   SummaryItemPrice,
-  SummaryButton,
+  BuyContainer,
 } from '../../components/styles/Checkout.styled';
 
+const CheckoutComponent = () => {
+  const navigate = useNavigate();
+  const [basketLines, setBasketLines] = useState([]);
+  const [activeTab, setActiveTab] = useState(false);
 
-const CheckoutComponent =  () => {
-
-
-
-const navigate = useNavigate()
-  const [basketLines,setBasketLines] = useState([])
   useEffect(() => {
-    loadBasketLines()
-   
-  }, [])
+    loadBasketLines();
+  }, []);
 
-  const loadBasketLines = async () =>{
-   try {
-     //const res = await axios.get('/tickets/basket')
-     const basketContents = JSON.parse(sessionStorage.getItem("basket")) || [];
-     //if(res.status === 200){
-      setBasketLines(basketContents)
-     //}
-   } catch (error) {
-     console.error('error happened', error)
-   }
-  }
+  const loadBasketLines = async () => {
+    try {
+      //const res = await axios.get('/tickets/basket')
+      const basketContents = JSON.parse(sessionStorage.getItem('basket')) || [];
+      //if(res.status === 200){
+      setBasketLines(basketContents);
+      //}
+    } catch (error) {
+      console.error('error happened', error);
+    }
+  };
 
-  
-  const continueShopping = () =>{
-    navigate('/')
-  }
+  const continueShopping = () => {
+    navigate('/');
+  };
 
-  const removeBasketItem = (id) =>{
-   const result = basketLines.findIndex((ticket)=>{
-     
-     return ticket.id === id
-   })
-   if(basketLines[result].qty > 1){
-      const newBasketline = basketLines[result]
-      newBasketline.qty = newBasketline.qty -1
-     const newArray = [...basketLines]
-     sessionStorage.setItem('basket', JSON.stringify(newArray))
+  const removeBasketItem = (id) => {
+    const result = basketLines.findIndex((ticket) => {
+      return ticket.id === id;
+    });
+    if (basketLines[result].qty > 1) {
+      const newBasketline = basketLines[result];
+      newBasketline.qty = newBasketline.qty - 1;
+      const newArray = [...basketLines];
+      sessionStorage.setItem('basket', JSON.stringify(newArray));
 
-     setBasketLines(newArray)
-     } else {
-       console.log(result)
-       console.log(basketLines)
-       const duplicateArray = [...basketLines]
-       duplicateArray.splice(result,1)
+      setBasketLines(newArray);
+    } else {
+      console.log(result);
+      console.log(basketLines);
+      const duplicateArray = [...basketLines];
+      duplicateArray.splice(result, 1);
       // const newValue= basketLines.splice(result, 1)
-      setBasketLines(duplicateArray)
-      sessionStorage.setItem('basket', JSON.stringify(duplicateArray))
-
-     }
-
-
-}
+      setBasketLines(duplicateArray);
+      sessionStorage.setItem('basket', JSON.stringify(duplicateArray));
+    }
+  };
   const subTotal = basketLines.reduce((previousValue, currentValue) => {
     const cost = currentValue.price * currentValue.qty;
     return previousValue + cost;
   }, 0);
 
-  const tax = subTotal * 0.19
-  const totalIncTax = tax + subTotal
-  const treesPlanted = ((0.10 * subTotal)  /5).toFixed(2)
+  const tax = subTotal * 0.19;
+  const totalIncTax = tax + subTotal;
+  const treesPlanted = ((0.1 * subTotal) / 5).toFixed(2);
   return (
     <CheckoutContainer>
       <WrapAll>
-
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
             <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
-            <TopButton type="filled">Checkout Now</TopButton>
+            {/* <TopButton type="filled">Checkout Now</TopButton> */}
           </CheckoutTop>
           <CheckoutBottom>
             <Info>
+
               {basketLines ? basketLines.map((basket)=>(
                 <Ticket>
         
@@ -172,8 +176,18 @@ const navigate = useNavigate()
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>
 
+
+                  <div onClick={() => setActiveTab(2)}>
+                    <Bitcoin
+                      className={activeTab === 2 ? 'active' : 'inactive'}
+                    />
+                  </div>
+                </PaymentIconsContainer>
+                <BuyContainer>
+                  <Buy />
+                </BuyContainer>
+              </Summary>
             </Info>
-           
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>

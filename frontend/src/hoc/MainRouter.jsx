@@ -8,6 +8,8 @@ import NoShows from '../pages/NoShows/NoShows';
 import NotFound from '../pages/NotFound/NotFound';
 import SearchResults from '../pages/SearchResults/SearchResults';
 import Impressum from '../pages/Impressum/Impressum';
+import Login from '../pages/Login/Login';
+
 
 //* IMPORT COMPONENTS____________________________
 import Register from '../components/Register/Register';
@@ -15,7 +17,7 @@ import Footer from '../components/Footer/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import EventInfo from '../components/BuyTickets/EventInfo';
 import Logout from '../components/Logout/Logout';
-import Login from '../components/Modal/Login'
+
 
 //* Use Context
 export const SearchContext = createContext();
@@ -33,7 +35,6 @@ const MainRouter = () => {
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
   const [customer, setCustomer] = useState({ id: '' });
-
   const [loggedIn, setLoggedIn] = useState(loginSession['loggedIn'])
   const [cartQty, setCartQty] = useState(0)
   const [treeCount, setTreeCount] = useState(0)
@@ -91,7 +92,7 @@ const MainRouter = () => {
           setCounter,
           loggedIn,
           setLoggedIn,
-          
+
         }}
       >
         <Navbar />

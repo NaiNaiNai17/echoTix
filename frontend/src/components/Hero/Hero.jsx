@@ -25,24 +25,23 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const Hero = () => {
-  const { dataName } = useContext(SearchContext);
-  const navigate = useNavigate();
+  // const { dataName } = useContext(SearchContext);
+  // const navigate = useNavigate();
 
   //* DataName Function
-  const getDataFileName = async () => {
-    const response = await axios.get(`/shows/events?attractionIDs=${dataName}`);
-    console.log('response from hero', response);
-  };
+  // const getDataFileName = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `/shows/events?attractionIDs=${dataName}`
+  //     );
+  //   } catch (error) {}
+  // };
 
-  useEffect(() => {
-    getDataFileName();
-  }, []);
-
-  const nameHandler = async (e) => {
-    e.preventDefault();
-    getDataFileName();
-    // navigate(`/eventdails${dataName}`);
-  };
+  // const nameHandler = async (e) => {
+  //   e.preventDefault();
+  //   getDataFileName();
+  //   // navigate(`/eventdails${dataName}`);
+  // };
 
   return (
     <Carousel
