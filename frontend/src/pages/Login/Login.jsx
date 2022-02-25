@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <RegisterContainer>
       <Wrapper>
-        <Title>Create an Account</Title>
+        <Title>Login</Title>
         <Form onSubmit={submitHandler}>
           <Input name="email" placeholder="email"></Input>
           <Input name="password" placeholder="password"></Input>

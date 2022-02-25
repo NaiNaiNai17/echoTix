@@ -132,6 +132,39 @@ export const FooterRight = styled.div.attrs(() => ({
   })};
 `;
 
+export const PaymentIconsContainer = styled.div.attrs(() => ({
+  className: 'PaymentIconsContainer',
+}))`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  div {
+    width: 150px;
+
+    ${mobile({
+      width: '4rem',
+    })};
+  }
+`;
+
+export const PaymentIconOrderSummary = styled.div.attrs(() => ({
+  className: 'PaymentIconOrderSummary',
+}))`
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.1);
+  }
+
+  ${mobile({
+    margin: '5px',
+  })};
+`;
+
 export const PaymentIcons = styled.div.attrs(() => ({
   className: 'PaymentIcons',
 }))`

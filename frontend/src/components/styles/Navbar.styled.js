@@ -1,6 +1,7 @@
 import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
 import { tablet } from '../../responsive';
+import { mobileMini } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
@@ -75,6 +76,7 @@ export const SearchContainer = styled.div.attrs(() => ({
 
   ${mobile({ width: '80px', padding: '5px 40px 5px 5px' })};
   ${tablet({ width: '250px' })};
+  ${mobileMini({ width: '150px' })};
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -89,6 +91,7 @@ export const Input = styled.input.attrs(() => ({
 
   ${mobile({ width: '80px' })};
   ${tablet({ width: '250px' })};
+  ${mobileMini({ width: '150px' })};
 `;
 
 //* Right
@@ -111,6 +114,7 @@ export const TreecountNumber = styled.span.attrs(() => ({
   margin-right: 30px;
   font-size: 2rem;
   font-weight: bold;
+
   ${mobile({ display: 'none' })};
 `;
 
@@ -121,6 +125,20 @@ export const NavTreecount = styled.div.attrs(() => ({
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .MuiBadge-colorPrimary {
+    background-color: rgba(41, 209, 158);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: -24px;
+    right: 0px;
+    color: black;
+    ${tablet({ top: '-15px', right: '5px' })};
+
+    span {
+      size: 30px;
+    }
 
   ${tablet({ width: '150px', padding: '0px' })};
 `;
@@ -135,13 +153,15 @@ export const NavUserItem = styled.div.attrs(() => ({
     alignItems: 'center',
     padding: '0px',
   })};
+
   .MuiBadge-colorPrimary {
-    background-color: gray;
+    background-color: rgba(41, 209, 158);
     width: 30px;
     height: 30px;
     border-radius: 50%;
     top: 0px;
     right: 0px;
+    color: black;
     ${tablet({ top: '-15px', right: '5px' })};
 
     span {

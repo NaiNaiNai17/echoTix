@@ -94,7 +94,7 @@ const Navbar = () => {
         <NavRight>
           <NavTreecount>
           
-            {/* <TreecountNumber>43.333</TreecountNumber> */}
+            
             <FontAwesomeIcon icon={faSeedling} size="3x" />
             <Badge
               badgeContent={treeCount.toFixed(2)}
