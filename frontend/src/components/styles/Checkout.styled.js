@@ -140,11 +140,17 @@ export const EventName = styled.span.attrs(() => ({
 
 export const Venue = styled.span.attrs(() => ({
   className: 'Venue',
-}))``;
+}))`
+  display: flex;
+  justify-content: flex-start;
+`;
 
 export const Date = styled.span.attrs(() => ({
   className: 'Date',
-}))``;
+}))`
+  display: flex;
+  justify-content: flex-start;
+`;
 
 export const EventID = styled.span.attrs(() => ({
   className: 'EventID',
@@ -168,12 +174,23 @@ export const Details = styled.div.attrs(() => ({
   padding-left: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    ${mobile({
+      justifyContent: 'center',
+      alignItems: 'center',
+    })};
+  }
   ${mobile({
-    width: '100%',
+    width: '65%',
+    height: '8rem',
     padding: '20px',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'flex-start',
   })};
 `;
 
@@ -227,6 +244,7 @@ export const Summary = styled.div.attrs(() => ({
   border-radius: 10px;
   padding: 20px;
   height: 100%;
+  margin-top: 20px;
   background-color: white;
   ${mobile({
     width: '20rem',
