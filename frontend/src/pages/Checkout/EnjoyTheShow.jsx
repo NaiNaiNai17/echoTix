@@ -1,14 +1,16 @@
 import React from 'react';
 import {
-  NoContainer,
   NoShowMessage,
 } from '../../components/styles/NoShowsNotFound.styled';
+import {
+  RegisterContainer
+} from '../../components/styles/RegisterLogin'
 const EnjoyTheShow = () => {
-  return <NoContainer>
+  return <RegisterContainer>
   <NoShowMessage>
     Have a great time!
   </NoShowMessage>
-</NoContainer>
+</RegisterContainer>
 };
 
 export default EnjoyTheShow;
