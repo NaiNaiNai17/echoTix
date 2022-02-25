@@ -16,7 +16,7 @@ import {
 
 
 
-const Counter = ({id, price, img, venue, date, showName}) =>{
+const Counter = ({id, price, img, venue, date, showName, city}) =>{
   const {setCounter} = useContext(SearchContext)
   const [quantity, setQuantity]= useState(0)
 
@@ -48,7 +48,7 @@ const Counter = ({id, price, img, venue, date, showName}) =>{
             style={{ width: '75px', height: '75px' }}
           ></Add>
         </CounterButtonContainer>
-        <Buy id={id} price={price} qty={quantity} img={img} venue={venue} date={date} showName={showName}/>
+        <Buy id={id} price={price} qty={quantity} img={img} venue={venue} date={date} showName={showName} city={city}/>
       </CounterContainer>
     );
   }

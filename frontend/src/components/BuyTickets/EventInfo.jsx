@@ -40,7 +40,7 @@ const EventInfo = ({ show }) => {
       </Table>
       <hr />
       <TicketInfo />
-      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} date={new Date(show.event_date.value).toLocaleString()} showName={show.name} />
+      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} date={new Date(show.event_date.value).toLocaleString()} showName={show.name} city={show.venue.location.address.city}/>
     </EventInfoContainer>
   );
 };
