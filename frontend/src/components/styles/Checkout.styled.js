@@ -97,7 +97,7 @@ export const City = styled.span.attrs(() => ({
 export const EventName = styled.span.attrs(() => ({
   className: 'EventName',
 }))`
-  font-size: xxx-large;
+  font-size: 2rem;
 `;
 
 export const Venue = styled.span.attrs(() => ({

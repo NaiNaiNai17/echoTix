@@ -118,19 +118,16 @@ const navigate = useNavigate()
                   <Image src={basket.img} />
                   <Details>
                     <City>{basket.city}</City>
-                    <EventName>{basket.ticketDescription}</EventName>
+                    <EventName >{basket.showName}</EventName>
                     <Venue>
                       <b>Venue:</b>
                       <div>{basket.venue}</div>
                     </Venue>
                     <Date>
-                      <b>Date</b>
-                      <div>{basket.showDate}</div>
+                      <b>Date:</b>
+                      <div>{basket.date}</div>
                     </Date>
-                    <EventID>
-                      <b>{basket.id}</b>
-                      <div></div>
-                    </EventID>
+                    
                   </Details>
                 </TicketDetail>
                 <PriceDetail>
@@ -147,7 +144,7 @@ const navigate = useNavigate()
                     <TicketAmount>{basket.qty}</TicketAmount>
                     {/* <Add style={{ width: '75px', height: '75px' }} /> */}
                   </TicketAmountCountainer>
-                  <TicketPrice>€{basket.price * basket.qty}</TicketPrice>
+                  <TicketPrice>€ {basket.price * basket.qty}</TicketPrice>
                 </PriceDetail>
               </Ticket>
               )): 'No card items'}
@@ -158,19 +155,19 @@ const navigate = useNavigate()
       
               <SummaryItem>
                 <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>€{subTotal}</SummaryItemPrice>
+                <SummaryItemPrice>€ {subTotal}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
                 <SummaryItemText>Trees Planted</SummaryItemText>
                 <SummaryItemPrice>{treesPlanted}</SummaryItemPrice>
               </SummaryItem>
               <SummaryItem>
-                <SummaryItemText>Tax €{tax.toFixed(2)}</SummaryItemText>
+                <SummaryItemText>Tax € {tax.toFixed(2)}</SummaryItemText>
                 <SummaryItemPrice></SummaryItemPrice>
               </SummaryItem>
               <SummaryItem type="total">
                 <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>€{totalIncTax.toFixed(2)}</SummaryItemPrice>
+                <SummaryItemPrice>€ {totalIncTax.toFixed(2)}</SummaryItemPrice>
               </SummaryItem>
               <SummaryButton>Checkout Now</SummaryButton>
             </Summary>

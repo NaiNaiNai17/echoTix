@@ -35,12 +35,12 @@ const EventInfo = ({ show }) => {
         <TableRow>
           <td>{show.venue.name}</td>
           <td>{new Date(show.event_date.value).toLocaleString()}</td> 
-          <td>{show.showPrice}</td>
+          <td>€ {show.showPrice}</td>
         </TableRow>
       </Table>
       <hr />
       <TicketInfo />
-      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} showDate={new Date(show.event_date.value).toLocaleString()}/>
+      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} date={new Date(show.event_date.value).toLocaleString()} showName={show.name} />
     </EventInfoContainer>
   );
 };
