@@ -146,7 +146,7 @@ const CheckoutComponent = () => {
                           />
 
                           <TicketAmount>{basket.qty}</TicketAmount>
-                          {/* <Add style={{ width: '75px', height: '75px' }} /> */}
+                          <Add style={{ width: '75px', height: '75px' }} />
                         </TicketAmountCountainer>
                         <TicketPrice>€ {basket.price * basket.qty}</TicketPrice>
                       </PriceDetail>
