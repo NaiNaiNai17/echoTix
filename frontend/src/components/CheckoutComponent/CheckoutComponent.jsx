@@ -118,7 +118,6 @@ const CheckoutComponent = () => {
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
             <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
-            {/* <TopButton type="filled">Checkout Now</TopButton> */}
           </CheckoutTop>
           <CheckoutBottom>
             <Info>
@@ -128,15 +127,18 @@ const CheckoutComponent = () => {
                       <TicketDetail>
                         <Image src={basket.img} />
                         <Details>
-                          <City>{basket.city}</City>
-                          <EventName>{basket.showName}</EventName>
+                          <div>
+                            <City>{basket.city}</City>
+                            <EventName>{basket.showName}</EventName>
+                          </div>
+
                           <Venue>
-                            <b>Venue:</b>
-                            <div>{basket.venue}</div>
+                            <b>Venue: &nbsp;</b>
+                            <div> {basket.venue}</div>
                           </Venue>
                           <Date>
-                            <b>Date:</b>
-                            <div>{basket.date}</div>
+                            <b>Date: &nbsp;</b>
+                            <div> {basket.date}</div>
                           </Date>
                         </Details>
                       </TicketDetail>
@@ -152,7 +154,7 @@ const CheckoutComponent = () => {
                           />
 
                           <TicketAmount>{basket.qty}</TicketAmount>
-                          {/* <Add style={{ width: '75px', height: '75px' }} /> */}
+                          <Add style={{ width: '75px', height: '75px' }} />
                         </TicketAmountCountainer>
                         <TicketPrice>€ {basket.price * basket.qty}</TicketPrice>
                       </PriceDetail>
@@ -160,7 +162,6 @@ const CheckoutComponent = () => {
                   ))
                 : 'No card items'}
 
-              <Hr />
               <Summary>
                 <SummaryTitle>Order Summary</SummaryTitle>
 
