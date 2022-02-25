@@ -46,16 +46,16 @@ const SearchResults = () => {
   //* Start: Search by Event_ID'S (event_ids)_________________
   const getEventDetails = async (attraction) => {
     if (attraction) {
-      const attractionIDs = attraction.id;
+      if(attraction.id){
+        const attractionIDs = attraction.id;
       const response = await axios.get(
         `/shows/eventdetails?attractionIDs=${attractionIDs}`
       );
 
-      console.log('This is my RESULT-DATA', results);
-      console.log('This is my EVENT-DATA', events);
-      console.log('AttractionsID', attractionIDs);
       // setDataName(attractionIDs);
       setEvents(response.data.payload.events);
+      }
+      
     } else {
       navigate(`/noshows`, { replace: true });
     }

@@ -63,7 +63,7 @@ exports.login = async ( req,res) =>{
 }
 
 exports.logout = async (req,res) =>{
-    return res.clearCookie('jwt', {
+    return await res.clearCookie('jwt', {
         httpOnly:true,
         secure:false,
         sameSite:'lax'
