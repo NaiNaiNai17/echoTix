@@ -41,6 +41,7 @@ const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const { loggedIn, search, setSearch } = useContext(SearchContext);
   const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
+  const [isShown, setIsShown] = useState(false)
 
   const navigate = useNavigate();
 
@@ -97,10 +98,15 @@ const Navbar = () => {
             
             <FontAwesomeIcon icon={faSeedling} size="3x" />
             <Badge
+            onMouseEnter={()=> setIsShown(true)}
+            onMouseLeave={()=> setIsShown(false)}
               badgeContent={treeCount.toFixed(2)}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
+            {isShown && (
+              <div> {treeCount.toFixed(2)} trees will be planted with your purchase</div>
+            )}
           </NavTreecount>
           
           <NavUserItem>
