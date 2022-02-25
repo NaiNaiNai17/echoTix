@@ -45,13 +45,14 @@ export const TeamMembers = styled.div.attrs(() => ({
 
   h2 {
     margin: 20px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: Edo;
   }
   h3 {
     margin: 20px;
     font-size: 2rem;
     text-decoration: underline;
+    
   }
 
   h4 {

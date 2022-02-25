@@ -214,7 +214,7 @@ export const impressum = [
       },
     ],
 
-    responsibility: 'Backend',
+    responsibility: 'Backend & Frontend Functionality',
     github: 'https://github.com/NaiNaiNai17/',
     telephone: '0176 717 46 859',
     email: 'fowler.naimah@gmail.com',
@@ -254,7 +254,7 @@ export const impressum = [
       },
     ],
 
-    responsibility: 'Frontend',
+    responsibility: 'Frontend & Design',
     github: 'https://github.com/LarsNemeth',
     email: 'lars.nemeth@posteo.de',
     telephone: '0179 900 62 19',
