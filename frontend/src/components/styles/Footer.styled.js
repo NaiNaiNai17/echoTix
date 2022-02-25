@@ -132,6 +132,27 @@ export const FooterRight = styled.div.attrs(() => ({
   })};
 `;
 
+export const PaymentIconsContainer = styled.div.attrs(() => ({
+  className: 'PaymentIconsContainer',
+}))`
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+`;
+
+export const PaymentIconOrderSummary = styled.div.attrs(() => ({
+  className: 'PaymentIconOrderSummary',
+}))`
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.1);
+  }
+`;
+
 export const PaymentIcons = styled.div.attrs(() => ({
   className: 'PaymentIcons',
 }))`
