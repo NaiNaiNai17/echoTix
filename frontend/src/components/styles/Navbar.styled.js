@@ -133,6 +133,7 @@ export const NavTreecount = styled.div.attrs(() => ({
     border-radius: 50%;
     top: -24px;
     right: 0px;
+    color: black;
     ${tablet({ top: '-15px', right: '5px' })};
 
     span {
@@ -160,6 +161,7 @@ export const NavUserItem = styled.div.attrs(() => ({
     border-radius: 50%;
     top: 0px;
     right: 0px;
+    color: black;
     ${tablet({ top: '-15px', right: '5px' })};
 
     span {
