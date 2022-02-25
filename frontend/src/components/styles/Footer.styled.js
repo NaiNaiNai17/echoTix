@@ -141,7 +141,7 @@ export const PaymentIconsContainer = styled.div.attrs(() => ({
 
   div {
     width: 150px;
-
+    margin-top: 20px;
     ${mobile({
       width: '4rem',
     })};
