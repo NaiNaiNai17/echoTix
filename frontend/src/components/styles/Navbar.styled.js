@@ -14,10 +14,11 @@ export const NavContainer = styled.div.attrs(() => ({
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
+    position: 'sticky',
   })};
 
   overflow: hidden;
-  // position: sticky;
+  //position: sticky;
   top: 0;
   z-index: 99;
   background-color: rgb(56, 58, 57);
@@ -190,6 +191,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
     justifyContent: ' space-around',
     flexFlow: 'column nowrap',
     top: '38px',
+    position: 'sticky',
   })};
 
   ${mobile({
@@ -197,6 +199,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
     justifyContent: ' space-around',
     flexFlow: 'column nowrap',
     top: '15px',
+    position: 'sticky',
   })};
 
   div {
