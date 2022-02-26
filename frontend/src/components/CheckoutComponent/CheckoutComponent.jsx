@@ -35,12 +35,10 @@ import {
   Date,
   TicketDetail,
   PriceDetail,
-  EventID,
   Image,
   TicketAmountCountainer,
   TicketAmount,
   TicketPrice,
-  Hr,
   Summary,
   SummaryTitle,
   SummaryItem,
@@ -60,11 +58,11 @@ const CheckoutComponent = () => {
 
   const loadBasketLines = async () => {
     try {
-      //const res = await axios.get('/tickets/basket')
+      
       const basketContents = JSON.parse(sessionStorage.getItem('basket')) || [];
-      //if(res.status === 200){
+      
       setBasketLines(basketContents);
-      //}
+   
     } catch (error) {
       console.error('error happened', error);
     }
@@ -98,7 +96,6 @@ const CheckoutComponent = () => {
       console.log(basketLines);
       const duplicateArray = [...basketLines];
       duplicateArray.splice(result, 1);
-      // const newValue= basketLines.splice(result, 1)
       setBasketLines(duplicateArray);
       sessionStorage.setItem('basket', JSON.stringify(duplicateArray));
     }

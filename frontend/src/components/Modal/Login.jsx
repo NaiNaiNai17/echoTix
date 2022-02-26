@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useContext} from 'react';
 import axios from '../../util/axiosInstance';
 import { useNavigate } from 'react-router-dom';
 import {SearchContext} from '../../hoc/MainRouter'
@@ -25,7 +25,7 @@ const submitHandler = (e) => {
   e.preventDefault()
   setShowModal(false)
   navigate('/register')
-  console.log('submit');
+ 
 };
 
   const onSubmitHandle = async (e) => {
@@ -47,13 +47,13 @@ const submitHandler = (e) => {
       setShowModal(false);
       setLoggedIn(true);
       console.log('user is logged in');
-      // navigate('/');
+     
 
     } catch (error) {
       console.log(error, 'cannot log user in');
     }
   };
-console.log('from loggedIn')
+
   return (
     <>
       {showModal ? (
@@ -81,11 +81,9 @@ console.log('from loggedIn')
               
                 <Button >Login</Button>
                 </LoginForm>
-                <ButtonContainer>
-                
-                <GoogleButton>Login in with Google</GoogleButton>
+              
                 <RegisterButton onClick={submitHandler}>Register</RegisterButton>
-              </ButtonContainer>
+             
             
           </Wrapper>
         </LoginContainer>

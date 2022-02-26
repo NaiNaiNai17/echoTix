@@ -39,7 +39,6 @@ const navigate = useNavigate()
       );
 
       setRegistrationCompleted(true)
-      // navigate('/');
       setTimeout(()=>{
       
       navigate('/')

@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { mobile } from '../../responsive';
 
 export const FooterContainer = styled.div.attrs(() => ({
@@ -102,7 +102,7 @@ export const FooterList = styled.ul.attrs(() => ({
     width: '100%',
     display: ' flex',
     justifyContent: 'center',
-    flexCirection: 'column',
+    
   })};
 `;
 

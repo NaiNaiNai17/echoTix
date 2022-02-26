@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import { mobile } from '../../responsive';
 
@@ -154,7 +154,7 @@ export const CloseLoginButton = styled(MdClose)`
 export const RegisterButton = styled.button.attrs(() => ({
   className: 'RegisterButton',
 }))`
-  width: 100%;
+  width: 70%;
   border: none;
   padding: 15px 20px;
   background-color: #201d1d;

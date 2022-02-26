@@ -15,8 +15,8 @@ const SubheroItem = ({ item }) => {
     <SubheroItemContainer>
       <Image src={item.img} key={item.id} />
       <Info>
-        <Title>{item.name}</Title>
-        <p>My Description Info</p>
+        <Title style={{marginBottom: '5%'}}>{item.name}</Title>
+       
         <a href={item.url}>
           <Tickets />
         </a>

@@ -12,7 +12,6 @@ import {
 } from '../../components/styles/Card.styled';
 
 const Card = ({ event, onEventClicked }) => {
-  console.log('image', event);
   return (
     <MainCardContainer
       onClick={() => onEventClicked(event)}

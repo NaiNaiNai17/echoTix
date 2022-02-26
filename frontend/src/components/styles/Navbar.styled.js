@@ -14,7 +14,7 @@ export const NavContainer = styled.div.attrs(() => ({
     overflow: 'hidden',
     display: 'flex',
     alignItems: 'center',
-    position: 'sticky',
+    // position: 'sticky',
   })};
 
   overflow: hidden;
@@ -200,6 +200,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
     flexFlow: 'column nowrap',
     top: '15px',
     position: 'sticky',
+    // zIndex: '600'
   })};
 
   div {

@@ -35,7 +35,6 @@ const MainRouter = () => {
   const [search, setSearch] = useState('');
   const [dataName, setDataName] = useState('');
   const [counter, setCounter] = useState('');
-  const [customer, setCustomer] = useState({ id: '' });
   const [loggedIn, setLoggedIn] = useState(loginSession['loggedIn'])
   const [cartQty, setCartQty] = useState(0)
   const [treeCount, setTreeCount] = useState(0)

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { ToggleContainer } from '../styles/Navbar.styled';
 
-const NavbarToggle = ({ open, setOpen, showModal, setShowModal }) => {
+const NavbarToggle = ({ open, setOpen}) => {
   const navigate = useNavigate();
   function goHome() {
     navigate('/');
