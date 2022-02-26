@@ -17,6 +17,7 @@ const FlipCard = ({ item }) => {
       flipOnHover={true} // default false
       flipOnClick={false} // default false
       flipDirection="horizontal" // horizontal or vertical
+      
       style={{ width: '300px', height: '300px', padding: '20px' }} /// these are optional style, it is not necessary
     >
       <FrontSide>

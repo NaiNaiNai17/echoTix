@@ -16,8 +16,8 @@ app.use(cors({
    credentials: true,
    origin:true,
 }))
-const PORT = process.env.PORT || 8000
-app.set('port', PORT || 4000)
+const PORT = process.env.PORT || 8080
+app.set('port', PORT )
 app.use(logger('dev'));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -31,7 +31,7 @@ const initializePassport = require('./config/jwt-passport-config')
 initializePassport(passport)
 
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
+mongoose.connect(process.env.MONGODB_URI ||`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
 ,{
    useNewUrlParser:true, 
    useUnifiedTopology:true,
@@ -52,3 +52,6 @@ app.use('/tickets', basketRoutes)
 //3001
 app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
+if (process.env.NODE_ENV === 'production'){
+   app.use(express.static('frontend/build'))
+}
