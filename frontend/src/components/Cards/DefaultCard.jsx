@@ -8,13 +8,10 @@ import {
   FrontContainer,
   Bandname,
   BackContainer,
-  Cities,
-  Date,
   BackInfoContainer,
 } from '../styles/DefaultCard.styled';
 
 const FlipCard = ({ item }) => {
-  // const [isFlipped, setIsFlipped] = React.useState(false);
   return (
     <Flippy
       flipOnHover={true} // default false

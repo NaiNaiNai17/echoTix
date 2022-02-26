@@ -26,8 +26,7 @@ const SearchResults = () => {
   const { setDataName } = useContext(SearchContext);
   const [searchParams, setSearchParams] = useSearchParams();
   const [currentEventSelected, setCurrentEventSelected] = useState(null);
-  const [currentAttractionsSelected, setCurrentAttractionsSelected] =
-    useState(null);
+  const [currentAttractionsSelected, setCurrentAttractionsSelected] = useState(null);
 
   //* Start: Search by Name (attractioname)_________________
   const getEvents = async () => {
@@ -69,7 +68,7 @@ const SearchResults = () => {
     setCurrentEventSelected(null);
     setEvents(null);
     getEvents().then((attractions) => {
-      // getEventDetails(attractions);
+      
     });
   }, [searchParams]);
 
@@ -92,13 +91,6 @@ const SearchResults = () => {
 
         {currentEventSelected ? (
           <>
-            {/* <GoBackButton
-              onClick={() => {
-                setCurrentEventSelected(null);
-              }}
-            >
-              Go Back
-            </GoBackButton> */}
             <GoBackButton
               onClick={() => {
                 setCurrentEventSelected(null);

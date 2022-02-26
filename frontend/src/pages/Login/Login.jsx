@@ -34,9 +34,7 @@ const Login = () => {
       console.log(error, 'cannot log user in');
     }
 
-    // setTimeout(()=>{
-    //   navigate('/')
-    // })
+  
   };
 
   return (

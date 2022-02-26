@@ -5,7 +5,7 @@ import {SearchContext, CartContext} from '../../hoc/MainRouter'
 
 
 export default function Logout()  {
-  const {cartQty, setCartQty} = useContext(CartContext)
+  const { setCartQty} = useContext(CartContext)
 const {  setLoggedIn } = useContext(SearchContext);
 
 const navigate= useNavigate()
@@ -14,7 +14,6 @@ useEffect(() => {
   async function logout(){
   const response = await axios.get('/user/logout')
   setLoggedIn(false)
-  console.log(response)
   setCartQty(0)
   navigate('/')
 } 

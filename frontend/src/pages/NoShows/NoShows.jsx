@@ -9,7 +9,7 @@ const Register = () => {
   return (
     <NoContainer>
       <NoShowMessage>
-        Unfortuantely there are no Shows for "This Artist" available right now!
+        Unfortunately there are no Shows for "This Artist" available right now!
       </NoShowMessage>
     </NoContainer>
   );

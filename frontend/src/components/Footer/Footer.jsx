@@ -50,12 +50,12 @@ const Footer = () => {
         </Logo>
         <Description>
           We live culture. We care about nature. With this unique Ticket
-          Plattform we help to minimize the ecological footfrint of Touring
-          Artists. With every Ticketsale we donate Money for afforestation.
+          Platform we aim to minimize the ecological footprint of Touring
+          Artists. With every Ticket sale we donate Money for reforestation.
         </Description>
       </FooterLeft>
       <FooterCenter>
-        <FooterTitle>Usefull Links</FooterTitle>
+        <FooterTitle>Useful Links</FooterTitle>
         <FooterList>
           <FooterListItem onClick={goHome}>Home</FooterListItem>
           <FooterListItem onClick={shoppingcart}>Shopping Cart</FooterListItem>

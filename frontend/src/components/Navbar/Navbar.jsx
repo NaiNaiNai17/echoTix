@@ -1,9 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext, SearchContext } from '../../hoc/MainRouter';
-import { mobile } from '../../responsive';
-import axios from '../../util/axiosInstance';
-import Logout from '../Logout/Logout';
+
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
@@ -29,7 +27,6 @@ import {
   NavCenter,
   NavRight,
   SearchContainer,
-  TreecountNumber,
   NavTreecount,
   NavContainer,
   NavUserItem,
@@ -93,11 +90,11 @@ const Navbar = () => {
         </NavCenter>
 
         <NavRight>
-          <NavTreecount>
+          <NavTreecount style={{paddingLeft:'10%'}} >
           
             
             <FontAwesomeIcon icon={faSeedling} size="3x" />
-            <Badge
+            <Badge 
             onMouseEnter={()=> setIsShown(true)}
             onMouseLeave={()=> setIsShown(false)}
               badgeContent={treeCount.toFixed(2)}
@@ -105,7 +102,7 @@ const Navbar = () => {
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
             {isShown && (
-              <div> {treeCount.toFixed(2)} trees will be planted with your purchase</div>
+              <div style={{paddingLeft:'10%'}} > {treeCount.toFixed(2)} trees will be planted with your purchase</div>
             )}
           </NavTreecount>
           
