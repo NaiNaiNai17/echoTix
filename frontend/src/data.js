@@ -254,7 +254,7 @@ export const impressum = [
       },
     ],
 
-    responsibility: 'Frontend & Design',
+    responsibility: 'Design & Frontend Functionality',
     github: 'https://github.com/LarsNemeth',
     email: 'lars.nemeth@posteo.de',
     telephone: '0179 900 62 19',
