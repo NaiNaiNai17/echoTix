@@ -45,8 +45,9 @@ export const TeamMembers = styled.div.attrs(() => ({
 
   h2 {
     margin: 20px;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-family: Edo;
+    text-align: center;
   }
   h3 {
     margin: 20px;
