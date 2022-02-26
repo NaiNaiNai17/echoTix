@@ -1,4 +1,5 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+import { mobile } from '../../responsive';
 
 export const HeroImageContainer = styled.div.attrs(() => ({
   className: 'HeroImageContainer',
@@ -20,6 +21,7 @@ export const HeroImage = styled.img.attrs(() => ({
   :hover {
     opacity: 1;
   }
+  ${mobile({ height: '50vh' })};
 `;
 
 export const InfoContainer = styled.div.attrs(() => ({
@@ -40,6 +42,11 @@ export const InfoContainer = styled.div.attrs(() => ({
   flex-direction: column;
   opacity: 1;
   background: rgba(55, 55, 55, 0.3);
+  ${mobile({
+    padding: '10px',
+    alignItems: 'center',
+    justifyContent: 'center',
+  })};
 
   p {
     background: rgb(55, 55, 55);
@@ -57,6 +64,7 @@ export const InfoContainer = styled.div.attrs(() => ({
     margin-top: 2rem;
     margin-bottom: 2rem;
     opacity: 1;
+    ${mobile({ padding: '20px' })};
   }
 `;
 
@@ -80,6 +88,7 @@ export const Title = styled.h1.attrs(() => ({
   font-weight: bold;
   font-family: Edo;
   text-align: start;
+  ${mobile({ fontSize: '3rem' })};
 `;
 
 export const Description = styled.p.attrs(() => ({
@@ -89,4 +98,5 @@ export const Description = styled.p.attrs(() => ({
   width: 30rem;
   text-align: start;
   margin: -10px;
+  ${mobile({ width: '20rem' })};
 `;

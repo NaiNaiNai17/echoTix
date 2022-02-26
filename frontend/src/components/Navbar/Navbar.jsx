@@ -1,14 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { SearchContext } from '../../hoc/MainRouter';
+import { CartContext, SearchContext } from '../../hoc/MainRouter';
+
 
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
-
 import Login from '../Modal/Login';
 
-//* Imported Icons from Fontawesome
+//* Import Component
+import Burger from './Burger';
 
+//* Imported Icons from Fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faSearch,
@@ -25,7 +27,6 @@ import {
   NavCenter,
   NavRight,
   SearchContainer,
-  TreecountNumber,
   NavTreecount,
   NavContainer,
   NavUserItem,
@@ -35,13 +36,17 @@ import {
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
-  const [login, setLogin] = useState(true);
-  const { search, setSearch } = useContext(SearchContext);
+  const { loggedIn, search, setSearch } = useContext(SearchContext);
+  const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
+  const [isShown, setIsShown] = useState(false)
+
   const navigate = useNavigate();
+
 
   //* Opens the Login-Modal
   const openModal = () => {
-    setShowModal((prev) => !prev);
+    // setShowModal((prev) => !prev);
+    setShowModal(!showModal);
   };
 
   //* Console: Showing if the input-field is active
@@ -52,17 +57,18 @@ const Navbar = () => {
   const searchHandler = async () => {
     navigate(`/searchresult?name=${search}`, { replace: true });
   };
-  const checkoutHandler = () =>{
-    navigate('/checkout')
-  }
+  const checkoutHandler = () => {
+    navigate('/checkout');
+  };
   //* Going Home
 
   function goHome() {
     navigate('/');
   }
 
+
   return (
-    <NavContainer fixed="top">
+    <NavContainer>
       <NavWrapper>
         <NavLeft src={Logo} alt="echotix-logo" onClick={goHome}></NavLeft>
         <NavCenter>
@@ -77,17 +83,29 @@ const Navbar = () => {
             <FontAwesomeIcon
               icon={faSearch}
               onClick={searchHandler}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: 'pointer', color: 'grey' }}
               size="2x"
             />
           </SearchContainer>
         </NavCenter>
 
         <NavRight>
-          <NavTreecount>
-            <TreecountNumber>43.333</TreecountNumber>
+          <NavTreecount style={{paddingLeft:'10%'}} >
+          
+            
             <FontAwesomeIcon icon={faSeedling} size="3x" />
+            <Badge 
+            onMouseEnter={()=> setIsShown(true)}
+            onMouseLeave={()=> setIsShown(false)}
+              badgeContent={treeCount.toFixed(2)}
+              color="primary"
+              badgeStyle={{ backgroundColor: '#00AFD7' }}
+            ></Badge>
+            {isShown && (
+              <div style={{paddingLeft:'10%'}} > {treeCount.toFixed(2)} trees will be planted with your purchase</div>
+            )}
           </NavTreecount>
+          
           <NavUserItem>
             <FontAwesomeIcon
               onClick={openModal}
@@ -95,23 +113,29 @@ const Navbar = () => {
               size="3x"
               style={{
                 cursor: 'pointer',
-                display: login ? 'block' : 'none',
+
+                display: loggedIn ? 'none' : 'block',
+
                 backgroundColor: 'transparent',
                 border: 'none',
                 paddingRight: '30px',
               }}
             />
-            <FontAwesomeIcon
-              icon={faSignOutAlt}
-              size="3x"
-              style={{
-                cursor: 'pointer',
-                display: login ? 'block' : 'none',
-                backgroundColor: 'transparent',
-                border: 'none',
-                paddingRight: '30px',
-              }}
-            />
+            <div>
+              <FontAwesomeIcon
+                onClick={() => navigate('/logout')}
+                icon={faSignOutAlt}
+                size="3x"
+                style={{
+                  cursor: 'pointer',
+                  display: loggedIn ? 'block' : 'none',
+
+                  backgroundColor: 'transparent',
+                  border: 'none',
+                  paddingRight: '30px',
+                }}
+              />
+            </div>
 
             <FontAwesomeIcon
               onClick={checkoutHandler}
@@ -120,13 +144,14 @@ const Navbar = () => {
               size="3x"
             />
             <Badge
-              badgeContent={4}
+              badgeContent={cartQty}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
             <Login showModal={showModal} setShowModal={setShowModal} />
           </NavUserItem>
         </NavRight>
+        <Burger showModal={showModal} setShowModal={setShowModal} />
       </NavWrapper>
     </NavContainer>
   );

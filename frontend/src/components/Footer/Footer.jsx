@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import MainLogo from '../../assets/images/echoTix_Logo.png';
 
 //* Social Icons Import
@@ -27,6 +28,20 @@ import {
 } from '../../components/styles/Footer.styled';
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  function goHome() {
+    navigate('/');
+  }
+
+  function shoppingcart() {
+    navigate('/shoppingcart');
+  }
+
+  function impressum() {
+    navigate('/impressum');
+  }
+
   return (
     <FooterContainer>
       <FooterLeft>
@@ -35,23 +50,22 @@ const Footer = () => {
         </Logo>
         <Description>
           We live culture. We care about nature. With this unique Ticket
-          Plattform we help to minimize the ecological footfrint of Touring
-          Artists. With every Ticketsale we donate Money for afforestation.
+          Platform we aim to minimize the ecological footprint of Touring
+          Artists. With every Ticket sale we donate Money for reforestation.
         </Description>
       </FooterLeft>
       <FooterCenter>
-        <FooterTitle>Usefull Links</FooterTitle>
+        <FooterTitle>Useful Links</FooterTitle>
         <FooterList>
-          <FooterListItem>Home</FooterListItem>
-          <FooterListItem>Shopping Cart</FooterListItem>
-          <FooterListItem>AGB</FooterListItem>
-          <FooterListItem>Impressum</FooterListItem>
-          <FooterListItem>Afforestation</FooterListItem>
-          <FooterListItem>Afforestation</FooterListItem>
+          <FooterListItem onClick={goHome}>Home</FooterListItem>
+          <FooterListItem onClick={shoppingcart}>Shopping Cart</FooterListItem>
+          <FooterListItem onClick={impressum}>Impressum</FooterListItem>
         </FooterList>
         <SocialContainer>
           <SocialIcon>
-            <FacebookIcon color="3B5999" />
+            <a href="https://de-de.facebook.com/">
+              <FacebookIcon color="3B5999" />
+            </a>
           </SocialIcon>
           <SocialIcon>
             <InstagramIcon color="E4405F" />

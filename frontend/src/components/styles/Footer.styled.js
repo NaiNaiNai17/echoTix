@@ -1,9 +1,11 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+import { mobile } from '../../responsive';
 
 export const FooterContainer = styled.div.attrs(() => ({
   className: 'FooterContainer',
 }))`
   display: flex;
+  ${mobile({ overflow: 'hidden', flexDirection: 'column' })};
 `;
 
 //* Footer Left
@@ -16,6 +18,7 @@ export const FooterLeft = styled.div.attrs(() => ({
   flex-direction: column;
   padding: 20px;
   background-color: #fff;
+  ${mobile({ height: '25vh', padding: '0px 10px 20px 10px ' })};
 `;
 
 export const Logo = styled.div.attrs(() => ({
@@ -30,6 +33,7 @@ export const Description = styled.p.attrs(() => ({
   className: 'Description',
 }))`
   margin: 20px 0px;
+  ${mobile({ margin: '10px 30px 10px 30px' })};
 `;
 
 export const SocialContainer = styled.div.attrs(() => ({
@@ -45,11 +49,17 @@ export const SocialIcon = styled.div.attrs(() => ({
   height: 40px;
   border-radius: 50%;
   color: white;
-  background-color: #2a9d8f;
+  background-color: rgba(55, 55, 55);
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
+
+  :hover {
+    background-color: rgba(20, 219, 150, 1);
+  }
+  }
 `;
 
 //* Footer Center
@@ -61,12 +71,24 @@ export const FooterCenter = styled.div.attrs(() => ({
   padding: 20px;
   color: white;
   background-color: #184e77;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  ${mobile({
+    height: '25vh',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+  })};
 `;
 
 export const FooterTitle = styled.h3.attrs(() => ({
   className: 'FooterTitle',
 }))`
-  margin-bottom: 20px;
+  ${mobile({
+    padding: '20px',
+  })};
 `;
 
 export const FooterList = styled.ul.attrs(() => ({
@@ -75,8 +97,13 @@ export const FooterList = styled.ul.attrs(() => ({
   margin: 0px;
   padding: 0px;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  ${mobile({
+    margin: '10px 0px 10px 0px',
+    width: '100%',
+    display: ' flex',
+    justifyContent: 'center',
+    
+  })};
 `;
 
 export const FooterListItem = styled.li.attrs(() => ({
@@ -84,6 +111,7 @@ export const FooterListItem = styled.li.attrs(() => ({
 }))`
   width: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 //* Footer Right
@@ -95,12 +123,53 @@ export const FooterRight = styled.div.attrs(() => ({
   padding: 20px;
   color: white;
   background: #202224;
+  ${mobile({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '20px',
+  })};
+`;
+
+export const PaymentIconsContainer = styled.div.attrs(() => ({
+  className: 'PaymentIconsContainer',
+}))`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  div {
+    width: 150px;
+    margin-top: 20px;
+    ${mobile({
+      width: '4rem',
+    })};
+  }
+`;
+
+export const PaymentIconOrderSummary = styled.div.attrs(() => ({
+  className: 'PaymentIconOrderSummary',
+}))`
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  cursor: pointer;
+
+  :hover {
+    transform: scale(1.1);
+  }
+
+  ${mobile({
+    margin: '5px',
+  })};
 `;
 
 export const PaymentIcons = styled.div.attrs(() => ({
   className: 'PaymentIcons',
 }))`
   display: flex;
+  margin: 10px 0px 30px 0px;
 `;
 
 export const PaymentIcon = styled.div.attrs(() => ({

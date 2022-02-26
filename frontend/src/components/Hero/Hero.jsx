@@ -1,12 +1,9 @@
-import React, { useEffect, useContext } from 'react';
-import axios from '../../util/axiosInstance';
+import React from 'react';
 
 //* IMPORT DATA______________________________
 import { sliderItems } from '../../data';
-import { SearchContext } from '../../hoc/MainRouter';
 
-//* IMPORT REACT-ROUTER_______________________
-import { useNavigate } from 'react-router-dom';
+
 
 //* IMPORT COMPONENTS_________________________
 import Tickets from '../Buttons/Tickets';
@@ -25,24 +22,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
 const Hero = () => {
-  const { dataName } = useContext(SearchContext);
-  const navigate = useNavigate();
 
-  //* DataName Function
-  const getDataFileName = async () => {
-    const response = await axios.get(`/shows/events?attractionIDs=${dataName}`);
-    console.log('response from hero', response);
-  };
-
-  useEffect(() => {
-    getDataFileName();
-  }, []);
-
-  const nameHandler = async (e) => {
-    e.preventDefault();
-    getDataFileName();
-    // navigate(`/eventdails${dataName}`);
-  };
 
   return (
     <Carousel

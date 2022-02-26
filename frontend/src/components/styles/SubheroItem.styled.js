@@ -1,4 +1,7 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+
+import { mobile } from '../../responsive';
+import { tablet } from '../../responsive';
 
 export const SubheroItemContainer = styled.div.attrs(() => ({
   className: 'SubheroItemContainer',
@@ -16,6 +19,7 @@ export const Image = styled.img.attrs(() => ({
   height: 100%;
   object-fit: cover;
   display: block;
+  ${mobile({ height: '150px' })};
 `;
 
 export const Info = styled.div.attrs(() => ({
@@ -35,6 +39,9 @@ export const Info = styled.div.attrs(() => ({
 
   :hover {
     opacity: 1;
+    h1 {
+      ${tablet({ fontSize: '2rem' })};
+    }
   }
   p {
     color: #fff;

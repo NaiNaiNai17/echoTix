@@ -1,9 +1,21 @@
-import React,{useEffect, useState} from 'react';
-import axios from '../../util/axiosInstance'
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+//* Component Import
+
+import Buy from '../Buttons/Buy';
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
 import Remove from '@material-ui/icons/RemoveCircleOutline';
+
+//* Payment Icons Import
+import { Visa, Giropay, Bitcoin } from 'react-pay-icons';
+
+import {
+  PaymentIconsContainer,
+  PaymentIconOrderSummary,
+} from '../../components/styles/Footer.styled';
 
 import {
   CheckoutContainer,
@@ -23,142 +35,183 @@ import {
   Date,
   TicketDetail,
   PriceDetail,
-  EventID,
   Image,
   TicketAmountCountainer,
   TicketAmount,
   TicketPrice,
-  Hr,
   Summary,
   SummaryTitle,
   SummaryItem,
   SummaryItemText,
   SummaryItemPrice,
-  SummaryButton,
+  BuyContainer,
 } from '../../components/styles/Checkout.styled';
 
-const CheckoutComponent =  () => {
+const CheckoutComponent = () => {
+  const navigate = useNavigate();
+  const [basketLines, setBasketLines] = useState([]);
+  const [activeTab, setActiveTab] = useState(false);
 
-  const [basketLines,setBasketLines] = useState([])
   useEffect(() => {
-    loadBasketLines()
+    loadBasketLines();
+  }, []);
+
+  const loadBasketLines = async () => {
+    try {
+      
+      const basketContents = JSON.parse(sessionStorage.getItem('basket')) || [];
+      
+      setBasketLines(basketContents);
    
-  }, [])
+    } catch (error) {
+      console.error('error happened', error);
+    }
+  };
 
-  const loadBasketLines = async () =>{
-   try {
-     const res = await axios.get('/tickets/basket')
-     if(res.status === 200){
-      setBasketLines(res.data.basket)
-     }
-   } catch (error) {
-     console.error('error happened', error)
-   }
+  const buyNow = () =>{
+    
+    setTimeout(() => {
+      alert('Are you sure?')
+      navigate('/thankyou')
+    }, 1000);
+    
   }
+  const continueShopping = () => {
+    navigate('/');
+  };
 
+  const removeBasketItem = (id) => {
+    const result = basketLines.findIndex((ticket) => {
+      return ticket.id === id;
+    });
+    if (basketLines[result].qty > 1) {
+      const newBasketline = basketLines[result];
+      newBasketline.qty = newBasketline.qty - 1;
+      const newArray = [...basketLines];
+      sessionStorage.setItem('basket', JSON.stringify(newArray));
+
+      setBasketLines(newArray);
+    } else {
+      console.log(result);
+      console.log(basketLines);
+      const duplicateArray = [...basketLines];
+      duplicateArray.splice(result, 1);
+      setBasketLines(duplicateArray);
+      sessionStorage.setItem('basket', JSON.stringify(duplicateArray));
+    }
+  };
+  const subTotal = basketLines.reduce((previousValue, currentValue) => {
+    const cost = currentValue.price * currentValue.qty;
+    return previousValue + cost;
+  }, 0);
+
+  const tax = subTotal * 0.19;
+  const totalIncTax = tax + subTotal;
+  const treesPlanted = ((0.1 * subTotal) / 5).toFixed(2);
   return (
     <CheckoutContainer>
       <WrapAll>
-
         <CheckoutWrapper>
           <CartTitle>Shopping Cart</CartTitle>
           <CheckoutTop>
-            <TopButton>Continue Shopping</TopButton>
-            <TopText>Quantity(4)</TopText>
-            <TopButton type="filled">Checkout Now</TopButton>
+            <TopButton onClick={continueShopping}>Continue Shopping</TopButton>
           </CheckoutTop>
           <CheckoutBottom>
             <Info>
-              {basketLines.map((basket)=>(
-                <Ticket>
-        
-                <TicketDetail>
-                  <Image src={basket.img} />
-                  <Details>
-                    <City>{basket.city}</City>
-                    <EventName>{basket.ticketDescription}</EventName>
-                    <Venue>
-                      <b>Venue:</b>
-                      <div>{basket.venue}</div>
-                    </Venue>
-                    <Date>
-                      <b>Date</b>
-                      <div>{basket.showDate}</div>
-                    </Date>
-                    <EventID>
-                      <b>{basket.eventID}</b>
-                      <div></div>
-                    </EventID>
-                  </Details>
-                </TicketDetail>
-                <PriceDetail>
-                  <TicketAmountCountainer>
-                    <Remove
-                      style={{
-                        width: '75px',
-                        height: '75px',
-                        fontWeight: '300',
-                      }}
-                    />
-                    <TicketAmount>{basket.length}</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
-                  </TicketAmountCountainer>
-                  <TicketPrice>{basket.price}</TicketPrice>
-                </PriceDetail>
-              </Ticket>
-              ))}
+              {basketLines
+                ? basketLines.map((basket) => (
+                    <Ticket>
+                      <TicketDetail>
+                        <Image src={basket.img} />
+                        <Details>
+                          <div>
+                            <City>{basket.city}</City>
+                            <EventName>{basket.showName}</EventName>
+                          </div>
+
+                          <Venue>
+                            <b>Venue: &nbsp;</b>
+                            <div> {basket.venue}</div>
+                          </Venue>
+                          <Date>
+                            <b>Date: &nbsp;</b>
+                            <div> {basket.date}</div>
+                          </Date>
+                        </Details>
+                      </TicketDetail>
+                      <PriceDetail>
+                        <TicketAmountCountainer>
+                          <Remove
+                            onClick={() => removeBasketItem(basket.id)}
+                            style={{
+                              width: '75px',
+                              height: '75px',
+                              fontWeight: '300',
+                            }}
+                          />
+
+                          <TicketAmount>{basket.qty}</TicketAmount>
+                          <Add style={{ width: '75px', height: '75px' }} />
+                        </TicketAmountCountainer>
+                        <TicketPrice>€ {basket.price * basket.qty}</TicketPrice>
+                      </PriceDetail>
+                    </Ticket>
+                  ))
+                : 'No card items'}
+
+              <Summary>
+                <SummaryTitle>Order Summary</SummaryTitle>
+
+                <SummaryItem>
+                  <SummaryItemText>Subtotal</SummaryItemText>
+                  <SummaryItemPrice>€ {subTotal}</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                  <SummaryItemText>Trees Planted</SummaryItemText>
+                  <SummaryItemPrice>{treesPlanted}</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem>
+                  <SummaryItemText>Tax € </SummaryItemText>
+                  <SummaryItemPrice>{tax.toFixed(2)}</SummaryItemPrice>
+                </SummaryItem>
+                <SummaryItem type="total">
+                  <SummaryItemText>Total</SummaryItemText>
+                  <SummaryItemPrice>
+                    € {totalIncTax.toFixed(2)}
+                  </SummaryItemPrice>
+                </SummaryItem>
+              </Summary>
+
+              <PaymentIconsContainer>
+                <div onClick={() => setActiveTab(0)}>
+                  <Giropay
+                    className={activeTab === 0 ? 'active' : 'inactive'}
+                  />
+                </div>
+
+                <div onClick={() => setActiveTab(1)}>
+                  <Visa className={activeTab === 1 ? 'active' : 'inactive'} />
+                </div>
+
+                <div onClick={() => setActiveTab(2)}>
+                  <Bitcoin
+                    className={activeTab === 2 ? 'active' : 'inactive'}
+                  />
+                </div>
+              </PaymentIconsContainer>
+              <BuyContainer>
+                <button onClick={buyNow} style={{  padding: '20px',
+  width: '15rem',
+  backgroundColor: '#2e8268',
+  color: 'white',
+  fontSize: 'large',
+  display: 'flex',
+  justifyContent: 'center',
+  borderRadius: '100px',
+  cursor: 'pointer '}}>Buy</button>
               
-              <Hr />
-              <Ticket>
-                <TicketDetail>
-                  <Image src="https://i.discogs.com/UkAHVId2CtYN8zmwzjFF3k5KLFTwQuAYfJaSWR-7RUY/rs:fit/g:sm/q:90/h:548/w:600/czM6Ly9kaXNjb2dz/LWltYWdlcy9SLTIz/NDgxODAtMTUwMjEy/MDkxMy01NjgxLmpw/ZWc.jpeg" />
-                  <Details>
-                    <City>Berlin</City>
-                    <EventName>Damien Jurado</EventName>
-                    <Venue>
-                      <b>Venue:</b>
-                      <div>Astra</div>
-                    </Venue>
-                    <Date>
-                      <b>Date</b>
-                      <div>22.11.2022</div>
-                    </Date>
-                    <EventID>
-                      <b>EventID</b>
-                      <div></div>
-                    </EventID>
-                  </Details>
-                </TicketDetail>
-                <PriceDetail>
-                  <TicketAmountCountainer>
-                    <Remove style={{ width: '75px', height: '75px' }} />
-                    <TicketAmount>2</TicketAmount>
-                    <Add style={{ width: '75px', height: '75px' }} />
-                  </TicketAmountCountainer>
-                  <TicketPrice>EUR 20</TicketPrice>
-                </PriceDetail>
-              </Ticket>
+              </BuyContainer>
             </Info>
-            <Summary>
-              <SummaryTitle>Order Summary</SummaryTitle>
-              <SummaryItem>
-                <SummaryItemText>Subtotal</SummaryItemText>
-                <SummaryItemPrice>EUR 50</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Donation</SummaryItemText>
-                <SummaryItemPrice>EUR 20</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem>
-                <SummaryItemText>Tax (19% MwST)</SummaryItemText>
-                <SummaryItemPrice>EUR 5</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryItem type="total">
-                <SummaryItemText>Total</SummaryItemText>
-                <SummaryItemPrice>EUR 50</SummaryItemPrice>
-              </SummaryItem>
-              <SummaryButton>Checkout Now</SummaryButton>
-            </Summary>
           </CheckoutBottom>
         </CheckoutWrapper>
       </WrapAll>

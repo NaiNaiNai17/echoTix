@@ -1,9 +1,12 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
+import { mobile } from '../../responsive';
 
 export const RegisterContainer = styled.div.attrs(() => ({
   className: 'RegisterContainer',
 }))`
+  display: flex;
+  justify-content: center;
   z-index: 99;
   width: 100vw;
   height: 100vh;
@@ -15,6 +18,9 @@ export const RegisterContainer = styled.div.attrs(() => ({
 
   display: flex;
   align-items: center;
+  ${mobile({
+    height: '30rem',
+  })};
 `;
 
 export const LoginContainer = styled.div.attrs(() => ({
@@ -30,21 +36,24 @@ export const LoginContainer = styled.div.attrs(() => ({
   position: fixed;
   position: absolute;
   left: 50%;
-  top: 30%;
+  top: 24%;
   transform: translate(-20%, -30%);
 `;
 
 export const Wrapper = styled.div.attrs(() => ({
   className: 'LoginWrapper',
 }))`
-  width: 30%;
-  padding: 20px;
+  width: 30rem;
+  padding: 35px;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   position: relative;
+  ${mobile({
+    width: '20rem',
+  })};
 `;
 
 export const Title = styled.h1.attrs(() => ({
@@ -145,7 +154,7 @@ export const CloseLoginButton = styled(MdClose)`
 export const RegisterButton = styled.button.attrs(() => ({
   className: 'RegisterButton',
 }))`
-  width: 100%;
+  width: 70%;
   border: none;
   padding: 15px 20px;
   background-color: #201d1d;

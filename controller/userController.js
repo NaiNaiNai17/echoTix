@@ -6,7 +6,7 @@ exports.registerUser = async (req,res) =>{
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password,salt)
     const user = new User()
-    console.log(user, 'new user')
+   
    
     try {
     
@@ -63,7 +63,7 @@ exports.login = async ( req,res) =>{
 }
 
 exports.logout = async (req,res) =>{
-    return res.clearCookie('jwt', {
+    return await res.clearCookie('jwt', {
         httpOnly:true,
         secure:false,
         sameSite:'lax'

@@ -3,6 +3,8 @@ import React from 'react';
 //* IMPORT COMPONENTS
 
 import TicketInfo from '../../components/BuyTickets/TicketsInfo';
+import Counter from '../../components/BuyTickets/Counter';
+
 
 //* IMPORT STYLE COMPONENTS
 import {
@@ -16,6 +18,7 @@ import {
 
 const EventInfo = ({ show }) => {
   console.log('Eventinfo', show ? 'Show' : 'Noshow');
+  console.log(show)
 
   return (
     <EventInfoContainer img={show.images.large.url}>
@@ -31,12 +34,13 @@ const EventInfo = ({ show }) => {
         </TableRow>
         <TableRow>
           <td>{show.venue.name}</td>
-          <td>{show.event_date.value}</td>
-          <td>32.99</td>
+          <td>{new Date(show.event_date.value).toLocaleString()}</td> 
+          <td>€ {show.showPrice}</td>
         </TableRow>
       </Table>
       <hr />
       <TicketInfo />
+      <Counter venue={show.venue.name}  id={show.id} price={show.showPrice} img={show.images.large.url} date={new Date(show.event_date.value).toLocaleString()} showName={show.name} city={show.venue.location.address.city}/>
     </EventInfoContainer>
   );
 };

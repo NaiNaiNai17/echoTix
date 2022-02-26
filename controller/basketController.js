@@ -1,32 +1,17 @@
+const { default: axios } = require('axios');
 const Basket = require ('../models/BasketSchema')
 
 
-exports.ticketOrder = async(req,res) =>{
+exports.addToBasket= async(req,res) =>{ // addToBasket 
     const {body} = req;
 
-    try {
-        const newBasket = await Basket.create({
-            artistID: body.artistID,
-            eventID: body.eventID,
-            showDate:body.showDate,
-            img:body.img,
-            city:body.city,
-            venue:body.venue,
-            ticketDescription:body.ticketDescription,
-            price:body.price,
-            vat:body.vat,
-            fee:body.fee,
-            totalIncVat:body.vat,
-            trees:body.trees, //0.5
-            customer:body.customer //id
-        })
-        return res.status(200).json({message: 'Basket Created', newBasket})
-    } catch (error) {
-        return res.status(400).json({message: 'Error creating Basket'})
-        
-    }
+    const basket = await Basket.create({
+        eventID:body.eventID,
+        ticketAmount:body.ticketAmount,
+        customerID:body.customerID
+    })
 }
-
+    
 exports.listOrder = async(req,res) =>{
     const page = Number(req.query.page) || 1
     const pageSize = Number(req.query.pageSize) || 10
@@ -44,7 +29,7 @@ exports.listOrder = async(req,res) =>{
 
 exports.listOrderByCustomer = async(req,res) =>{
 
-    const page = Number(req,query.page) || 1
+    const page = Number(req.query.page) || 1
     const pageSize = Number(req.query.pageSize) || 10
 
     const skipRows = (page - 1) * pageSize

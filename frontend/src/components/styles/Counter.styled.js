@@ -1,4 +1,5 @@
-import styled from 'styled-components/macro';
+import styled from 'styled-components';
+import { mobile } from '../../responsive';
 
 export const CounterContainer = styled.div.attrs(() => ({
   className: 'CounterContainer',
@@ -7,6 +8,13 @@ export const CounterContainer = styled.div.attrs(() => ({
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
+  ${mobile({
+    display: 'flex',
+    flexDirection: 'column',
+    height: '150px',
+    justifyContent: 'space-between',
+  })};
 `;
 
 export const CounterButton = styled.button.attrs(() => ({

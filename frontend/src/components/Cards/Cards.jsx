@@ -11,7 +11,7 @@ const Cards = ({ events }) => {
     const response = await axios.get(
       '/shows/attractions?attractionName=coldplay'
     );
-    console.log(response.data);
+   
     setResults(response.data.payload.attractions);
   };
 

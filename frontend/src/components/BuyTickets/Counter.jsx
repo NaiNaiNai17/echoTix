@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import {SearchContext, searchContext} from '../../hoc/MainRouter'
 
 //* Icons Import
 import Add from '@material-ui/icons/AddCircleOutline';
@@ -13,47 +14,53 @@ import {
   CounterNumber,
 } from '../../components/styles/Counter.styled';
 
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = { count: 1 };
-    this.decrement = this.decrement.bind(this);
-  }
 
-  increment() {
-    this.setState({ count: this.state.count + 1 });
-  }
-  decrement() {
-    this.setState({ count: this.state.count - 1 });
-  }
+const Counter = ({id, price, img, venue, date, showName, city}) =>{
+  const {setCounter} = useContext(SearchContext)
+  const [quantity, setQuantity]= useState(0)
 
-  render() {
-    // const navigate = useNavigate();
-
-    // const onBuyHandler = () => {
-    //   navigate(`/shoppingcart`, { replace: true });
-    // };
+  const increment = ()=> {
+    setQuantity( quantity + 1 );
+    setCounter(quantity)
+  } 
+  
+  const decrement =()=> {
+    if (quantity >= 1){
+      setQuantity(quantity - 1 )
+    }
+  
+  setCounter(quantity)
+}
 
     return (
       <CounterContainer>
         <CounterButtonContainer>
           <Remove
-            onClick={() => this.decrement()}
+            onClick={() => decrement()}
             style={{ width: '75px', height: '75px' }}
           ></Remove>
           <CounterNumber style={{ fontSize: '2em' }}>
-            {this.state.count}
+            {quantity}
           </CounterNumber>
           <Add
-            onClick={() => this.increment()}
+            onClick={() => increment()}
             style={{ width: '75px', height: '75px' }}
           ></Add>
         </CounterButtonContainer>
-        <Buy/>
+        <Buy id={id} price={price} qty={quantity} img={img} venue={venue} date={date} showName={showName} city={city}/>
       </CounterContainer>
     );
   }
-}
+
+
+
+
+  
+ 
+
+   
+  
+
 
 export default Counter;
