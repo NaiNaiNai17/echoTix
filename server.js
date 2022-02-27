@@ -51,22 +51,19 @@ app.use('/shows',ticketRoutes)
 app.use('/tickets', basketRoutes)
 
 
-app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
 
-// if (process.env.NODE_ENV === 'production'){
-//    // app.use(express.static('frontend/build'))
 
-// app.use(express.static(path.join(__dirname, "./frontend/build/index.html")));
-// }
+
 
 //!For deployment - Do not add code below this line!
 // Serve frontend client/build folder
-app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
 });
 
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));
-});
+
+
+app.listen(PORT, console.log(`server is running on ${PORT}`) )
