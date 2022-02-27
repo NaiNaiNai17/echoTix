@@ -34,7 +34,7 @@ const navigate = useNavigate()
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/user/register',
+        '/user/register',
         data
       );
 
