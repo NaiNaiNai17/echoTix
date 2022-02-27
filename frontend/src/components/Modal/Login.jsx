@@ -41,7 +41,7 @@ const submitHandler = (e) => {
 
     try {
       const response = await axios.post(
-        'http://localhost:3001/user/login',
+        'http://localhost:5000/user/login',
         data
       );
       setShowModal(false);
