@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
 const ticketRoutes = require('./routes/ticketRoutes')
 const basketRoutes = require('./routes/basketRoutes')
+const path = require('path')
 
 require('dotenv').config()
 
@@ -49,15 +50,22 @@ app.use('/user',userRoutes)
 app.use('/shows',ticketRoutes)
 app.use('/tickets', basketRoutes)
 
-//3001
+
 app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
 
-if (process.env.NODE_ENV === 'production'){
-   // app.use(express.static('frontend/build'))
+// if (process.env.NODE_ENV === 'production'){
+//    // app.use(express.static('frontend/build'))
 
-app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-}
+// app.use(express.static(path.join(__dirname, "./frontend/build/index.html")));
+// }
+
+//!For deployment - Do not add code below this line!
+// Serve frontend client/build folder
+app.use(express.static(path.join(__dirname, "client/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 app.get("*", function (request, response) {
   response.sendFile(path.resolve(__dirname, "./frontend/build", "index.html"));

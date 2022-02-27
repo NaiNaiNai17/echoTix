@@ -1,7 +1,12 @@
 import axios from 'axios';
 
 const axiosApiInstance = axios.create();
-
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    // dev code
+    axiosApiInstance.defaults.baseURL = "http://localhost:5000";
+  } else {
+    // production code
+    axiosApiInstance.defaults.baseURL = "https://echotixx.herokuapp.com";
 //defining the settings for our axios instance. 
 axiosApiInstance.defaults.baseURL = 'http://localhost:3001';
 axiosApiInstance.defaults.headers.post['Content-Type'] = 'application/json';
