@@ -1,11 +1,16 @@
 import axios from 'axios';
 
-const axiosApiInstance = axios.create();
 
-//defining the settings for our axios instance. 
-axiosApiInstance.defaults.baseURL = 'http://localhost:3001';
-axiosApiInstance.defaults.headers.post['Content-Type'] = 'application/json';
-axiosApiInstance.defaults.withCredentials = true;
+const axiosApiInstance = axios.create();
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+    // dev code
+    axiosApiInstance.defaults.baseURL = "http://localhost:5000";
+  } else {
+    // production code
+    axiosApiInstance.defaults.baseURL = "https://echotixx.herokuapp.com";
+
+    axiosApiInstance.defaults.headers.post['Content-Type'] = 'application/json';
+    axiosApiInstance.defaults.withCredentials = true;
 
 //intercepts requests.
 axiosApiInstance.interceptors.request.use(config => {
@@ -30,4 +35,6 @@ axiosApiInstance.interceptors.response.use(config => {
     return Promise.reject(error);
 })
 
-export default axiosApiInstance;
+}
+
+export default axiosApiInstance

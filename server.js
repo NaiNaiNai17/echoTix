@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser')
 const userRoutes = require('./routes/userRoutes')
 const ticketRoutes = require('./routes/ticketRoutes')
 const basketRoutes = require('./routes/basketRoutes')
+const path = require('path')
 
 require('dotenv').config()
 
@@ -16,8 +17,8 @@ app.use(cors({
    credentials: true,
    origin:true,
 }))
-const PORT = process.env.PORT || 8000
-app.set('port', PORT || 4000)
+const PORT = process.env.PORT || 8080
+app.set('port', PORT )
 app.use(logger('dev'));
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
@@ -31,7 +32,7 @@ const initializePassport = require('./config/jwt-passport-config')
 initializePassport(passport)
 
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
+mongoose.connect(process.env.MONGODB_URI ||`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}?retryWrites=true&w=majority`
 ,{
    useNewUrlParser:true, 
    useUnifiedTopology:true,
@@ -49,6 +50,20 @@ app.use('/user',userRoutes)
 app.use('/shows',ticketRoutes)
 app.use('/tickets', basketRoutes)
 
-//3001
-app.listen(PORT, console.log(`server is running on ${PORT}`) )
 
+
+
+
+
+
+//!For deployment - Do not add code below this line!
+// Serve frontend client/build folder
+app.use(express.static(path.join(__dirname, "frontend/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
+});
+
+
+
+app.listen(PORT, console.log(`server is running on ${PORT}`) )
