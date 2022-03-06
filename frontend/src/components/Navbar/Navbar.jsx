@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CartContext, SearchContext } from '../../hoc/MainRouter';
 
-
 import Badge from '@material-ui/core/Badge';
 import Logo from '../../assets/images/imageedit_12_2414757947.png';
 import Login from '../Modal/Login';
@@ -37,11 +36,11 @@ import {
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const { loggedIn, search, setSearch } = useContext(SearchContext);
-  const { cartQty, setCartQty,treeCount, setTreeCount } = useContext(CartContext);
-  const [isShown, setIsShown] = useState(false)
+  const { cartQty, setCartQty, treeCount, setTreeCount } =
+    useContext(CartContext);
+  const [isShown, setIsShown] = useState(false);
 
   const navigate = useNavigate();
-
 
   //* Opens the Login-Modal
   const openModal = () => {
@@ -66,7 +65,6 @@ const Navbar = () => {
     navigate('/');
   }
 
-
   return (
     <NavContainer>
       <NavWrapper>
@@ -74,7 +72,7 @@ const Navbar = () => {
         <NavCenter>
           <SearchContainer>
             <Input
-              placeholder="Search For Shows"
+              placeholder="Search"
               onChange={(e) => setSearch(e.target.value)}
               onFocus={example}
               // value={search}
@@ -90,22 +88,23 @@ const Navbar = () => {
         </NavCenter>
 
         <NavRight>
-          <NavTreecount style={{paddingLeft:'10%'}} >
-          
-            
+          <NavTreecount>
             <FontAwesomeIcon icon={faSeedling} size="3x" />
-            <Badge 
-            onMouseEnter={()=> setIsShown(true)}
-            onMouseLeave={()=> setIsShown(false)}
+            <Badge
+              onMouseEnter={() => setIsShown(true)}
+              onMouseLeave={() => setIsShown(false)}
               badgeContent={treeCount.toFixed(2)}
               color="primary"
               badgeStyle={{ backgroundColor: '#00AFD7' }}
             ></Badge>
             {isShown && (
-              <div style={{paddingLeft:'10%'}} > {treeCount.toFixed(2)} trees will be planted with your purchase</div>
+              <div style={{ paddingLeft: '10%' }}>
+                {' '}
+                {treeCount.toFixed(2)} trees will be planted with your purchase
+              </div>
             )}
           </NavTreecount>
-          
+
           <NavUserItem>
             <FontAwesomeIcon
               onClick={openModal}

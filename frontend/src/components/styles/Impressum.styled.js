@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { mobileMini } from '../../responsive';
 import { mobile } from '../../responsive';
 import { tabletSmall } from '../../responsive';
 
@@ -26,9 +27,9 @@ export const TeamMembers = styled.div.attrs(() => ({
   className: 'TeamMembers',
 }))`
   border: 1px solid grey;
-  width: 300px;
+  width: 20rem;
   height: 80%;
-  margin: 80px;
+  margin: 2rem 3rem 2rem 3rem;
   padding: 50px;
   background-color: rgba(52, 52, 52, 60%);
   color: white;
@@ -39,8 +40,9 @@ export const TeamMembers = styled.div.attrs(() => ({
 
   h1 {
     font-family: Edo;
-    margin: 20px;
+    margin-bottom: 2rem;
     font-size: 3rem;
+    ${mobileMini({ fontSize: '2rem' })};
   }
 
   h2 {
@@ -53,7 +55,6 @@ export const TeamMembers = styled.div.attrs(() => ({
     margin: 20px;
     font-size: 2rem;
     text-decoration: underline;
-    
   }
 
   h4 {
@@ -72,6 +73,8 @@ export const TeamMembers = styled.div.attrs(() => ({
       margin: 10px;
     }
   }
+
+  ${mobileMini({ width: '13rem' })};
 `;
 
 export const Technologies = styled.div.attrs(() => ({

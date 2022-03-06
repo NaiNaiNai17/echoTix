@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import { mobileMini } from '../../responsive';
 import { mobile } from '../../responsive';
+import { tablet } from '../../responsive';
 
 export const HeroImageContainer = styled.div.attrs(() => ({
   className: 'HeroImageContainer',
@@ -88,7 +90,9 @@ export const Title = styled.h1.attrs(() => ({
   font-weight: bold;
   font-family: Edo;
   text-align: start;
+  ${mobileMini({ fontSize: '2rem' })};
   ${mobile({ fontSize: '3rem' })};
+  ${tablet({ fontSize: '3rem' })};
 `;
 
 export const Description = styled.p.attrs(() => ({

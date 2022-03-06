@@ -2,10 +2,12 @@ import styled from 'styled-components/macro';
 import { mobile } from '../../responsive';
 import { tablet } from '../../responsive';
 import { mobileMini } from '../../responsive';
+import { mobileMidi } from '../../responsive';
 
 export const NavContainer = styled.div.attrs(() => ({
   className: 'NavContainer',
 }))`
+  display: flex;
   color: #fff;
   height: 120px;
   background: rgba(52, 52, 52);
@@ -31,7 +33,7 @@ export const NavWrapper = styled.div.attrs(() => ({
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  width: 100%;
   ${mobile({
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -39,10 +41,8 @@ export const NavWrapper = styled.div.attrs(() => ({
   })};
 
   ${tablet({
-    width: '400px',
+    width: '100%',
   })};
-
-  ${'' /* background: #0b0b0b; */}
 `;
 
 //* Left
@@ -58,9 +58,8 @@ export const NavLeft = styled.img.attrs(() => ({
 export const NavCenter = styled.div.attrs(() => ({
   className: 'NavCenter',
 }))`
-  width: 400px;
-  ${mobile({ width: '150px' })};
-  ${tablet({ width: '300px' })};
+  ${mobile({ width: '75%' })};
+  ${tablet({ width: '75%' })};
 `;
 //* Search Box
 
@@ -74,10 +73,14 @@ export const SearchContainer = styled.div.attrs(() => ({
   color: black;
   padding: 10px 40px 10px 5px;
   background-color: #fff;
+  width: 85%;
 
-  ${mobile({ width: '80px', padding: '5px 40px 5px 5px' })};
-  ${tablet({ width: '250px' })};
-  ${mobileMini({ width: '150px' })};
+  ${mobile({ padding: '5px 40px 5px 5px' })};
+  ${'' /* ${tablet({ width: '69%' })}; */}
+  ${
+    '' /* ${mobileMini({ width: '75%' })};
+  ${mobileMidi({ width: '75%' })}; */
+  }
 `;
 
 export const Input = styled.input.attrs(() => ({
@@ -89,10 +92,14 @@ export const Input = styled.input.attrs(() => ({
   border: 0;
   outline: none;
   text-align: left;
+  width: 80%;
 
-  ${mobile({ width: '80px' })};
+  ${
+    '' /* ${mobile({ width: '80px' })};
   ${tablet({ width: '250px' })};
-  ${mobileMini({ width: '150px' })};
+  ${mobileMini({ width: '110px' })};
+  ${mobileMidi({ width: '100%' })}; */
+  }
 `;
 
 //* Right
@@ -178,7 +185,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
 }))`
   height: 40px;
   position: fixed;
-  ${'' /* top: 40px; */}
+  top: 40px; */}
   right: 20px;
   display: none;
   justify-content: space-around;
@@ -200,7 +207,6 @@ export const BurgerMenue = styled.div.attrs(() => ({
     flexFlow: 'column nowrap',
     top: '15px',
     position: 'sticky',
-    // zIndex: '600'
   })};
 
   div {
@@ -218,7 +224,7 @@ export const BurgerMenue = styled.div.attrs(() => ({
 
     &:nth-child(2) {
       transform: ${({ open }) =>
-        open ? 'translateX(200%)' : 'translateX(0%)'};
+        open ? 'translateX(800%)' : 'translateX(0%)'};
       opacitiy: ${({ open }) => (open ? 0 : 1)};
     }
 
@@ -261,6 +267,8 @@ export const ToggleContainer = styled.div.attrs(() => ({
 
       :hover {
         color: #fff;
+        text-shadow: 5px 5px #000000;
+        
       }
     }
   }
